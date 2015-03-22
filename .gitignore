@@ -1,0 +1,3 @@
+# runtime and cache directories
+/protected/runtime/*
+/assets/*
