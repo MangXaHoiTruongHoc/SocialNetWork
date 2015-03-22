@@ -14,10 +14,10 @@ class TaikhoanController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			//'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
-	}
+	} 
 
 	/**
 	 * Specifies the access control rules.
@@ -28,7 +28,7 @@ class TaikhoanController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','create'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -37,14 +37,14 @@ class TaikhoanController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('de@gmail.com'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
 		);
 	}
-
+   
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -55,11 +55,15 @@ class TaikhoanController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+    public function actionAbout(){
+            $model = new Taikhoan;
+            $result = "";
+            $this->render('about',array('model'=>$model,'result'=>$result));
+        }  
 	public function actionCreate()
 	{
 		$model=new Taikhoan;
@@ -69,16 +73,23 @@ class TaikhoanController extends Controller
 
 		if(isset($_POST['Taikhoan']))
 		{
+		      // chèn ?nh
+            $random = rand(0,9999); 
 			$model->attributes=$_POST['Taikhoan'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->matk));
+            $uploadFile=CUploadedFile::getInstance($model,'hinh_dai_dien');
+            $fileName = "{$random}-{$uploadFile}";
+            $model->hinh_dai_dien = $fileName;
+			if($model->save()){
+                $uploadFile->saveAs(Yii::app()->basePath.'/../upload/'.$fileName);
+				$this->redirect(array('view','id'=>$model->ma_tai_khoan));
+                }
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
 	}
-
+  
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -87,15 +98,24 @@ class TaikhoanController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+       
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Taikhoan']))
 		{
+		    $_POST['Taikhoan']['hinh_dai_dien'] = $model->hinh_dai_dien;
+           
 			$model->attributes=$_POST['Taikhoan'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->matk));
+            $uploadFile = CUploadedFile::getInstance($model,'hinh_dai_dien');
+            $model->hinh_dai_dien = $uploadFile;
+			if($model->save()){
+			  
+			     if(!empty($uploadFile)){
+			         $uploadFile->saveAs(Yii::app()->basePath.'/../upload/'.$model->hinh_dai_dien);
+			     }
+				 $this->redirect(array('view','id'=>$model->ma_tai_khoan));
+                }
 		}
 
 		$this->render('update',array(
@@ -137,7 +157,7 @@ class TaikhoanController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Taikhoan']))
 			$model->attributes=$_GET['Taikhoan'];
-
+      
 		$this->render('admin',array(
 			'model'=>$model,
 		));
@@ -170,4 +190,5 @@ class TaikhoanController extends Controller
 			Yii::app()->end();
 		}
 	}
+   
 }

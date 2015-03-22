@@ -12,8 +12,8 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'matk'); ?>
-		<?php echo $form->textField($model,'matk'); ?>
+		<?php echo $form->label($model,'ma_tai_khoan'); ?>
+		<?php echo $form->textField($model,'ma_tai_khoan'); ?>
 	</div>
 
 	<div class="row">
@@ -22,28 +22,38 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'hoten'); ?>
-		<?php echo $form->textField($model,'hoten',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->label($model,'ho_ten'); ?>
+		<?php echo $form->textField($model,'ho_ten',array('size'=>50,'maxlength'=>50)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'ngaysinh'); ?>
-		<?php echo $form->textField($model,'ngaysinh',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->label($model,'ngay_sinh'); ?>
+		<?php echo $form->textField($model,'ngay_sinh',array('size'=>10,'maxlength'=>10)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'Gioitinh'); ?>
-		<?php echo $form->textField($model,'Gioitinh',array('size'=>5,'maxlength'=>5)); ?>
+		<?php echo $form->label($model,'gioi_tinh'); ?>
+		<?php echo $form->textField($model,'gioi_tinh',array('size'=>5,'maxlength'=>5)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'avatar'); ?>
-		<?php echo $form->textField($model,'avatar',array('size'=>60,'maxlength'=>60)); ?>
+		<?php echo $form->label($model,'hinh_dai_dien'); ?>
+		<?php echo $form->textField($model,'hinh_dai_dien',array('size'=>60,'maxlength'=>60)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'machuyennganh'); ?>
-		<?php echo $form->textField($model,'machuyennganh'); ?>
+		<?php echo $form->label($model,'ma_chuyen_nganh'); ?>
+		<?php echo $form->textField($model,'ma_chuyen_nganh'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'mat_khau'); ?>
+		<?php echo $form->textField($model,'mat_khau',array('size'=>32,'maxlength'=>32)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'ngay_tao'); ?>
+		<?php echo $form->textField($model,'ngay_tao',array('size'=>10,'maxlength'=>10)); ?>
 	</div>
 
 	<div class="row buttons">

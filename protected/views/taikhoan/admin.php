@@ -1,15 +1,16 @@
 <?php
 /* @var $this TaikhoanController */
 /* @var $model Taikhoan */
-
+session_start();
 $this->breadcrumbs=array(
 	'Taikhoans'=>array('index'),
 	'Manage',
 );
-
+if(isset($_SESSION['email'])){
 $this->menu=array(
 	array('label'=>'List Taikhoan', 'url'=>array('index')),
 	array('label'=>'Create Taikhoan', 'url'=>array('create')),
+    array('label'=>'Manage About', 'url'=>array('about')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -45,18 +46,25 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'matk',
+		'ma_tai_khoan',
 		'email',
-		'hoten',
-		'ngaysinh',
-		'Gioitinh',
-		'avatar',
+		'ho_ten',
+		'ngay_sinh',
+		'gioi_tinh',
+		'hinh_dai_dien',
 		/*
-		'machuyennganh',
-		'password',
+		'ma_chuyen_nganh',
+		'mat_khau',
+		'ngay_tao',
 		*/
 		array(
 			'class'=>'CButtonColumn',
 		),
 	),
 )); ?>
+<?php
+}
+else{
+    $this->redirect('index.php');
+}
+?>

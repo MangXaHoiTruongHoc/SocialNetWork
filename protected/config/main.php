@@ -7,7 +7,9 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'My Web Application', 
+    'theme'=>'blackboot',
+    
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -27,7 +29,7 @@ return array(
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		
+	
 	),
 
 	// application components

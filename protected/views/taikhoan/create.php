@@ -10,6 +10,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'List Taikhoan', 'url'=>array('index')),
 	array('label'=>'Manage Taikhoan', 'url'=>array('admin')),
+    array('label'=>'Manage About', 'url'=>array('about')),
 );
 ?>
 

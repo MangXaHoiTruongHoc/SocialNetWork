@@ -4,14 +4,15 @@
  * This is the model class for table "taikhoan".
  *
  * The followings are the available columns in table 'taikhoan':
- * @property integer $matk
+ * @property integer $ma_tai_khoan
  * @property string $email
- * @property string $hoten
- * @property string $ngaysinh
- * @property string $Gioitinh
- * @property string $avatar
- * @property integer $machuyennganh
- * @property string $password
+ * @property string $ho_ten
+ * @property string $ngay_sinh
+ * @property string $gioi_tinh
+ * @property string $hinh_dai_dien
+ * @property integer $ma_chuyen_nganh
+ * @property string $mat_khau
+ * @property string $ngay_tao
  */
 class Taikhoan extends CActiveRecord
 {
@@ -31,16 +32,16 @@ class Taikhoan extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email, hoten, ngaysinh, Gioitinh, machuyennganh, password', 'required'),
-			array('machuyennganh', 'numerical', 'integerOnly'=>true),
-			array('email, hoten', 'length', 'max'=>50),
-			array('ngaysinh', 'length', 'max'=>10),
-			array('Gioitinh', 'length', 'max'=>5),
-			array('avatar', 'length', 'max'=>60),
-			array('password', 'length', 'max'=>32),
+			array('email, ho_ten,hinh_dai_dien, ngay_sinh, gioi_tinh,  mat_khau', 'required'),
+            array('email','email'),
+			array('email, ho_ten', 'length', 'max'=>50),
+			array('ngay_sinh, ngay_tao', 'length', 'max'=>10),
+			array('gioi_tinh', 'length', 'max'=>5),
+			array('hinh_dai_dien', 'length', 'max'=>60),
+			array('mat_khau', 'length', 'max'=>32),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('matk, email, hoten, ngaysinh, Gioitinh, avatar, machuyennganh, password', 'safe', 'on'=>'search'),
+			array('ma_tai_khoan, email, ho_ten, ngay_sinh, gioi_tinh, hinh_dai_dien,  mat_khau, ngay_tao', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,14 +62,14 @@ class Taikhoan extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'matk' => 'Matk',
+			'ma_tai_khoan' => 'Ma Tai Khoan',
 			'email' => 'Email',
-			'hoten' => 'Họ Tên',
-			'ngaysinh' => 'Ngày Sinh',
-			'Gioitinh' => 'Giới Tính',
-			'avatar' => 'Ảnh Minh Họa',
-			'machuyennganh' => 'Chuyên Ngành',
-			'password' => 'Mật Khẩu',
+			'ho_ten' => 'Họ Tên',
+			'ngay_sinh' => 'Ngày Sinh',
+			'gioi_tinh' => 'Giới Tính',
+			'hinh_dai_dien' => 'Hình Đại Diện',
+			'mat_khau' => 'Mật Khẩu',
+			'ngay_tao' => 'Ngày Tạo',
 		);
 	}
 
@@ -90,14 +91,14 @@ class Taikhoan extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('matk',$this->matk);
+		$criteria->compare('ma_tai_khoan',$this->ma_tai_khoan);
 		$criteria->compare('email',$this->email,true);
-		$criteria->compare('hoten',$this->hoten,true);
-		$criteria->compare('ngaysinh',$this->ngaysinh,true);
-		$criteria->compare('Gioitinh',$this->Gioitinh,true);
-		$criteria->compare('avatar',$this->avatar,true);
-		$criteria->compare('machuyennganh',$this->machuyennganh);
-		$criteria->compare('password',$this->password,true);
+		$criteria->compare('ho_ten',$this->ho_ten,true);
+		$criteria->compare('ngay_sinh',$this->ngay_sinh,true);
+		$criteria->compare('gioi_tinh',$this->gioi_tinh,true);
+		$criteria->compare('hinh_dai_dien',$this->hinh_dai_dien,true);
+		$criteria->compare('mat_khau',$this->mat_khau,true);
+		$criteria->compare('ngay_tao',$this->ngay_tao,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -114,4 +115,20 @@ class Taikhoan extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+     // hash mat_khau
+    public function hashPassword($mat_khau)
+    {
+        return ($mat_khau);
+    }
+            
+    // mat_khau validation
+    public function validatePassword($mat_khau)
+    {
+        return $this->hashPassword($mat_khau)===$this->mat_khau;
+    }      
+    public function beforeSave()
+    {
+        $this->mat_khau = $this->hashPassword($this->mat_khau);
+        return parent::beforeSave();
+    }
 }
