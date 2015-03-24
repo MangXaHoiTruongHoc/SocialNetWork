@@ -25,7 +25,8 @@
 	<?php echo CHtml::encode($data->gioi_tinh); ?>
 	<br />
 
-	<b><?php echo CHtml::image(Yii::app()->request->baseUrl.'/upload/'.$data->hinh_dai_dien,"hinh_dai_dien",array("width"=>"50px" ,"height"=>"50px")); ?></b>
+	<b><?php echo CHtml::image(Yii::app()->request->baseUrl.'/upload/'.$data->hinh_dai_dien,
+    "hinh_dai_dien",array("width"=>"50px" ,"height"=>"50px")); ?></b>
     
 	<br />
     

@@ -5,6 +5,7 @@ class SiteController extends Controller
 	/**
 	 * Declares class-based actions.
 	 */
+ 	//public $layout='//layouts/column2';
 	public function actions()
 	{
 		return array(
@@ -92,7 +93,8 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-                $_SESSION['email']= $model->email;
+                // Thi?t l?p session email
+                Yii::app()->session['email'] = $model->email;
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form
@@ -103,7 +105,8 @@ class SiteController extends Controller
 	 * Logs out the current user and redirect to homepage.
 	 */
 	public function actionLogout()
-	{
+	{  
+	    
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}

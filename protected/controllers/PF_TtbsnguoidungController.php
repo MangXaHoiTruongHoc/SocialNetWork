@@ -1,6 +1,6 @@
 <?php
 
-class TaikhoanController extends Controller
+class PF_TtbsnguoidungController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -17,7 +17,7 @@ class TaikhoanController extends Controller
 			//'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
-	} 
+	}
 
 	/**
 	 * Specifies the access control rules.
@@ -28,7 +28,7 @@ class TaikhoanController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -37,72 +37,56 @@ class TaikhoanController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('de@gmail.com'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
 		);
 	}
-   
+
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id)
-	{
+	{  
+	   //$chuyennganh = $this->loadModel($id)->chuyennganh;
+        //print_r ($chuyennganh);
+        //die;
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
+
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-   
 	public function actionCreate()
 	{
-		$model=new Taikhoan;
+		$model=new PF_Ttbsnguoidung;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Taikhoan']))
-		{
-		    // Thực hiện upload ảnh .
-            $random = rand(0,9999); 
-			$model->attributes=$_POST['Taikhoan'];
-            $uploadFile=CUploadedFile::getInstance($model,'hinh_dai_dien');
-            $fileName = "{$random}-{$uploadFile}";
-            $model->hinh_dai_dien = $fileName;
+		if(isset($_POST['PF_Ttbsnguoidung']))
+		{ 
+            // Lấy mã tài khoản của người dùng
+            $matk =  Yii::app()->session['ma_tai_khoan'];
+			$model->attributes=$_POST['PF_Ttbsnguoidung'];
+            // thực hieenj gán mã tài khoản vào model
+            $model->ma_tai_khoan = $matk;
 			if($model->save()){
-                $uploadFile->saveAs(Yii::app()->basePath.'/../upload/'.$fileName);
-				//$this->redirect(array('view','id'=>$model->ma_tai_khoan));
-                }
+				//$this->redirect(array('view','id'=>$model->pf_ma_ttr_nguoi_dung));
+              }  
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
 	}
-    //action about
-     public function actionAbout(){
-            // Lấy session email từ SiteController
-            $email = Yii::app()->session['email'];
-            // Thực hiện lấy mã tài khoản của người dùng khi đăng nhập vào 
-            $taikhoan = Taikhoan::model()->findAll(array('condition'=>'email LIKE :email',
-            'params'=>array(':email'=>"%$email%")));
-                foreach($taikhoan as $tk){
-                      $tk->ma_tai_khoan;
-                }
-            // Lưu mã tài khoản vào session['ma_tai_khoan']
-            Yii::app()->session['ma_tai_khoan'] = $tk->ma_tai_khoan;
-            $model = new Taikhoan;
-            $matk = Yii::app()->session['ma_tai_khoan'];
-            $model = $this->loadModel($matk);
-            $this->render('about',array('model'=>$model));
-        }  
-  
+
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -111,24 +95,15 @@ class TaikhoanController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-       
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Taikhoan']))
+		if(isset($_POST['PF_Ttbsnguoidung']))
 		{
-		    $_POST['Taikhoan']['hinh_dai_dien'] = $model->hinh_dai_dien;
-           
-			$model->attributes=$_POST['Taikhoan'];
-            $uploadFile = CUploadedFile::getInstance($model,'hinh_dai_dien');
-            $model->hinh_dai_dien = $uploadFile;
-			if($model->save()){
-			  
-			     if(!empty($uploadFile)){
-			         $uploadFile->saveAs(Yii::app()->basePath.'/../upload/'.$model->hinh_dai_dien);
-			     }
-				 $this->redirect(array('view','id'=>$model->ma_tai_khoan));
-                }
+			$model->attributes=$_POST['PF_Ttbsnguoidung'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->pf_ma_ttr_nguoi_dung));
 		}
 
 		$this->render('update',array(
@@ -155,7 +130,7 @@ class TaikhoanController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Taikhoan');
+		$dataProvider=new CActiveDataProvider('PF_Ttbsnguoidung');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -166,11 +141,11 @@ class TaikhoanController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Taikhoan('search');
+		$model=new PF_Ttbsnguoidung('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Taikhoan']))
-			$model->attributes=$_GET['Taikhoan'];
-      
+		if(isset($_GET['PF_Ttbsnguoidung']))
+			$model->attributes=$_GET['PF_Ttbsnguoidung'];
+
 		$this->render('admin',array(
 			'model'=>$model,
 		));
@@ -180,12 +155,12 @@ class TaikhoanController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Taikhoan the loaded model
+	 * @return PF_Ttbsnguoidung the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Taikhoan::model()->findByPk($id);
+		$model=PF_Ttbsnguoidung::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -193,15 +168,14 @@ class TaikhoanController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Taikhoan $model the model to be validated
+	 * @param PF_Ttbsnguoidung $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='taikhoan-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='pf--ttbsnguoidung-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
-   
 }

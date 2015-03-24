@@ -7,6 +7,15 @@ $this->pageTitle=Yii::app()->name . ' - Contact Us';
 $this->breadcrumbs=array(
 	'Contact',
 );
+
+     $this->menu= array(
+     array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/create')),
+     array('label'=>'Học Tập', 'url'=>array('contact')),
+     array('label'=>'Kỹ năng', 'url'=>array('#')),
+     array('label'=>'Nghề Nghiệp', 'url'=>array('#')),
+     array('label'=>'Hoạt Động', 'url'=>array('site/page&view=about')),
+     );
+
 ?>
 
 <h1>Contact Us</h1>
