@@ -13,7 +13,7 @@
 	//array('label'=>'Update Taikhoan', 'url'=>array('update', 'id'=>$model->ma_tai_khoan)),
     //array('label'=>'Delete Taikhoan', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ma_tai_khoan),'confirm'=>'Are you sure you want to delete this item?')),
   $this->menu= array(
-     array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/view','id'=>$matk)),
+     array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/create')),
      array('label'=>'Thông Tin Bổ Sung', 'url'=>array('pf_ttbsnguoidung/create')),
      array('label'=>'Tốt Nghiệp', 'url'=>array('pf_totnghiep/create')),
      array('label'=>'Ngoại Ngữ', 'url'=>array('#')),
@@ -28,8 +28,10 @@
 ?>
 
 <h1>Thông Tin Người Dùng </h1>
+<p style='text-align:right'><a href='index.php?r=taikhoan/update&id=<?php echo($model->ma_tai_khoan)?>'>Edit</a>  
+<?php 
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		//'ma_tai_khoan',

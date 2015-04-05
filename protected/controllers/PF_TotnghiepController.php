@@ -14,7 +14,7 @@ class PF_TotnghiepController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+		//	'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -75,11 +75,16 @@ class PF_TotnghiepController extends Controller
             $model->ma_tai_khoan = $matk;
 			if($model->save()){
 				//$this->redirect(array('view','id'=>$model->pf_ma_tn));
+                 $model->unsetAttributes();
+                 $this->redirect(array('create'));
+                   //  $this->render('create',array(
+//        			'model'=>$model,'temp'=>$temp
+//        		));
                 }
 		}
-
+        
 		$this->render('create',array(
-			'model'=>$model,
+			'model'=>$model
 		));
 	}
 
@@ -99,11 +104,13 @@ class PF_TotnghiepController extends Controller
 		{
 			$model->attributes=$_POST['PF_Totnghiep'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->pf_ma_tn));
+				//$this->redirect(array('view','id'=>$model->pf_ma_tn));
+                  $temp = "";
+                  $this->redirect(array('create'));
 		}
-
-		$this->render('update',array(
-			'model'=>$model,
+        $temp = 'Update';
+		$this->render('create',array(
+			'model'=>$model,'temp'=>$temp
 		));
 	}
 
@@ -114,11 +121,16 @@ class PF_TotnghiepController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
-
+	   	$this->loadModel($id)->delete();
+        
+        
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
+            
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            
+        ///
+           
 	}
 
 	/**
@@ -168,7 +180,7 @@ class PF_TotnghiepController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='pf--totnghiep-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='totnghiep-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

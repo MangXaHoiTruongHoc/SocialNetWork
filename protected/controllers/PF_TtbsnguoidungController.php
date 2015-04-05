@@ -103,11 +103,13 @@ class PF_TtbsnguoidungController extends Controller
 		{
 			$model->attributes=$_POST['PF_Ttbsnguoidung'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->pf_ma_ttr_nguoi_dung));
+				//$this->redirect(array('view','id'=>$model->pf_ma_ttr_nguoi_dung));
+                 $temp = "";
+                 $this->redirect(array('create','temp'=>$temp));
 		}
-
-		$this->render('update',array(
-			'model'=>$model,
+        $temp = "Update";
+		$this->render('create',array(
+			'model'=>$model,'temp'=>$temp
 		));
 	}
 

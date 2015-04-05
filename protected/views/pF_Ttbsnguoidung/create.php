@@ -13,9 +13,9 @@
 //);
 //
   $this->menu= array(
-    array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/view','id'=>$matk)),
+    array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/create')),
      array('label'=>'Thông Tin Bổ Sung', 'url'=>array('pf_ttbsnguoidung/create')),
-     array('label'=>'Tốt Nghiệp', 'url'=>array('#')),
+     array('label'=>'Tốt Nghiệp', 'url'=>array('pf_totnghiep/create')),
      array('label'=>'Ngoại Ngữ', 'url'=>array('#')),
      array('label'=>'Kỹ Năng', 'url'=>array('#')),
      array('label'=>'Hoạt Động Học Tập', 'url'=>array('#')),
@@ -31,6 +31,7 @@
         $ttbs = PF_Ttbsnguoidung::model()->findAll(array('condition'=>'ma_tai_khoan = :matk',
         'params'=>array(':matk' => $matk)));
         foreach($ttbs as $k){
+           
             $model->pf_ma_ttr_nguoi_dung = $k->pf_ma_ttr_nguoi_dung;
             $model->ma_tai_khoan = $k->ma_tai_khoan;
             $model->pf_quoc_tich = $k->pf_quoc_tich;
@@ -50,9 +51,12 @@ $this->renderPartial('view',array('model'=>$model));
 }
 ?>
 <?php
-    if(!isset($model->pf_ma_ttr_nguoi_dung)){ //Kiểm tra mã ttbs đã có chưa nếu chưa thì hiền form view nếu rồi thì thôi
+    if(empty($model->pf_ma_ttr_nguoi_dung)){ //Kiểm tra mã ttbs đã có chưa nếu chưa thì hiền form view nếu rồi thì thôi
 ?>
 <h1>Thêm Thông Tin Bổ Sung</h1>
 <?php $this->renderPartial('_form', array('model'=>$model));
 }
+    if(!empty($temp)){
+        $this->renderPartial('_form', array('model'=>$model));
+    }
  ?>

@@ -62,6 +62,7 @@ class TaikhoanController extends Controller
    
 	public function actionCreate()
 	{
+	    
 		$model=new Taikhoan;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -77,10 +78,9 @@ class TaikhoanController extends Controller
             $model->hinh_dai_dien = $fileName;
 			if($model->save()){
                 $uploadFile->saveAs(Yii::app()->basePath.'/../upload/'.$fileName);
-				//$this->redirect(array('view','id'=>$model->ma_tai_khoan));
+				$this->redirect(array('//site/login','email'=>$model->email,'mat_khau'=>$model->mat_khau));
                 }
-		}
-
+		} 
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -127,12 +127,13 @@ class TaikhoanController extends Controller
 			     if(!empty($uploadFile)){
 			         $uploadFile->saveAs(Yii::app()->basePath.'/../upload/'.$model->hinh_dai_dien);
 			     }
-				 $this->redirect(array('view','id'=>$model->ma_tai_khoan));
+                 $temp="";                                  
+				 $this->redirect(array('create','temp'=>$temp));
                 }
 		}
-
-		$this->render('update',array(
-			'model'=>$model,
+        $temp = 'Update';    
+		$this->render('create',array(
+			'model'=>$model,'temp'=>$temp
 		));
 	}
 
@@ -170,7 +171,6 @@ class TaikhoanController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Taikhoan']))
 			$model->attributes=$_GET['Taikhoan'];
-      
 		$this->render('admin',array(
 			'model'=>$model,
 		));

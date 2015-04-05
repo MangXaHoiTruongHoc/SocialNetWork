@@ -11,7 +11,7 @@
     
 if(isset($email)){
      $this->menu= array(
-     array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/view','id'=> $matk )),
+     array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/create' )),
      array('label'=>'Thông Tin Bổ Sung', 'url'=>array('pf_ttbsnguoidung/create')),
      array('label'=>'Tốt Nghiệp', 'url'=>array('pf_totnghiep/create')),
      array('label'=>'Ngoại Ngữ', 'url'=>array('#')),

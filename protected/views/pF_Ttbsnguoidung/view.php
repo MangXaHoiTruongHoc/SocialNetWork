@@ -16,7 +16,7 @@
 //);
     $matk = yii::app()->session['ma_tai_khoan'];
     $this->menu= array(
-     array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/view','id'=> $matk )),
+     array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/create')),
      array('label'=>'Thông Tin Bổ Sung', 'url'=>array('pf_ttbsnguoidung/create')),
      array('label'=>'Tốt Nghiệp', 'url'=>array('pf_totnghiep/create')),
      array('label'=>'Ngoại Ngữ', 'url'=>array('#')),
@@ -36,8 +36,21 @@
              $list[$l->pf_ma_chuyen_nganh] = $l->pf_chuyen_nganh;
         }
         
+         //Yii::app()->clientScript->registerScript('showview', "
+//        $('.editview').mouseenter(function(){
+//        	$('.form').hide('slow');
+//        });
+//        ");
     ?>
-<?php $this->widget('zii.widgets.CDetailView', array(
+  
+
+    
+<p style='text-align:right'><a class='editview' href='index.php?r=pf_ttbsnguoidung/update&id=<?php echo($model->pf_ma_ttr_nguoi_dung)?>'>Edit</a>
+    
+ 
+<?php 
+    
+$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		//'pf_ma_ttr_nguoi_dung',
@@ -51,7 +64,7 @@
         array(
         'label'=>'Chuyên Ngành',
         'type'=>'raw',
-        'value'=>CHtml::textField('chuyennganh',$list[$model->pf_ma_chuyen_nganh]),
+        'value'=>$list[$model->pf_ma_chuyen_nganh],
         )
 	),
 )); ?>

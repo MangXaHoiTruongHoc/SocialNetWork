@@ -5,21 +5,19 @@
 //$this->breadcrumbs=array(
 //	'Pf  Totnghieps'=>array('index'),
 //	'Create',
-//);
-        $matk = yii::app()->session['ma_tai_khoan'];
-        // Thực hiện lấy mã tốt nghiệp
-        $matn = PF_Totnghiep::model()->findAll(array('condition'=>'ma_tai_khoan = :matk','params'=>array(':matk'=>$matk)));
-        $count = count($matn);
+//);    
         
-                $list = array();
-                foreach($matn as $l){
-                   $model->pf_ma_tn =  $l->pf_ma_tn;
-                   $model->pf_ten_truong_tn = $l->pf_ten_truong_tn;
-                   $model->pf_ngay_bat_dau = $l->pf_ngay_bat_dau;
-                   $model->pf_ngay_ket_thuc = $l->pf_ngay_ket_thuc;
-                   $model->pf_ma_chuyen_nganh = $l->pf_ma_chuyen_nganh;
-                   $model->pf_ma_ket_qua_tn= $l->pf_ma_ket_qua_tn;
-                 }
+        //echo Yii::app()->createAbsoluteUrl("PF_Totnghiep/create");
+        //die;
+        $matk = yii::app()->session['ma_tai_khoan'];
+        $matn = PF_Totnghiep::model()->findAllByAttributes(array('ma_tai_khoan'=>$matk));
+       // print_r($matn); die;
+        foreach($matn as $k){
+            
+        }
+        // Thực hiện lấy mã tốt nghiệp
+      //  $matn = PF_Totnghiep::model()->findAll(array('condition'=>'ma_tai_khoan = :matk','params'=>array(':matk'=>$matk)));
+       // $count = count($matn);
                  
    //Loadmenu              
 $this->menu= array(
@@ -30,17 +28,33 @@ $this->menu= array(
      array('label'=>'Kỹ Năng', 'url'=>array('#')),
      array('label'=>'Hoạt Động Học Tập', 'url'=>array('#')),
      array('label'=>'Hoạt Động Ngoại Khóa', 'url'=>array('#')),
-      array('label'=>'Kinh Nghiệm Làm Việc', 'url'=>array('#')),
-      array('label'=>'Mục Tiêu Nghề Nghiệp', 'url'=>array('#')),
+     array('label'=>'Kinh Nghiệm Làm Việc', 'url'=>array('#')),
+     array('label'=>'Mục Tiêu Nghề Nghiệp', 'url'=>array('#')),
      );
+    
 ?>
 <h1>Tốt Nghiệp</h1>
 <?php
         
-        if(isset($l->pf_ma_tn)){
-            $this->renderPartial('view',array('id'=>2,'model'=>$model));
+        if(isset($k->pf_ma_tn )){   
+        foreach($matn as $l){
+                   $model->pf_ma_tn =  $l->pf_ma_tn;
+                   $model->pf_ten_truong_tn = $l->pf_ten_truong_tn;
+                   $model->pf_ngay_bat_dau = $l->pf_ngay_bat_dau;
+                   $model->pf_ngay_ket_thuc = $l->pf_ngay_ket_thuc;
+                   $model->pf_ma_chuyen_nganh = $l->pf_ma_chuyen_nganh;
+                   $model->pf_ma_ket_qua_tn= $l->pf_ma_ket_qua_tn;
+                   $this->renderPartial('view',array('model'=>$model));
+                 }           
         }
 ?>
-
+        
 <h1>Thêm Trường Tốt Nghiệp</h1>
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php 
+   
+ 
+    if(empty($temp)){// kiểm tra trường hợp update để set lại form
+    $model->unsetAttributes();// set lại model
+    }   
+    $this->renderPartial('_form', array('model'=>$model));
+ ?>
