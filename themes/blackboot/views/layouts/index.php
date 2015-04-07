@@ -1401,7 +1401,7 @@
                                                 <h3 class="text-white innerB text-center">Account Access</h3>
                                                 <div class="lock-container">
                                                     <div class="innerAll text-center">
-                                                        <img src="../assets//images/people/100/22.jpg" class="img-circle" />
+                                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/people/100/22.jpg" class="img-circle" />
                                                         <div class="innerLR">
                                                             <input class="form-control text-center bg-gray" type="text" placeholder="Username"
                                                             />
