@@ -1,6 +1,6 @@
 <?php
 
-class PF_TotnghiepController extends Controller
+class PF_KynangController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -14,7 +14,7 @@ class PF_TotnghiepController extends Controller
 	public function filters()
 	{
 		return array(
-		//	'accessControl', // perform access control for CRUD operations
+			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -62,29 +62,21 @@ class PF_TotnghiepController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new PF_Totnghiep;
-        // L?y mã tài kho?n thông qua session
-        $matk = yii::app()->session['ma_tai_khoan'];
+		$model=new PF_Kynang;
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['PF_Totnghiep']))
+    
+		if(isset($_POST['PF_Kynang']))
 		{
-			$model->attributes=$_POST['PF_Totnghiep'];
-            // Gán mã tài kho?n vào model
-            $model->ma_tai_khoan = $matk;
-			if($model->save()){
-				//$this->redirect(array('view','id'=>$model->pf_ma_tn));
-                 $model->unsetAttributes();
-                 $this->redirect(array('create'));
-                   //  $this->render('create',array(
-//        			'model'=>$model,'temp'=>$temp
-//        		));
-                }
+			$model->attributes=$_POST['PF_Kynang'];
+            $model->ma_tai_khoan = yii::app()->session['ma_tai_khoan'];
+			if($model->save())
+				$this->redirect(array('create'));
 		}
-        
+
 		$this->render('create',array(
-			'model'=>$model
+			'model'=>$model,
 		));
 	}
 
@@ -96,24 +88,21 @@ class PF_TotnghiepController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-        // T?o session l?y id theo dúng id dã set bên form.
-        yii::app()->session['pf_ma_tn'] = $model->pf_ma_tn;
+        yii::app()->session['pf_ma_ky_nang'] = $model->pf_ma_ky_nang;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['PF_Totnghiep']))
+		if(isset($_POST['PF_Kynang']))
 		{
-			$model->attributes=$_POST['PF_Totnghiep'];
+			$model->attributes=$_POST['PF_Kynang'];
 			if($model->save())
-				//$this->redirect(array('view','id'=>$model->pf_ma_tn));
-                  $temp = "";
-                  $this->redirect(array('create'));
+                $temp = "";
+				$this->redirect(array('create','temp'=>$temp));
 		}
-        $temp = 'Update';
+        $temp = "Update";
 		$this->render('create',array(
-			'model'=>$model,'temp'=>$temp 
+			'model'=>$model,'temp'=>$temp
 		));
-        
 	}
 
 	/**
@@ -123,16 +112,11 @@ class PF_TotnghiepController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-	   	$this->loadModel($id)->delete();
-        
-        
+		$this->loadModel($id)->delete();
+
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-            
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-            
-        ///
-           
 	}
 
 	/**
@@ -140,7 +124,7 @@ class PF_TotnghiepController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PF_Totnghiep');
+		$dataProvider=new CActiveDataProvider('PF_Kynang');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -151,10 +135,10 @@ class PF_TotnghiepController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new PF_Totnghiep('search');
+		$model=new PF_Kynang('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['PF_Totnghiep']))
-			$model->attributes=$_GET['PF_Totnghiep'];
+		if(isset($_GET['PF_Kynang']))
+			$model->attributes=$_GET['PF_Kynang'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -165,12 +149,12 @@ class PF_TotnghiepController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return PF_Totnghiep the loaded model
+	 * @return PF_Kynang the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=PF_Totnghiep::model()->findByPk($id);
+		$model=PF_Kynang::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -178,11 +162,11 @@ class PF_TotnghiepController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param PF_Totnghiep $model the model to be validated
+	 * @param PF_Kynang $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='totnghiep-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='pf--kynang-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

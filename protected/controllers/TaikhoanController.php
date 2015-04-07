@@ -89,6 +89,7 @@ class TaikhoanController extends Controller
      public function actionAbout(){
             // Lấy session email từ SiteController
             $email = Yii::app()->session['email'];
+
             // Thực hiện lấy mã tài khoản của người dùng khi đăng nhập vào 
             $taikhoan = Taikhoan::model()->findAll(array('condition'=>'email LIKE :email',
             'params'=>array(':email'=>"%$email%")));
@@ -99,6 +100,7 @@ class TaikhoanController extends Controller
             Yii::app()->session['ma_tai_khoan'] = $tk->ma_tai_khoan;
             $model = new Taikhoan;
             $matk = Yii::app()->session['ma_tai_khoan'];
+
             $model = $this->loadModel($matk);
             $this->render('about',array('model'=>$model));
         }  

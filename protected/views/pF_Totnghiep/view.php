@@ -19,7 +19,7 @@ $this->menu= array(
      array('label'=>'Thông Tin Bổ Sung', 'url'=>array('pf_ttbsnguoidung/create')),
      array('label'=>'Tốt Nghiệp', 'url'=>array('pf_totnghiep/create')),
      array('label'=>'Ngoại Ngữ', 'url'=>array('#')),
-     array('label'=>'Kỹ Năng', 'url'=>array('#')),
+     array('label'=>'Kỹ Năng', 'url'=>array('pf_kynang/create')),
      array('label'=>'Hoạt Động Học Tập', 'url'=>array('#')),
      array('label'=>'Hoạt Động Ngoại Khóa', 'url'=>array('#')),
      array('label'=>'Kinh Nghiệm Làm Việc', 'url'=>array('#')),
@@ -48,49 +48,41 @@ $this->menu= array(
         }
         $ketqua = $listk[$model->pf_ma_ket_qua_tn];
         
-        // JS
-        Yii::app()->clientScript->registerScript('abc', "
-        $('#abc').attr('id').mouseenter(function(){
-        	$('.re_up". $model->pf_ma_tn."').fadeIn('slow');
-        	
-        });
-        $('#abc". $model->pf_ma_tn."').mouseleave(function(){
-        	$('.re_up". $model->pf_ma_tn."').fadeOut('slow');
-        	
-        });
-        ");
+        
+
      
 ?>
-<div id="abc<?php echo($model->pf_ma_tn) ?>">
-<div class="re_up<?php echo($model->pf_ma_tn) ?>" style="display: none;">
-<p style='text-align:right'><a href='index.php?r=pf_totnghiep/update&id=<?php echo($model->pf_ma_tn)?>'>Edit</a>     
+<div id="tot_nghiep<?php echo($model->pf_ma_tn) ?>">
+  
       
       <?php 
             
-           
-echo CHtml::ajaxLink('Delete',
+      $deleteajax= CHtml::ajaxLink('Xóa',
                 "index.php?r=pf_totnghiep/delete&id=$model->pf_ma_tn",
                 array(
                                 'type'=>'post',
                                 'data' => null,
                                 'success' => 'function(){
                                     alert("Xóa thành công");
-                                    $("#abc'.$model->pf_ma_tn.'").slideUp("slow",function(){$("#abc'.$model->pf_ma_tn.'").remove();});
+                                    $("#tot_nghiep'.$model->pf_ma_tn.'").
+                                    slideUp("slow",function(){$("#tot_nghiep'.$model->pf_ma_tn.'").remove();});
                                 }'
                 ),
                 array( 'confirm'=>'Ban muon xoa chu',)
 );
 ?>
-      </p>        
-</div>
-<?php 
 
+
+<?php 
 $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		//'pf_ma_tn',
-        
-		'pf_ten_truong_tn',
+        array('label'=>$model->getAttributeLabel('pf_ten_truong_tn'),
+            'type'=>'raw',
+            'value'=>$model->pf_ten_truong_tn."<p class='re_up' style='float: right; display:none'><a href='index.php?r=pf_totnghiep/update&id={$model->pf_ma_tn}'>Sửa</a> 
+            {$deleteajax} </p>"
+        ),
 		'pf_ngay_bat_dau',
 		'pf_ngay_ket_thuc',
         array('label'=>'Kết Quả Tốt Nghiệp',

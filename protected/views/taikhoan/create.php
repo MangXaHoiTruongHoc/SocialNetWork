@@ -7,7 +7,7 @@
      array('label'=>'Thông Tin Bổ Sung', 'url'=>array('pf_ttbsnguoidung/create')),
      array('label'=>'Tốt Nghiệp', 'url'=>array('pf_totnghiep/create')),
      array('label'=>'Ngoại Ngữ', 'url'=>array('#')),
-     array('label'=>'Kỹ Năng', 'url'=>array('#')),
+     array('label'=>'Kỹ Năng', 'url'=>array('pf_kynang/create')),
      array('label'=>'Hoạt Động Học Tập', 'url'=>array('#')),
      array('label'=>'Hoạt Động Ngoại Khóa', 'url'=>array('#')),
      array('label'=>'Kinh Nghiệm Làm Việc', 'url'=>array('#')),
