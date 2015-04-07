@@ -1,4 +1,4 @@
-<?php $this->beginContent('//layouts/main'); ?>
+<?php $this->beginContent('//layouts/login'); ?>
 <div class="row-fluid">
 	<div class="span12">
 		<div class="main">
