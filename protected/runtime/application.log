@@ -7935,3 +7935,43 @@ Stack trace:
 REQUEST_URI=/yii/SocialNetWork.git/index.php?r=pf_totnghiep/update&id=%20(94)
 HTTP_REFERER=http://localhost:8080/yii/SocialNetWork.git/index.php?r=pf_totnghiep/create
 ---
+2015/04/09 06:21:58 [error] [php] session_regenerate_id(): Session object destruction failed (D:\xampp\htdocs\yii\framework\web\CHttpSession.php:182)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\auth\CWebUser.php(233): CWebUser->changeIdentity()
+#1 D:\xampp\htdocs\yii\SocialNetWork\protected\models\LoginForm.php(71): CWebUser->login()
+#2 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\SiteController.php(99): LoginForm->login()
+#3 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=site/login
+in D:\xampp\htdocs\yii\SocialNetWork\protected\models\LoginForm.php (71)
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\SiteController.php (99)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/10 13:37:04 [error] [exception.CException] exception 'CException' with message 'Property "CActiveForm.class" is not defined.' in D:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('class', 'form-horizontal...')
+#1 D:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'CActiveForm', Array)
+#2 D:\xampp\htdocs\yii\framework\web\CBaseController.php(197): CBaseController->createWidget('CActiveForm', Array)
+#3 D:\xampp\htdocs\yii\SocialNetWork\protected\views\site\contact.php(45): CBaseController->beginWidget('CActiveForm', Array)
+#4 D:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#7 D:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('contact', Array, true)
+#8 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\SiteController.php(73): CController->render('contact', Array)
+#9 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionContact()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('contact')
+#14 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/contact')
+#15 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=site/contact
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php
+---

@@ -21,7 +21,7 @@
 	-->
     <!--[if lt IE 9]><link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/library/bootstrap/css/bootstrap.min.css" /><![endif]-->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/module.admin.stylesheet-complete.min.css" />
-    />
+    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -43,14 +43,13 @@
 <body class=" menu-right-hidden">
     <!-- nonelogin -->
     <?php  
-        if(isset(Yii::app()->session['ma_tai_khoan'])){
+
+        if(isset(yii::app()->session['email'])){
     ?>
     <!-- login -->
     <!-- Main Container Fluid -->
     <div class="container-fluid ">
-        <!-- Content START -->
-        <div id="content">
-           
+        <!-- start navigation -->
             <nav class="navbar navbar-default top-nav navbar-fixed-top" role="navigation">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -59,258 +58,14 @@
                         data-target="#navbar-fixed-layout-collapse">
                             <i class="fa fa-indent"></i>
                         </button>
-                        <a class="navbar-brand" href="#">
-                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css//images/logo/logo.jpg" alt="">
+                        <a class="navbar-brand" href="index.php">
+                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css//images/logo/dhkt.jpg" alt="" style="width:40px">
+                            <b style="margin-left:7px">Mạng Xã Hội Trường Học</b>
                         </a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-fixed-layout-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Layout <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li class="active">
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&layout_fixed=false">Fluid Layout
-					</a>
-                                    </li>
-                                    <li>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&layout_fixed=true">Fixed Layout
-					</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-header">Timeline</li>
-                                    <li class="active">
-                                        <a href="index.html?lang=en">
-                                            <span>Timeline #1</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="timeline_2.html?lang=en">
-                                            <span>Timeline #2</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="timeline_3.html?lang=en">
-                                            <span>Timeline #3</span>
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li class="dropdown-header">Media</li>
-                                    <li>
-                                        <a href="media_1.html?lang=en">
-                                            <span>Photos #1</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="media_2.html?lang=en">
-                                            <span>Photos #2</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="media_3.html?lang=en">
-                                            <span>Photos #3</span>
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li class="dropdown-header">Contacts</li>
-                                    <li>
-                                        <a href="contacts_1.html?lang=en">
-                                            <span>Friends #1</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="contacts_2.html?lang=en">
-                                            <span>Friends #2</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="contacts_3.html?lang=en">
-                                            <span>Friends #3</span>
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li class="dropdown-header">About</li>
-                                    <li>
-                                        <a href="about_1.html?lang=en">
-                                            <span>About #1</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="about_2.html?lang=en">
-                                            <span>About #2</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="about_3.html?lang=en">
-                                            <span>About #3</span>
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="messages.html?lang=en">
-                                            <span>Messages</span>
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li class="dropdown-header">Music</li>
-                                    <li>
-                                        <a href="playlist.html?lang=en">
-                                            <span>playlist</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="albums.html?lang=en">
-                                            <span>Albums</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="song.html?lang=en">
-                                            <span>Song</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nav Color <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&navbar_type=navbar-default">
-            	White Navbar</a>
-                                    </li>
-                                    <li>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&navbar_type=navbar-inverse">
-            	Dark Navbar</a>
-                                    </li>
-                                    <li>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&navbar_type=navbar-primary">
-            		Primary Color Navbar</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li class="innerAll half" style="line-height:20px;">
-                                        <div class="strong">Skin Colors</div>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=style-default"
-                                        style="background-color: #25ad9f; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">style-default</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=green-army"
-                                        style="background-color: #9FB478; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">green-army</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=alizarin-crimson"
-                                        style="background-color: #F06F6F; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">alizarin-crimson</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=blue-gray"
-                                        style="background-color: #5577b4; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">blue-gray</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=brown"
-                                        style="background-color: #d39174; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">brown</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=purple-gray"
-                                        style="background-color: #AF86B9; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">purple-gray</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=purple-wine"
-                                        style="background-color: #CC6788; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">purple-wine</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=black-and-white"
-                                        style="background-color: #979797; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">black-and-white</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=amazon"
-                                        style="background-color: #8BC4B9; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">amazon</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=amber"
-                                        style="background-color: #b0b069; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">amber</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=android-green"
-                                        style="background-color: #A9C784; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">android-green</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=antique-brass"
-                                        style="background-color: #B3998A; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">antique-brass</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=antique-bronze"
-                                        style="background-color: #8D8D6E; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">antique-bronze</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=artichoke"
-                                        style="background-color: #B0B69D; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">artichoke</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=atomic-tangerine"
-                                        style="background-color: #F19B69; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">atomic-tangerine</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=bazaar"
-                                        style="background-color: #98777B; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">bazaar</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=bistre-brown"
-                                        style="background-color: #C3A961; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">bistre-brown</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=green"
-                                        style="background-color: #77ac40; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">green</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=bittersweet"
-                                        style="background-color: #d6725e; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">bittersweet</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=blueberry"
-                                        style="background-color: #7789D1; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">blueberry</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=bud-green"
-                                        style="background-color: #6fa362; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">bud-green</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=coral"
-                                        style="background-color: #7eccc2; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">coral</span>
-                                        </a>
-                                        <a href="?module=admin&page=index&url_rewrite=&build=&v=v1.0.1-rc2&skin=burnt-sienna"
-                                        style="background-color: #E4968A; display:inline-block; width:30px; height:30px; margin:1px;"
-                                        class="no-ajaxify innerAll half ">
-                                            <span class="hide">burnt-sienna</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                      
                         <form class="navbar-form navbar-left hidden-sm" role="search">
                             <div class="form-group inline-block">
                                 <input type="text" class="form-control" placeholder="Search">
@@ -347,11 +102,161 @@
                     <!-- /.navbar-collapse -->
                 </div>
                 <!-- /.container-fluid -->
-            </nav>
+            </nav> <!-- end nav -->
+
+        <!-- Content START -->
+
+        <div id="content">
+           
+
             <!-- <div class="layout-app">  -->
             <div class="container">
-                <?php echo $content ?>
-                
+                <div class="innerAll">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-8">
+                            <div class="timeline-cover">
+                                <div class="cover">
+                                    <div class="top">
+                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css//images/photodune-2755655-party-time-s.jpg" class="img-responsive"
+                                        />
+                                    </div>
+                                    <!-- <ul class="list-unstyled">
+                                        <li class="active"><a href="index.html?lang=en"><i class="fa fa-fw fa-clock-o"></i> <span>Timeline</span></a>
+                                        </li>
+                                        <li><a href="about_1.html?lang=en"><i class="fa fa-fw fa-user"></i> <span>About</span></a>
+                                        </li>
+                                        <li><a href="media_1.html?lang=en"><i class="fa fa-fw icon-photo-camera"></i> <span>Photos</span> <small>(102)</small></a>
+                                        </li>
+                                        <li><a href="contacts_1.html?lang=en"><i class="fa fa-fw icon-group"></i><span> Friends </span><small>(19)</small></a>
+                                        </li>
+                                        <li><a href="messages.html?lang=en"><i class="fa fa-fw icon-envelope-fill-1"></i> <span>Messages</span> <small>(2 new)</small></a>
+                                        </li>
+                                    </ul> -->
+                                    <?php $this->widget('zii.widgets.CMenu',array(
+                                    'htmlOptions' => array( 'class' => 'list-unstyled' ),
+                                    'activeCssClass'    => 'active',
+                                    'items'=>array(
+                                        array('label'=>'Timeline', 'url'=>array('/site/index')),
+                                    //  array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+                                        array('label'=>'About', 'url'=>array('/Taikhoan/about')),
+                                        array('label'=>'Contact', 'url'=>array('/site/contact')),
+                                        array('label'=>'Register', 'url'=>array('/Taikhoan/Create'),'visible'=>Yii::app()->user->isGuest),
+                                        array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+                                        array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+                                    ),
+                                    )); 
+                                    ?>
+                                </div>
+                                <div class="widget">
+                                    <div class="widget-body padding-none margin-none">
+                                        <div class="innerAll">
+                                            <i class="fa fa-quote-left text-muted pull-left fa-fw"></i> 
+                                            <p class="lead margin-none">What a fun Partyyy</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="gridalicious-row" data-toggle="gridalicious" data-gridalicious-width="340"
+                            data-gridalicious-gutter="12" data-gridalicious-selector=".gridalicious-item">
+                                <div class="innerAll inner-2x loading text-center text-medium"><i class="fa fa-fw fa-spinner fa-spin"></i> Loading</div>
+                                <div class="loaded hide2">
+                                   <?php echo $content ?>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-md-4 col-lg-3">
+                            <div class="widget">
+                                <div class="widget-body text-center">
+                                    <a href="">
+                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/people/250/22.jpg"
+                                        width="120" alt="" class="img-circle">
+                                    </a>
+                                    <h2 class="strong margin-none">Adrian Demian</h2>
+                                    <div class="innerB">Working at MOSAICPRO</div>
+                                    <a href="" class="btn btn-primary text-center btn-block">PRO Account</a>
+                                    <div class="btn-group-vertical btn-block">
+                                        <a href="" class="btn btn-default"><i class="fa fa-cog pull-right"></i>Edit Account</a>
+                                        <a href="" class="btn btn-default"><i class="fa fa-cog pull-right"></i>Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget">
+                                <h5 class="innerAll margin-none border-bottom bg-gray">Recent News</h5>
+                                <div class="widget-body padding-none">
+                                    <div class="media border-bottom innerAll margin-none">
+                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/people/35/22.jpg" class="pull-left media-object" />
+                                        <div class="media-body">
+                                            <a href="" class="pull-right text-muted innerT half">
+                                                <i class="fa fa-comments"></i> 4
+                                            </a>
+                                            <h5 class="margin-none"><a href="" class="text-inverse">Social Admin Released</a>
+                                            </h5>
+                                            <small>on February 2nd, 2014</small>
+                                        </div>
+                                    </div>
+                                    <div class="media border-bottom innerAll margin-none">
+                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/people/35/22.jpg" class="pull-left media-object" />
+                                        <div class="media-body">
+                                            <a href="" class="pull-right text-muted innerT half">
+                                                <i class="fa fa-comments"></i> 4
+                                            </a>
+                                            <h5 class="margin-none"><a href="" class="text-inverse">Timeline Cover Page</a>
+                                            </h5>
+                                            <small>on February 2nd, 2014</small>
+                                        </div>
+                                    </div>
+                                    <div class="media border-bottom innerAll margin-none">
+                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/people/35/22.jpg" class="pull-left media-object" />
+                                        <div class="media-body">
+                                            <a href="" class="pull-right text-muted innerT half">
+                                                <i class="fa fa-comments"></i> 4
+                                            </a>
+                                            <h5 class="margin-none"><a href="" class="text-inverse">1000+ Sales</a>
+                                            </h5>
+                                            <small>on February 2nd, 2014</small>
+                                        </div>
+                                    </div>
+                                    <div class="media border-bottom innerAll margin-none">
+                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/people/35/22.jpg" class="pull-left media-object" />
+                                        <div class="media-body">
+                                            <a href="" class="pull-right text-muted innerT half">
+                                                <i class="fa fa-comments"></i> 4
+                                            </a>
+                                            <h5 class="margin-none"><a href="" class="text-inverse">On-Page Optimization</a>
+                                            </h5>
+                                            <small>on February 2nd, 2014</small>
+                                        </div>
+                                    </div>
+                                    <div class="media border-bottom innerAll margin-none">
+                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/people/35/22.jpg" class="pull-left media-object" />
+                                        <div class="media-body">
+                                            <a href="" class="pull-right text-muted innerT half">
+                                                <i class="fa fa-comments"></i> 4
+                                            </a>
+                                            <h5 class="margin-none"><a href="" class="text-inverse">14th Admin Template</a>
+                                            </h5>
+                                            <small>on February 2nd, 2014</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Widget -->
+                            <div class="widget widget-heading-simple widget-body-white">
+                                <!-- Widget Heading -->
+                                <div class="widget-head">
+                                    <h4 class="heading glyphicons glyphicons-social twitter"><i></i>Twitter feed</h4>
+                                </div>
+                                <!-- // Widget Heading END -->
+                                <div class="widget-body" data-builder-exclude="element children">
+                                    <div class="jstwitter" data-gridalicious="false" data-type="slide" data-images="false">
+                                        <span class="label label-default">Loading ..</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // Widget END -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- // Content END -->
@@ -371,47 +276,10 @@
     </div>
     <?php 
         }else{
+            // nếu session ko tồn tại thì đưa đến trang login.
+            $this->redirect(array('//site/login'));
      ?>
-      <!-- Main Container Fluid -->
-    <div class="container-fluid ">
-        <!-- Content START -->
-        <div id="content">
-            <!-- <div class="layout-app col-fs">  -->
-            <div class="container">
-                <div class="layout-app col-fs">
-                    <div class="row row-app">
-                        <div class="col-md-12">
-                            <div class="col-separator col-separator-first box col-unscrollable col-fs">
-                                <div class="col-table">
-                                    <div class="col-table-row">
-                                        <div class="col-app col-unscrollable tab-content">
-                                            <div class="col-app lock-wrapper lock-bg-1 tab-pane active animated fadeIn" id="lock-1-1">
-                                                <h3 class="text-white innerB text-center">Account Access</h3>
-                                                <div class="lock-container">
-                                                    <div class="innerAll text-center">
-                                                        <img src="../assets//images/people/100/22.jpg" class="img-circle" />
-                                                        <div class="innerLR">
-                                                            <input class="form-control text-center bg-gray" type="text" placeholder="Username"
-                                                            />
-                                                            <input class="form-control text-center bg-gray" type="password" placeholder="Enter Password"
-                                                            />
-                                                        </div>
-                                                        <div class="innerT">
-                                                            <a href="index.html?lang=en" class="btn btn-primary">Login <i class="fa fa-fw fa-unlock-alt"></i></a>
-                                                        </div>
-                                                        <a href="" class="btn margin-none">Forgot password?</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                </div>
+     
      <?php }?>
     <!-- // Main Container Fluid END -->
     <!-- Global -->

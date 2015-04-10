@@ -42,8 +42,8 @@ $this->breadcrumbs=array(
 	</div> -->
 
 	<div class="innerT  ">
-		<?php echo CHtml::submitButton('Login',array('class'=>'btn btn-primary ')); ?>
+		<?php echo CHtml::submitButton('Đăng Nhập',array('class'=>'btn btn-primary ')); ?>
 	</div>
-
+	
 <?php $this->endWidget(); ?>
 </div><!-- form -->

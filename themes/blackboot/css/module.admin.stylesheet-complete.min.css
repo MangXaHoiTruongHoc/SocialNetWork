@@ -2098,7 +2098,7 @@ html.csstransitions.csstransforms3d [data-toggle="gridalicious"] .widget-pintere
     vertical-align: top;
 }
 .error {
-    padding-top: 100px;
+    padding-top: 5px;
 }
 .error .error-icon {
     display: inline;
@@ -10543,7 +10543,7 @@ ul.social-comments li .user-info abbr {
     text-decoration: underline;
 }
 .footer-sticky #footer {
-    position: fixed;
+    
     z-index: 10000;
     bottom: 0;
     left: 0;
