@@ -5,7 +5,7 @@ class SiteController extends Controller
 	/**
 	 * Declares class-based actions.
 	 */
- 	//public $layout='//layouts/column2';
+ 	
 	public function actions()
 	{
 		return array(
@@ -77,31 +77,36 @@ class SiteController extends Controller
 	 * Displays the login page
 	 */
 	public function actionLogin()
-	{
-		$model=new LoginForm;
+	{	
+		if(isset(yii::app()->session['email'])){
+			$this->redirect(array('index'));
 
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
+		}else{
+			$model=new LoginForm;
 
-		// collect user input data
-		if(isset($_POST['LoginForm']))
-		{
-			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-                // Thiết lập session email
-                Yii::app()->session['email'] = $model->email;
-                $email = Yii::app()->session['email'];
-                if(isset($email)){
-				$this->redirect(Yii::app()->user->returnUrl);
-                }
+			// if it is ajax validation request
+			if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
+			{
+				echo CActiveForm::validate($model);
+				Yii::app()->end();
+			}
+
+			// collect user input data
+			if(isset($_POST['LoginForm']))
+			{
+				$model->attributes=$_POST['LoginForm'];
+				// validate user input and redirect to the previous page if valid
+				if($model->validate() && $model->login())
+	                // Thiết lập session email
+	                Yii::app()->session['email'] = $model->email;
+	                $email = Yii::app()->session['email'];
+	                if(isset($email)){
+					$this->redirect(Yii::app()->user->returnUrl);
+	                }
+			}
+			// display the login form
+			$this->render('login',array('model'=>$model));
 		}
-		// display the login form
-		$this->render('login',array('model'=>$model));
 	}
 
 	/**
