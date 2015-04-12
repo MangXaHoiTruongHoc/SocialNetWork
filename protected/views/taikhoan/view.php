@@ -27,7 +27,7 @@
 
 ?>
 
-<h1>Thông Tin Người Dùng </h1>
+<h3 style="margin-left:10px">Thông Tin Người Dùng </h3>
 <p style='text-align:right'><a href='index.php?r=taikhoan/update&id=<?php echo($model->ma_tai_khoan)?>'>Edit</a>  
 <?php 
 

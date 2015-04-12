@@ -38,14 +38,16 @@ $this->menu= array(
                 ),
                 array( 'confirm'=>'Ban muon xoa chu',));
         ?>
-   
+
        
     <?php $this->widget('zii.widgets.CDetailView', array(
         'data'=>$model,
         'attributes'=>array(
             array('label'=>$model->getAttributeLabel('pf_ky_nang'),
                 'type'=>'raw',
-                'value'=>$model->pf_ky_nang."<div class='re_up' style='float: right; display:display'><a href='#'>Đánh giá</a> <a href='index.php?r=pf_kynang/update&id={$model->pf_ma_ky_nang}'>Sửa</a> 
+                'value'=>$model->pf_ky_nang."<div class='re_up' style='float: right; display:display'>
+                <a href='index.php?r=pf_danhgiahoso/create'>Đánh giá</a>
+                <a href='index.php?r=pf_kynang/update&id={$model->pf_ma_ky_nang}'>Sửa</a> 
             {$deleteajax} </div>"
                 ),
             'pf_so_nam_kinh_nghiem',

@@ -161,7 +161,8 @@ class PF_TtbsnguoidungController extends Controller
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
-	{
+	{	
+	
 		$model=PF_Ttbsnguoidung::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');

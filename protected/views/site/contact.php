@@ -54,28 +54,30 @@ If you have business inquiries or other questions, please fill out the following
 			<?php echo $form->errorSummary($model); ?>
 			 
 			<div class="form-group">
-				<?php echo $form->labelEx($model,'name',array('class'=>'col-md-4 control-label')); ?>
-				<div  class="col-md-8">
+				<?php echo $form->labelEx($model,'name',array('class'=>'col-md-2 control-label')); ?>
+				<div  class="col-md-6">
 				<?php echo $form->textField($model,'name',array('class'=>'form-control')); ?>
 				</div>
 				<?php echo $form->error($model,'name'); ?>
 			</div>
 
-			<div class="row">
-				<?php echo $form->labelEx($model,'email'); ?>
-				<?php echo $form->textField($model,'email'); ?>
+			<div class="form-group">
+				<?php echo $form->labelEx($model,'email',array('class'=>'col-md-2 control-label')); ?>
+				<div  class="col-md-6">
+				<?php echo $form->textField($model,'email',array('class'=>'form-control')); ?>
+				</div>
 				<?php echo $form->error($model,'email'); ?>
 			</div>
 
-			<div class="row">
-				<?php echo $form->labelEx($model,'subject'); ?>
-				<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
+			<div class="form-group">
+				<?php echo $form->labelEx($model,'subject',array('class'=>'col-md-2 control-label')); ?>
+				<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>126),array('class'=>'form-control')); ?>
 				<?php echo $form->error($model,'subject'); ?>
 			</div>
 
 			<div class="row">
-				<?php echo $form->labelEx($model,'body'); ?>
-				<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
+				<?php echo $form->labelEx($model,'body',array('class'=>'col-md-2 control-label')); ?>
+				<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50),array('class'=>'form-control')); ?>
 				<?php echo $form->error($model,'body'); ?>
 			</div>
 

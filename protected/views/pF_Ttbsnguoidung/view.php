@@ -2,18 +2,6 @@
 /* @var $this PF_TtbsnguoidungController */
 /* @var $model PF_Ttbsnguoidung */
 
-//$this->breadcrumbs=array(
-//	'Pf  Ttbsnguoidungs'=>array('index'),
-//	$model->pf_ma_ttr_nguoi_dung,
-//);
-
-//$this->menu=array(
-//	array('label'=>'List PF_Ttbsnguoidung', 'url'=>array('index')),
-//	array('label'=>'Create PF_Ttbsnguoidung', 'url'=>array('create')),
-//	array('label'=>'Update PF_Ttbsnguoidung', 'url'=>array('update', 'id'=>$model->pf_ma_ttr_nguoi_dung)),
-//	array('label'=>'Delete PF_Ttbsnguoidung', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->pf_ma_ttr_nguoi_dung),'confirm'=>'Are you sure you want to delete this item?')),
-//	array('label'=>'Manage PF_Ttbsnguoidung', 'url'=>array('admin')),
-//);
     $matk = yii::app()->session['ma_tai_khoan'];
     $this->menu= array(
      array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/create')),
@@ -27,7 +15,7 @@
       array('label'=>'Mục Tiêu Nghề Nghiệp', 'url'=>array('#')),
      );
 ?>
-    <?php
+        <?php
         $chuyennganh = new PF_Chuyennganh;
         
         $listcn = PF_Chuyennganh::model()->findAll(array('select'=>'pf_ma_chuyen_nganh,pf_chuyen_nganh'));

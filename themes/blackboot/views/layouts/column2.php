@@ -1,22 +1,30 @@
-<?php $this->beginContent('//layouts/main'); ?>
-      <div class="row-fluid">
-        <div class="span3">
-         <?php
-			$this->beginWidget('zii.widgets.CPortlet', array(
-				'title'=>'Tổng Quan',
-			));
-			$this->widget('zii.widgets.CMenu', array(
-				'items'=>$this->menu,
-				'htmlOptions'=>array('class'=>'sidebar'),
-			));
-			$this->endWidget();
-		?>
-		</div><!-- sidebar span3 -->
+<?php $this->beginContent('//layouts/index'); ?>
+    <div class="row">
+        <div class="col-md-3">
+        		<div class='widget'>
+        			 <h4 class="innerAll bg-inverse margin-none">Tổng Quan</h4>
 
-	<div class="span9">
-		<div class="main">
-			<?php echo $content; ?>
-		</div><!-- content -->
+		         <?php
+					$this->beginWidget('zii.widgets.CPortlet', array(
+						
+					));
+					$this->widget('zii.widgets.CMenu', array(
+						'items'=>$this->menu,
+						'htmlOptions'=>array('class'=>'list-group list-group-1 margin-none borders-none animated fadeInUp','style'=>'list-style:none'),
+					));
+					$this->endWidget();
+				?>
+				</div>
+			
+		</div><!-- sidebar col-md-3 -->
+
+		<div class="col-md-9">
+				<div class='widget'>
+					<div class='"widget-body padding-none animated fadeInUp'>
+						<?php echo $content; ?>
+					</div>
+				</div>
+		</div>
 	</div>
-</div>
 <?php $this->endContent(); ?>
+

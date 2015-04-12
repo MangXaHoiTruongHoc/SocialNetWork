@@ -5,7 +5,7 @@
 //$matk = Taikhoan::model()->findAll(array('select'=>'ma_tai_khoan,email','condition'=>'email = "%$email%"'));
         $email = Yii::app()->session['email'];
         $matk = Yii::app()->session['ma_tai_khoan'];
-       
+        
 //$this->breadcrumbs=array('About');
 //get Session 
     

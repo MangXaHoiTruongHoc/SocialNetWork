@@ -33,7 +33,7 @@ $this->menu= array(
      );
     
 ?>
-<h1>Tốt Nghiệp</h1>
+<h3 style="margin-left:10px">Tốt Nghiệp</h3>
 <?php
         
         if(isset($k->pf_ma_tn )){   
@@ -49,7 +49,7 @@ $this->menu= array(
         }
 ?>
         
-<h1>Thêm Trường Tốt Nghiệp</h1>
+
 <?php 
     // Lấy đúng trường tốt nghiệp theo id đã set.
     $tn  = yii::app()->session['pf_ma_tn'];

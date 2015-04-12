@@ -101,7 +101,7 @@ class SiteController extends Controller
 	                Yii::app()->session['email'] = $model->email;
 	                $email = Yii::app()->session['email'];
 	                if(isset($email)){
-					$this->redirect(Yii::app()->user->returnUrl);
+					$this->redirect(Yii::app()->user->returnUrl);// nếu tồn tài thì đưa về trang index.
 	                }
 			}
 			// display the login form

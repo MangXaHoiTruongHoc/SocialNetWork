@@ -311,5 +311,8 @@
     <script src="http://maps.googleapis.com/maps/api/js?v=3&sensor=false&callback=initGoogleMaps"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/modules/admin/modals/assets/js/bootbox.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/core/js/core.init.js?v=v1.0.1-rc2"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/bootstrap-datepicker/assets/lib/js/bootstrap-datepicker.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/bootstrap-datepicker/assets/custom/js/bootstrap-datepicker.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/jasny-fileupload/assets/js/bootstrap-fileupload.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
 </body>
 </html>

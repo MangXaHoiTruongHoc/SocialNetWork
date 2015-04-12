@@ -4,7 +4,6 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'taikhoan-form',
@@ -15,65 +14,97 @@
 	'enableAjaxValidation'=>false,
     'htmlOptions' => array(
         'enctype' => 'multipart/form-data',
+        'class'=>'form-horizontal margin-none','autocomplete'=>'off'
     ),
    	'enableClientValidation'=>true,
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
 	),
 )); ?>
+<div class='widget'>
+	<!-- Widget heading -->
+    <div class="widget-head">
+        <h3 class="heading">Cập Nhật Thông Tin Người Dùng</h3>
+    </div>	
+    	<div class="widget-body innerAll inner-2x">
+			<div class="row innerLR">
+	<!-- <p class="note">Fields with <span class="required">*</span> are required.</p>
+				<?php echo $form->errorSummary($model); ?> -->
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+				<div class="form-group">
+					<?php echo $form->labelEx($model,'email',array('class'=>'col-md-4 control-label')); ?>
+					<div class='col-md-6'>
+					<?php echo $form->textField($model,'email',array('class'=>'form-control','size'=>50,'maxlength'=>50)); ?>
+					</div>
+					<?php echo $form->error($model,'email'); ?>
+				</div>
 
-	<?php echo $form->errorSummary($model); ?>
+				<div class="form-group">
+					<?php echo $form->labelEx($model,'ho_ten',array('class'=>'col-md-4 control-label')); ?>
+					<div class='col-md-6'>
+					<?php echo $form->textField($model,'ho_ten',array('class'=>'form-control','size'=>50,'maxlength'=>50)); ?>
+					</div>
+					<?php echo $form->error($model,'ho_ten'); ?>
+				</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'email'); ?>
-	</div>
+				<div class="form-group">
+					<?php echo $form->labelEx($model,'ngay_sinh',array('class'=>'col-md-4 control-label')); ?>
+					<div class='col-md-6'>
+					<?php echo $form->textField($model,'ngay_sinh',array('class'=>'form-control datepicker1','size'=>10,'maxlength'=>10)); ?>
+					</div>
+					<?php echo $form->error($model,'ngay_sinh'); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'ho_ten'); ?>
-		<?php echo $form->textField($model,'ho_ten',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'ho_ten'); ?>
-	</div>
+                                        
+                           
+				</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'ngay_sinh'); ?>
-		<?php echo $form->dateField($model,'ngay_sinh',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'ngay_sinh'); ?>
-	</div>
+				<div class="form-group" id="text">
+					<?php echo $form->labelEx($model,'gioi_tinh',array('class'=>'col-md-4 control-label')); ?>
+					<div class='col-md-6'>
+					<?php echo $form->radioButtonList($model,'gioi_tinh',array('Nam'=>'Nam','Nữ'=>'Nữ'),array('class'=>'form-control'));?>
+					</div>
+					<?php echo $form->error($model,'gioi_tinh'); ?>
+				</div>
 
-	<div class="row" id="text">
-		<?php echo $form->labelEx($model,'gioi_tinh'); ?>
-		<?php echo $form->radioButtonList($model,'gioi_tinh',array('Nam'=>'Nam','Nữ'=>'Nữ'),array('separator'=>'', 'labelOptions'=>array('style'=>'display: inline; margin: 0px; width:60px')));?>
-		<?php echo $form->error($model,'gioi_tinh'); ?>
-	</div>
+				<div class="form-group">
+					<?php echo $form->labelEx($model,'hinh_dai_dien',array('class'=>'col-md-4 control-label')); ?>
+					<div class='col-md-6 fileupload fileupload-new margin-none' data-provides='fileupload'>
+						<span class="btn btn-default btn-file">
+							<span class="fileupload-new">Select file</span>
+                            <span class="fileupload-exists">Change</span>
+                            
+							<?php echo $form->fileField($model,'hinh_dai_dien',array('class'=>'form-control margin-none')) ?>
+						</span>
+							<span class="fileupload-preview"></span>
+                            <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">&times;</a>
+					</div>
+					<?php echo $form->error($model,'hinh_dai_dien'); ?>
+				</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'hinh_dai_dien'); ?>
-		<?php echo $form->fileField($model,'hinh_dai_dien') ?>
-		<?php echo $form->error($model,'hinh_dai_dien'); ?>
-	</div>
+				
 
-	
+				<div class="form-group ">
+					<?php echo $form->labelEx($model,'mat_khau',array('class'=>'col-md-4 control-label')); ?>
+					<div class='col-md-6 border-none'>
+					<?php echo $form->passwordField($model,'mat_khau',array('class'=>'form-control','size'=>32,'maxlength'=>32)); ?>
+					</div>
+					<?php echo $form->error($model,'mat_khau'); ?>
+				</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'mat_khau'); ?>
-		<?php echo $form->passwordField($model,'mat_khau',array('size'=>32,'maxlength'=>32)); ?>
-		<?php echo $form->error($model,'mat_khau'); ?>
-	</div>
+				<div class="form-group">
+					<?php echo $form->labelEx($model,'ngay_tao',array('class'=>'col-md-4 control-label')); ?>
+					<div class='col-md-6'>
+					<?php echo $form->dateField($model,'ngay_tao',array('class'=>'form-control','size'=>10,'maxlength'=>10)); ?>
+					</div>
+					<?php echo $form->error($model,'ngay_tao'); ?>
+				</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'ngay_tao'); ?>
-		<?php echo $form->dateField($model,'ngay_tao',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'ngay_tao'); ?>
-	</div>
+				<div class="form-actions col-md-7">
+					<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'btn btn-primary','style'=>'float:right')); ?>
+				</div>
+			</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
+		</div>
+</div>
 <?php $this->endWidget(); ?>
 
-</div><!-- form -->

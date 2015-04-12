@@ -43,7 +43,7 @@
 <?php
 
 if(!isset($model->ma_tai_khoan)){
- echo "<h1>Create Taikhoan</h1>";
+ echo "<h1' >Create Taikhoan</h1>";
 $this->renderPartial('_form', array('model'=>$model));
 }
 if(!empty($temp)){

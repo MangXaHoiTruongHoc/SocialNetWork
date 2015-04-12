@@ -27,9 +27,9 @@
 
 <?php
         // Lấy thông tin bổ sung người dùng
-        
-        $ttbs = PF_Ttbsnguoidung::model()->findAll(array('condition'=>'ma_tai_khoan = :matk',
-        'params'=>array(':matk' => $matk)));
+        $ttbs = PF_Ttbsnguoidung::model()->findAllByAttributes(array('ma_tai_khoan'=>$matk)); 
+        /*$ttbs = PF_Ttbsnguoidung::model()->findAll(array('condition'=>'ma_tai_khoan = :matk',
+        'params'=>array(':matk' => $matk)));*/
         foreach($ttbs as $k){
            
             $model->pf_ma_ttr_nguoi_dung = $k->pf_ma_ttr_nguoi_dung;
@@ -45,18 +45,18 @@
         
 ?>
 <?php if(isset($model->pf_ma_ttr_nguoi_dung)) { // Kiểm tra mã ttbs đã có chưa nếu có rồi thì hiện form view ngược lại thì thôi
-echo "<h1>Thông Tin Bổ Sung</h1>";
+echo "<h3 style='margin-left:10px' >Thông Tin Bổ Sung</h3>";
 // Render qua trang view
 $this->renderPartial('view',array('model'=>$model));
 }
-?>
-<?php
-    if(empty($model->pf_ma_ttr_nguoi_dung)){ //Kiểm tra mã ttbs đã có chưa nếu chưa thì hiền form view nếu rồi thì thôi
-?>
+    ?>
+    <?php
+        if(empty($model->pf_ma_ttr_nguoi_dung)){ //Kiểm tra mã ttbs đã có chưa nếu chưa thì hiền form view nếu rồi thì thôi
+    ?>
 <h1>Thêm Thông Tin Bổ Sung</h1>
-<?php $this->renderPartial('_form', array('model'=>$model));
-}
-    if(!empty($temp)){
-        $this->renderPartial('_form', array('model'=>$model));
+    <?php $this->renderPartial('_form', array('model'=>$model));
     }
- ?>
+        if(!empty($temp)){
+            $this->renderPartial('_form', array('model'=>$model));
+        }
+    ?>

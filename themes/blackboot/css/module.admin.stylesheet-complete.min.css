@@ -5255,6 +5255,7 @@ div.DTCR_pointer {
 }
 .list-group>li {
     border-color: #efefef;
+    border-bottom: 1px dotted #C6C5C5;
 }
 .list-group-1 {
     margin-bottom: 0;

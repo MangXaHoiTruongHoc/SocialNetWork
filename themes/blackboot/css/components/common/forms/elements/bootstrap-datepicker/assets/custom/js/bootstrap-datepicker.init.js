@@ -6,10 +6,11 @@ $(function()
 
 	/* DatePicker */
 	// default
-	$("#datepicker1").bdatepicker({
+	$(".datepicker1").bdatepicker({
 		format: 'yyyy-mm-dd',
 		startDate: "2013-02-14"
 	});
+
 
 	// component
 	$('#datepicker2').bdatepicker({

@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'pf--kynang-form',
@@ -12,38 +12,52 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
+	'htmlOptions'=>array('class'=>'form-horizontal margin-none','autocomplete'=>'off'),
 	'enableAjaxValidation'=>false,
     'enableClientValidation'=>true,
 )); ?>
+<div class='widget'>
+	 <!-- Widget heading -->
+    <div class="widget-head">
+        <h3 class="heading">Thêm Kỹ Năng</h3>
+    </div>	
+		<div class="widget-body innerAll inner-2x">
+			<div class="row innerLR">
+				<!-- <p class="note">Fields with <span class="required">*</span> are required.</p> -->
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+				<?php echo $form->errorSummary($model); ?>
 
-	<?php echo $form->errorSummary($model); ?>
+				<div class="form-group">
+					<?php echo $form->labelEx($model,'pf_ky_nang',array('class'=>'col-md-4 control-label')); ?>
+					<div class="col-md-6">
+					<?php echo $form->textField($model,'pf_ky_nang',array('class'=>'form-control','rows'=>6, 'cols'=>50)); ?>
+					</div>
+					<?php echo $form->error($model,'pf_ky_nang'); ?>
+				</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'pf_ky_nang'); ?>
-		<?php echo $form->textField($model,'pf_ky_nang',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'pf_ky_nang'); ?>
-	</div>
+				<div class="form-group">
+					<?php echo $form->labelEx($model,'pf_so_nam_kinh_nghiem',array('class'=>'col-md-4 control-label')); ?>
+					<div class='col-md-6'>
+					<?php echo $form->textField($model,'pf_so_nam_kinh_nghiem',array('class'=>'form-control')); ?>
+					</div>
+					<?php echo $form->error($model,'pf_so_nam_kinh_nghiem'); ?>
+				</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'pf_so_nam_kinh_nghiem'); ?>
-		<?php echo $form->textField($model,'pf_so_nam_kinh_nghiem'); ?>
-		<?php echo $form->error($model,'pf_so_nam_kinh_nghiem'); ?>
-	</div>
+				<div class="form-group">
+					<?php echo $form->labelEx($model,'pf_mo_ta',array('class'=>'col-md-4 control-label')); ?>
+					<div class='col-md-6'>
+					<?php echo $form->textArea($model,'pf_mo_ta',array('class'=>'form-control','rows'=>6, 'cols'=>50)); ?>
+					</div>
+					<?php echo $form->error($model,'pf_mo_ta'); ?>
+				</div>
+		    
+			
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'pf_mo_ta'); ?>
-		<?php echo $form->textArea($model,'pf_mo_ta',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'pf_mo_ta'); ?>
-	</div>
-    
-	
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
+				<div class="form-actions col-md-8">
+					<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'btn btn-primary','style'=>'float:right')); ?>
+				</div>
+			</div>
+		</div>
+</div>
 <?php $this->endWidget(); ?>
 
-</div><!-- form -->

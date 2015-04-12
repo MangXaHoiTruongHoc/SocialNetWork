@@ -15,7 +15,7 @@ $this->menu= array(
      );
      $matk = yii::app()->session['ma_tai_khoan'];
 ?>
-<h1>Kỹ Năng</h1>
+<h3 style="margin-left:10px">Kỹ Năng</h3>
 <?php
     $kynang = PF_Kynang::model()->findAll(array('condition'=>'ma_tai_khoan = :matk','params'=>array(':matk'=>$matk)));
     if(isset($kynang)){
@@ -29,7 +29,7 @@ $this->menu= array(
     }
 
 ?>   
-<h1>Thêm Kỹ Năng</h1>
+<!-- <h1>Thêm Kỹ Năng</h1> -->
 <?php 
     // Kiểm tra khi click vào sửa
     $makn = yii::app()->session['pf_ma_ky_nang'];
