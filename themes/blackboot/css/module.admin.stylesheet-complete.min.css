@@ -2343,7 +2343,7 @@ div.pp_overlay {
     background: #fff;
 }
 .gridalicious-row {
-    margin: 0 -12px;
+    margin: 0;
 }
 .label {
     display: inline-block;
