@@ -56,7 +56,13 @@ $this->menu= array(
   
       
       <?php 
-            
+      //Kiem tra nguoi xem để ẩn .re_up
+      if(isset(yii::app()->session['matk2'])){
+            Yii::app()->clientScript->registerScript('re_up',"
+             $('.re_up').css({'display':'none'});
+            ");
+        }
+      //Delete totnghiep      
       $deleteajax= CHtml::ajaxLink('Xóa',
                 "index.php?r=pf_totnghiep/delete&id=$model->pf_ma_tn",
                 array(
@@ -80,8 +86,8 @@ $this->widget('zii.widgets.CDetailView', array(
 		//'pf_ma_tn',
         array('label'=>$model->getAttributeLabel('pf_ten_truong_tn'),
             'type'=>'raw',
-            'value'=>$model->pf_ten_truong_tn."<p class='re_up' style='float: right; display:display'><a href='index.php?r=pf_totnghiep/update&id={$model->pf_ma_tn}'>Sửa</a> 
-            {$deleteajax} </p>"
+            'value'=>$model->pf_ten_truong_tn."<div class='re_up' style='float: right; display:display'><a href='index.php?r=pf_totnghiep/update&id={$model->pf_ma_tn}'>Sửa</a> 
+            {$deleteajax} </div>"
         ),
 		'pf_ngay_bat_dau',
 		'pf_ngay_ket_thuc',

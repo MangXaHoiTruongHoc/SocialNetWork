@@ -27,6 +27,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+  
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/library/jquery/jquery.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/library/jquery/jquery-migrate.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/library/modernizr/modernizr.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
@@ -39,12 +40,17 @@
         document.documentElement.className += ' ie ie10';
     }
     </script>
+    <script type="text/javascript" src="/yii/SocialNetWork/assets/socialajax/socialajax.js"></script>
 </head>
 <body class=" menu-right-hidden">
     <!-- nonelogin -->
     <?php  
 
         if(isset(yii::app()->session['email'])){
+            
+            
+
+
     ?>
     <!-- login -->
     <!-- Main Container Fluid -->
@@ -75,25 +81,46 @@
                         </form>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="innerLR">
-                                <button type="button" class="btn btn-success navbar-btn"><i class="fa fa-pencil"></i> Sign in</button>
+                                <a href="#" title="">
+                                <img style="width:30px; heigth:30px"  src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/icons/message.png" alt="">
+                                </a>
                             </li>
+                            <li class="innerLR">
+                                <a href="#" title="">
+                                <img style="width:30px; heigth:30px"  src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/icons/friend.png" alt="">
+                                </a>
+                            </li>
+                            <li class="innerLR">
+                                <a href="#" title="">
+                                <img style="width:30px; heigth:30px"  src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/icons/notification.png" alt="">
+                                </a>
+                            </li>
+                           <!--  <li class="innerLR">
+                                <button type="button" class="btn btn-success navbar-btn"><i class="fa fa-pencil"></i> Sign in</button>
+                            </li> -->
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <span class="pull-left innerR">
-                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/people/35/16.jpg"
+                                        <?php
+                                            $email = Yii::app()->session['email'];
+                                            $image= Taikhoan::model()->findAllByAttributes(array('email'=>$email));
+                                            foreach ($image as $key ) {
+                                                $key->hinh_dai_dien;
+                                            }
+                                        ?>
+                                        <img style="width:30px;heigth:30px;" src="<?php echo Yii::app()->baseUrl; ?>/upload/<?php echo $key->hinh_dai_dien?>"
                                         alt="user" class="img-circle">
                                     </span>
-                                    Bill <b class="caret"></b>
+                                    <?php echo($key->ho_ten) ?> <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a>
+                                    <li><a href="index.php">Profile</a>
                                     </li>
-                                    <li><a href="#">Another action</a>
-                                    </li>
-                                    <li><a href="#">Something else here</a>
+                                    <li><a href="index.php?r=site/home">Home</a>
                                     </li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Separated link</a>
+                                    <li><a href="index.php?r=site/logout">Logout</a>
                                     </li>
                                 </ul>
                             </li>
@@ -117,7 +144,7 @@
                             <div class="timeline-cover">
                                 <div class="cover">
                                     <div class="top">
-                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css//images/photodune-2755655-party-time-s.jpg" class="img-responsive"
+                                        <img style="width:851px;height:250px"src="<?php echo Yii::app()->theme->baseUrl; ?>/css//images/photodune-5765965-idea-concept-xs.jpg" class="img-responsive"
                                         />
                                     </div>
                                     <!-- <ul class="list-unstyled">
@@ -140,9 +167,9 @@
                                     //  array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
                                         array('label'=>'About', 'url'=>array('/Taikhoan/about')),
                                         array('label'=>'Contact', 'url'=>array('/site/contact')),
-                                        array('label'=>'Register', 'url'=>array('/Taikhoan/Create'),'visible'=>Yii::app()->user->isGuest),
+                                        //array('label'=>'Register', 'url'=>array('/Taikhoan/Create'),'visible'=>Yii::app()->user->isGuest),
                                         array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                                        array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+                                        //array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
                                     ),
                                     )); 
                                     ?>
@@ -151,7 +178,7 @@
                                     <div class="widget-body padding-none margin-none">
                                         <div class="innerAll">
                                             <i class="fa fa-quote-left text-muted pull-left fa-fw"></i> 
-                                            <p class="lead margin-none">What a fun Partyyy</p>
+                                            <p class="lead margin-none">Đăng Bài</p>
                                         </div>
                                     </div>
                                 </div>
@@ -167,16 +194,30 @@
                         <div class="col-md-4 col-lg-3">
                             <div class="widget">
                                 <div class="widget-body text-center">
-                                    <a href="">
-                                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/people/250/22.jpg"
+                                    <?php
+                                            $email = Yii::app()->session['email'];
+                                            $profile= Taikhoan::model()->findAllByAttributes(array('email'=>$email));
+                                            foreach ($image as $pf ) {
+                                                $pf->hinh_dai_dien;
+                                            }
+                                            if(isset($_GET['iduser'])){
+                                                yii::app()->session['matk2'] = $_GET['iduser'];
+                                            }
+                                            if(isset(yii::app()->session['matk2'])){
+                                                $profile = Taikhoan::model()->findAllByAttributes(array('ma_tai_khoan'=>yii::app()->session['matk2']));
+                                                foreach ($profile as $pf ) {
+                                                    $pf->hinh_dai_dien;
+                                                }
+                                            }
+                                    ?>
+                                    <a href="index.php?r=taikhoan/about">
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/upload/<?php echo $pf->hinh_dai_dien?>"
                                         width="120" alt="" class="img-circle">
                                     </a>
-                                    <h2 class="strong margin-none">Adrian Demian</h2>
+                                    <h2 class="strong margin-none"><?php echo $pf->ho_ten ?></h2>
                                     <div class="innerB">Working at MOSAICPRO</div>
-                                    <a href="" class="btn btn-primary text-center btn-block">PRO Account</a>
                                     <div class="btn-group-vertical btn-block">
-                                        <a href="" class="btn btn-default"><i class="fa fa-cog pull-right"></i>Edit Account</a>
-                                        <a href="" class="btn btn-default"><i class="fa fa-cog pull-right"></i>Logout</a>
+                                        <a href="" class="btn btn-primary text-center "><i class="fa fa-cog pull-right"></i>Logout</a>
                                     </div>
                                 </div>
                             </div>
@@ -314,5 +355,9 @@
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/bootstrap-datepicker/assets/lib/js/bootstrap-datepicker.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/bootstrap-datepicker/assets/custom/js/bootstrap-datepicker.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/jasny-fileupload/assets/js/bootstrap-fileupload.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/fuelux-radio/fuelux-radio.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/bootstrap-switch/assets/lib/js/bootstrap-switch.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/bootstrap-switch/assets/custom/js/bootstrap-switch.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/fuelux-checkbox/fuelux-checkbox.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
 </body>
 </html>

@@ -34,7 +34,7 @@
 				<div class="form-group">
 					<?php echo $form->labelEx($model,'email',array('class'=>'col-md-4 control-label')); ?>
 					<div class='col-md-6'>
-					<?php echo $form->textField($model,'email',array('class'=>'form-control','size'=>50,'maxlength'=>50)); ?>
+					<?php echo $form->emailField($model,'email',array('class'=>'form-control','readonly'=>true,'size'=>50,'maxlength'=>50)); ?>
 					</div>
 					<?php echo $form->error($model,'email'); ?>
 				</div>
@@ -61,7 +61,21 @@
 				<div class="form-group" id="text">
 					<?php echo $form->labelEx($model,'gioi_tinh',array('class'=>'col-md-4 control-label')); ?>
 					<div class='col-md-6'>
-					<?php echo $form->radioButtonList($model,'gioi_tinh',array('Nam'=>'Nam','Nữ'=>'Nữ'),array('class'=>'form-control'));?>
+					<div class="radio">
+                        <label class="radio-custom">
+                            <input type="radio" name="Taikhoan[gioi_tinh]" value='Nam' <?php if($model->gioi_tinh==='Nam') echo ("checked='checked' "); ?>>
+                            <i class="fa fa-circle-o checked"></i>Nam
+                            
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label class="radio-custom">
+                            <input type="radio" name="Taikhoan[gioi_tinh]" value='Nữ'<?php if($model->gioi_tinh==='Nữ') echo ("checked='checked' " ); ?> >
+                            <i class="fa fa-circle-o checked"></i>Nữ
+                            
+                        </label>
+                    </div>
+					
 					</div>
 					<?php echo $form->error($model,'gioi_tinh'); ?>
 				</div>
@@ -72,7 +86,6 @@
 						<span class="btn btn-default btn-file">
 							<span class="fileupload-new">Select file</span>
                             <span class="fileupload-exists">Change</span>
-                            
 							<?php echo $form->fileField($model,'hinh_dai_dien',array('class'=>'form-control margin-none')) ?>
 						</span>
 							<span class="fileupload-preview"></span>

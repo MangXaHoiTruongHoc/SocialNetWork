@@ -15,18 +15,60 @@ $this->menu= array(
      );
      $matk = yii::app()->session['ma_tai_khoan'];
 ?>
-<h3 style="margin-left:10px">Kỹ Năng</h3>
+        <?php
+        // lấy giới hạn kỹ năng
+        $gioihan1 = PF_Gioihan::model()->findAllByAttributes(array('ma_tai_khoan'=>yii::app()->session['ma_tai_khoan']));
+        foreach ($gioihan1 as $g ) {
+          $tt_kn = $g->pf_tt_kynang;
+        }
+        ?>
+
+<h3 style="margin-left:10px"> Kỹ Năng
+    <?php
+         // Kiểm tra session nguoi xem de ẩn checkbox
+        if(!isset(yii::app()->session['matk2'])){
+      ?>  
+      <div class="make-switch" data-on="success" data-off="default" style="float:right">
+      <input id="<?php echo (yii::app()->session['ma_tai_khoan'])?>"   class='gioihan1' type="checkbox" name="tt_kynang"  value="<?php echo $tt_kn; ?>" <?php echo $tt_kn == 1 ? "checked": ""; ?> > 
+      </div>  
+      <?php
+      }
+      ?>   
+</h3>
 <?php
+    // Kiểm tra matk người xem.
+    if(isset(yii::app()->session['matk2'])){
+                $matk = yii::app()->session['matk2'];
+    }
     $kynang = PF_Kynang::model()->findAll(array('condition'=>'ma_tai_khoan = :matk','params'=>array(':matk'=>$matk)));
-    if(isset($kynang)){
+
+    if($tt_kn==0){// kiểm tra checkbox đc check chưa.
+    //kiểm tra giá trị kỹ năng để hiện thị view
+    if(isset($kynang)){ 
     foreach($kynang as $k){
-         $model->pf_ma_ky_nang = $k->pf_ma_ky_nang;
+        $model->pf_ma_ky_nang = $k->pf_ma_ky_nang;
         $model->pf_ky_nang = $k->pf_ky_nang;
         $model->pf_so_nam_kinh_nghiem = $k->pf_so_nam_kinh_nghiem;
         $model->pf_mo_ta = $k->pf_mo_ta;
         $this->renderPartial('view',array('model'=>$model));
         }
     }
+  }else{
+    if(!isset(yii::app()->session['matk2'])){
+       if(isset($kynang)){
+        foreach($kynang as $k){
+        $model->pf_ma_ky_nang = $k->pf_ma_ky_nang;
+        $model->pf_ky_nang = $k->pf_ky_nang;
+        $model->pf_so_nam_kinh_nghiem = $k->pf_so_nam_kinh_nghiem;
+        $model->pf_mo_ta = $k->pf_mo_ta;
+        $this->renderPartial('view',array('model'=>$model));
+        }
+      } 
+
+    }else{
+            echo "<h4 style='margin-left:10px'>Bạn phải liên hệ với chủ hồ sơ để được xem thông tin. Cảm ơn!!!</h4>";
+    }
+  }
 
 ?>   
 <!-- <h1>Thêm Kỹ Năng</h1> -->
@@ -44,9 +86,11 @@ $this->menu= array(
             
         }
     }
-if(empty($temp)){
-    $model->unsetAttributes();
-}
-$this->renderPartial('_form', array('model'=>$model)); 
+    if(empty($temp)){
+        $model->unsetAttributes();
+    }
+    if(!isset(yii::app()->session['matk2'])){
+    $this->renderPartial('_form', array('model'=>$model));
+    } 
 
 ?>

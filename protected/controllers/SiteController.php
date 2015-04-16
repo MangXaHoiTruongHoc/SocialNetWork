@@ -118,6 +118,9 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	public function actionHome(){
+		$this->render('home');
+	}
     //public function actionAjax() {
 //        $model = new City();
 // 

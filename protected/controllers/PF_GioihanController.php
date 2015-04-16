@@ -1,6 +1,6 @@
 <?php
 
-class PF_DanhgiahosoController extends Controller
+class PF_GioihanController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,22 +62,21 @@ class PF_DanhgiahosoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new PF_Danhgiahoso;
+		$model=new PF_Gioihan;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['PF_Danhgiahoso']))
+		if(isset($_POST['PF_Gioihan']))
 		{
-			$model->attributes=$_POST['PF_Danhgiahoso'];
-			$model->ma_tai_khoan = yii::app()->session['matk2'];
+			$model->attributes=$_POST['PF_Gioihan'];
 			if($model->save())
-				$this->redirect(array('//pf_kynang/create'));
+				$this->redirect(array('view','id'=>$model->pf_ma_trangthai));
 		}
 
-		/*$this->render('create',array(
+		$this->render('create',array(
 			'model'=>$model,
-		));*/
+		));
 	}
 
 	/**
@@ -92,16 +91,27 @@ class PF_DanhgiahosoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['PF_Danhgiahoso']))
-		{
-			$model->attributes=$_POST['PF_Danhgiahoso'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->pf_ma_danh_gia_ho_so));
-		}
+		
+			//$model->attributes=$_POST['PF_Gioihan'];
+			if(isset($_POST['tt_totnghiep'])){
+			$model->pf_tt_totnghiep = $_POST['tt_totnghiep'];
+			}
+			if(isset($_POST['tt_kynang'])){
+			$model->pf_tt_kynang = $_POST['tt_kynang'];
+			}
+			if(isset($_POST['tt_ttbs'])){
+			$model->pf_tt_ttbs = $_POST['tt_ttbs'];
+			}
+			if(isset($_POST['tt_taikhoan'])){
+			$model->pf_tt_taikhoan = $_POST['tt_taikhoan'];
+			}
+			if($model->save()){
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+			}
+
+		
+
+	
 	}
 
 	/**
@@ -123,7 +133,7 @@ class PF_DanhgiahosoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PF_Danhgiahoso');
+		$dataProvider=new CActiveDataProvider('PF_Gioihan');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -134,10 +144,10 @@ class PF_DanhgiahosoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new PF_Danhgiahoso('search');
+		$model=new PF_Gioihan('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['PF_Danhgiahoso']))
-			$model->attributes=$_GET['PF_Danhgiahoso'];
+		if(isset($_GET['PF_Gioihan']))
+			$model->attributes=$_GET['PF_Gioihan'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -148,12 +158,12 @@ class PF_DanhgiahosoController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return PF_Danhgiahoso the loaded model
+	 * @return PF_Gioihan the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=PF_Danhgiahoso::model()->findByPk($id);
+		$model=PF_Gioihan::model()->findByAttributes(array('ma_tai_khoan'=>$id));
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -161,11 +171,11 @@ class PF_DanhgiahosoController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param PF_Danhgiahoso $model the model to be validated
+	 * @param PF_Gioihan $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='pf--danhgiahoso-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='pf--gioihan-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

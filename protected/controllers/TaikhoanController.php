@@ -85,13 +85,29 @@ class TaikhoanController extends Controller
 			'model'=>$model,
 		));
 	}
+	public function actionRegister(){
+	$model=new Taikhoan;	
+	if(isset($_POST['Taikhoan']))
+		{
+		    // Thực hiện upload ảnh .
+            $random = rand(0,9999); 
+			$model->attributes=$_POST['Taikhoan'];
+            $uploadFile=CUploadedFile::getInstance($model,'hinh_dai_dien');
+            $fileName = "{$random}-{$uploadFile}";
+            $model->hinh_dai_dien = $fileName;
+			if($model->save()){
+                $uploadFile->saveAs(Yii::app()->basePath.'/../upload/'.$fileName);
+				$this->redirect(array('//site/login'));
+			}
+		}
+	}
     //action about
      public function actionAbout(){
             // Lấy session email từ SiteController
             $email = Yii::app()->session['email'];
-
+            if(isset($email)){
             // Thực hiện lấy mã tài khoản của người dùng khi đăng nhập vào
-             $taikhoan = Taikhoan::model()->findAllByAttributes(array('email'=>$email)); 
+            $taikhoan = Taikhoan::model()->findAllByAttributes(array('email'=>$email)); 
             /*$taikhoan = Taikhoan::model()->findAll(array('condition'=>'email LIKE :email',
             'params'=>array(':email'=>"%$email%")));*/
                 foreach($taikhoan as $tk){
@@ -101,9 +117,15 @@ class TaikhoanController extends Controller
             Yii::app()->session['ma_tai_khoan'] = $tk->ma_tai_khoan;
             $model = new Taikhoan;
             $matk = Yii::app()->session['ma_tai_khoan'];
-
+            if(isset(yii::app()->session['matk2'])){
+            	$matk = yii::app()->session['matk2'];
+            }
             $model = $this->loadModel($matk);
             $this->render('about',array('model'=>$model));
+        	}
+        	else{
+        		$this->redirect(array('//site/login'));
+        	}
         }  
   
 	/**

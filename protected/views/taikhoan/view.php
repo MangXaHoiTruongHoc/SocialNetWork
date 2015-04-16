@@ -6,7 +6,6 @@
 //	'Taikhoans'=>array('index'),
 //	$model->ma_tai_khoan,
 //);
-
 //$this->menu=array(
 	//array('label'=>'List Taikhoan', 'url'=>array('index')),
 	//array('label'=>'Create Taikhoan', 'url'=>array('create')),
@@ -24,11 +23,16 @@
       array('label'=>'Mục Tiêu Nghề Nghiệp', 'url'=>array('#')),
      );	
     //<?php echo $model->ho_ten; 
-
+  // Kiểm tra session để ẩn hiện re_up
+    if(isset(yii::app()->session['matk2'])){
+            Yii::app()->clientScript->registerScript('re_up',"
+             $('.re_up').css({'display':'none'});
+            ");
+    }
 ?>
 
-<h3 style="margin-left:10px">Thông Tin Người Dùng </h3>
-<p style='text-align:right'><a href='index.php?r=taikhoan/update&id=<?php echo($model->ma_tai_khoan)?>'>Edit</a>  
+
+
 <?php 
 
 $this->widget('zii.widgets.CDetailView', array(
@@ -38,7 +42,11 @@ $this->widget('zii.widgets.CDetailView', array(
          array(              
          'label'=>'Hình Đại Diện',
          'type'=>'raw',
-         'value'=>CHtml::image(Yii::app()->request->baseUrl.'/upload/'.$model->hinh_dai_dien)),
+         'value'=>CHtml::image(Yii::app()->request->baseUrl.'/upload/'.$model->hinh_dai_dien,'',array(
+            'style'=>'width:70px!important;height:70px!important'
+            )).
+         "<div class='re_up' style='float:right'><a href='index.php?r=taikhoan/update&id=$model->ma_tai_khoan'>Edit</a> </div>
+          "),
 		'email',
 		'ho_ten',
 		'ngay_sinh',

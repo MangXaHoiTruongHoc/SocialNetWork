@@ -32,7 +32,7 @@ class Taikhoan extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email, ho_ten,hinh_dai_dien, ngay_sinh, gioi_tinh,  mat_khau', 'required'),
+			array('email, ho_ten, ngay_sinh, mat_khau,gioi_tinh', 'required'),
             array('email','email'),
             array('hinh_dai_dien', 'file', 'allowEmpty'=>false, 'types'=>'jpg,jpeg,gif,png'),
 			array('email, ho_ten', 'length', 'max'=>50),

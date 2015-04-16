@@ -24,8 +24,12 @@ if(isset($email)){
         
 ?>
 
-
+<h3 style="margin-left:10px">Thông Tin Người Dùng </h3>
 <?php
+    if(isset(yii::app()->session['matk2'])){
+      $matk  = yii::app()->session['matk2'];
+    }
+    
    $this->renderPartial('view',array('id'=>$matk,'model'=>$model));
   // $data = new PF_Ttbsnguoidung;
   // $this->renderPartial('//pf_ttbsnguoidung/create',array('matk'=>$matk,'model'=>$model));

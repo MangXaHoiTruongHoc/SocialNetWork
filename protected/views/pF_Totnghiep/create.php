@@ -10,6 +10,10 @@
         //echo Yii::app()->createAbsoluteUrl("PF_Totnghiep/create");
         //die;
         $matk = yii::app()->session['ma_tai_khoan'];
+         // Kiểm tra matk người xem.
+        if(isset(yii::app()->session['matk2'])){
+              $matk = yii::app()->session['matk2'];
+            }
         $matn = PF_Totnghiep::model()->findAllByAttributes(array('ma_tai_khoan'=>$matk));
        // print_r($matn); die;
         foreach($matn as $k){
@@ -33,19 +37,54 @@ $this->menu= array(
      );
     
 ?>
-<h3 style="margin-left:10px">Tốt Nghiệp</h3>
+      <?php
+        $gioihan = PF_Gioihan::model()->findAllByAttributes(array('ma_tai_khoan'=>yii::app()->session['ma_tai_khoan']));
+        foreach ($gioihan as $g ) {
+          $tt_tn = $g->pf_tt_totnghiep;
+        }
+      ?>
+      <h3   style="margin-left:10px">Tốt nghiệp
+      <?php
+        if(!isset(yii::app()->session['matk2'])){
+      ?>  
+        <div class="make-switch" data-on="success" data-off="default" style="float:right">
+          <input id="<?php echo (yii::app()->session['ma_tai_khoan'])?>"   class='gioihan' type="checkbox" name="tt_totnghiep"  value="<?php echo $tt_tn; ?>" <?php echo $tt_tn == 1 ? "checked": ""; ?> > 
+          <!-- <input class='gioihan make-switch' data-on="success" data-off="default" style="float:right" type="checkbox" name="tt_totnghiep" id="<?php echo (yii::app()->session['ma_tai_khoan'])?>" value="<?php echo $tt_tn; ?>" > -->
+        </div>  
+      <?php
+      }
+      ?>  
+      </h3>
+      
+
 <?php
-        
+        if($tt_tn==0){// kiểm tra checkbox đc check chưa.
         if(isset($k->pf_ma_tn )){   
-        foreach($matn as $l){
-                   $model->pf_ma_tn =  $l->pf_ma_tn;
-                   $model->pf_ten_truong_tn = $l->pf_ten_truong_tn;
-                   $model->pf_ngay_bat_dau = $l->pf_ngay_bat_dau;
-                   $model->pf_ngay_ket_thuc = $l->pf_ngay_ket_thuc;
-                   $model->pf_ma_chuyen_nganh = $l->pf_ma_chuyen_nganh;
-                   $model->pf_ma_ket_qua_tn= $l->pf_ma_ket_qua_tn;
-                   $this->renderPartial('view',array('model'=>$model));
-                 }           
+          foreach($matn as $l){
+                     $model->pf_ma_tn =  $l->pf_ma_tn;
+                     $model->pf_ten_truong_tn = $l->pf_ten_truong_tn;
+                     $model->pf_ngay_bat_dau = $l->pf_ngay_bat_dau;
+                     $model->pf_ngay_ket_thuc = $l->pf_ngay_ket_thuc;
+                     $model->pf_ma_chuyen_nganh = $l->pf_ma_chuyen_nganh;
+                     $model->pf_ma_ket_qua_tn= $l->pf_ma_ket_qua_tn;
+                     $this->renderPartial('view',array('model'=>$model));
+                   }           
+          }
+        }else{
+          if(!isset(yii::app()->session['matk2'])){
+            foreach($matn as $l){
+                     $model->pf_ma_tn =  $l->pf_ma_tn;
+                     $model->pf_ten_truong_tn = $l->pf_ten_truong_tn;
+                     $model->pf_ngay_bat_dau = $l->pf_ngay_bat_dau;
+                     $model->pf_ngay_ket_thuc = $l->pf_ngay_ket_thuc;
+                     $model->pf_ma_chuyen_nganh = $l->pf_ma_chuyen_nganh;
+                     $model->pf_ma_ket_qua_tn= $l->pf_ma_ket_qua_tn;
+                     $this->renderPartial('view',array('model'=>$model));
+                   }    
+          }
+          else{
+            echo "<h4 style='margin-left:10px'>Bạn phải liên hệ với chủ hồ sơ để được xem thông tin. Cảm ơn!!!</h4>";
+          }
         }
 ?>
         
@@ -65,6 +104,9 @@ $this->menu= array(
                  }
     if(empty($temp)){// kiểm tra trường hợp update để set lại form
     $model->unsetAttributes();// set lại model
-    }   
+    }
+    if(!isset(yii::app()->session['matk2'])){  
     $this->renderPartial('_form', array('model'=>$model));
+    }
  ?>
+ 

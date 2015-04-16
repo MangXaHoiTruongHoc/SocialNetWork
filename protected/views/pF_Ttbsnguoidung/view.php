@@ -23,26 +23,23 @@
         foreach($listcn as $l){
              $list[$l->pf_ma_chuyen_nganh] = $l->pf_chuyen_nganh;
         }
-        
-         //Yii::app()->clientScript->registerScript('showview', "
-//        $('.editview').mouseenter(function(){
-//        	$('.form').hide('slow');
-//        });
-//        ");
+        if(isset(yii::app()->session['matk2'])){
+            Yii::app()->clientScript->registerScript('re_up',"
+             $('.re_up').css({'display':'none'});
+            ");
+    }
     ?>
-  
-
-    
-<p style='text-align:right'><a class='editview' href='index.php?r=pf_ttbsnguoidung/update&id=<?php echo($model->pf_ma_ttr_nguoi_dung)?>'>Edit</a>
-    
- 
 <?php 
     
 $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		//'pf_ma_ttr_nguoi_dung',
-		'pf_dan_toc',
+        array('label'=>$model->getAttributeLabel('pf_dan_toc'),
+            'type'=>'raw',
+            'value'=>$model->pf_dan_toc."<div class='re_up' style='float:right;margin-top:2px;'><a href='index.php?r=pf_ttbsnguoidung/update&id=$model->pf_ma_ttr_nguoi_dung'>Edit</a></div>"
+            ),
+		
 		'pf_quoc_tich',
 		'pf_so_thich',
 		'pf_ton_giao',
