@@ -40,6 +40,7 @@
         document.documentElement.className += ' ie ie10';
     }
     </script>
+    <script type="text/javascript" src="/yii/SocialNetWork/assets/socialajax/jquery.multifile.js"></script>
     <script type="text/javascript" src="/yii/SocialNetWork/assets/socialajax/socialajax.js"></script>
 </head>
 <body class=" menu-right-hidden">
@@ -359,5 +360,8 @@
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/bootstrap-switch/assets/lib/js/bootstrap-switch.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/bootstrap-switch/assets/custom/js/bootstrap-switch.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/fuelux-checkbox/fuelux-checkbox.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/uniform/assets/custom/js/uniform.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/gallery/blueimp-gallery/assets/lib/js/blueimp-gallery.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/gallery/blueimp-gallery/assets/lib/js/jquery.blueimp-gallery.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
 </body>
 </html>

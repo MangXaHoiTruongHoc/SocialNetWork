@@ -7,29 +7,30 @@
 //	'Create',
 //);
     $matk = Yii::app()->session['ma_tai_khoan'];
+   // Kiểm tra matk người xem.
+    if(isset(yii::app()->session['matk2'])){
+            $matk = yii::app()->session['matk2'];
+    }
 //$this->menu=array(
 //	array('label'=>'List PF_Ttbsnguoidung', 'url'=>array('index')),
 //	array('label'=>'Manage PF_Ttbsnguoidung', 'url'=>array('admin')),
 //);
 //
-  $this->menu= array(
-    array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/create')),
-     array('label'=>'Thông Tin Bổ Sung', 'url'=>array('pf_ttbsnguoidung/create')),
-     array('label'=>'Tốt Nghiệp', 'url'=>array('pf_totnghiep/create')),
-     array('label'=>'Ngoại Ngữ', 'url'=>array('#')),
-     array('label'=>'Kỹ Năng', 'url'=>array('pf_kynang/create')),
-     array('label'=>'Hoạt Động Học Tập', 'url'=>array('#')),
-     array('label'=>'Hoạt Động Ngoại Khóa', 'url'=>array('#')),
-      array('label'=>'Kinh Nghiệm Làm Việc', 'url'=>array('#')),
-      array('label'=>'Mục Tiêu Nghề Nghiệp', 'url'=>array('#')),
+ $this->menu= array(
+     array('label'=>'Thông tin người dùng', 'url'=>array('taikhoan/create')),
+     array('label'=>'Thông tin bổ sung', 'url'=>array('pf_ttbsnguoidung/create')),
+     array('label'=>'Tốt nghiệp', 'url'=>array('pf_totnghiep/create')),
+     array('label'=>'Ngoại ngữ', 'url'=>array('#')),
+     array('label'=>'Kỹ năng', 'url'=>array('pf_kynang/create')),
+     array('label'=>'Hoạt động học tập', 'url'=>array('#')),
+     array('label'=>'Hoạt động ngoại khóa', 'url'=>array('pf_hoatdongngoaikhoa/create')),
+    array('label'=>'Kinh nghiệm làm việc', 'url'=>array('#')),
+     array('label'=>'Mục tiêu nghề nghiệp', 'url'=>array('#')),
      );
 ?>
 
 <?php   
-         // Kiểm tra matk người xem.
-        if(isset(yii::app()->session['matk2'])){
-              $matk = yii::app()->session['matk2'];
-        }
+        
         // Lấy thông tin bổ sung người dùng
         $ttbs = PF_Ttbsnguoidung::model()->findAllByAttributes(array('ma_tai_khoan'=>$matk)); 
         /*$ttbs = PF_Ttbsnguoidung::model()->findAll(array('condition'=>'ma_tai_khoan = :matk',
@@ -50,7 +51,7 @@
 ?>
 <?php
         // lấy giới hạn ttbs
-        $gioihan3 = PF_Gioihan::model()->findAllByAttributes(array('ma_tai_khoan'=>yii::app()->session['ma_tai_khoan']));
+        $gioihan3 = PF_Gioihan::model()->findAllByAttributes(array('ma_tai_khoan'=>$matk));
         foreach ($gioihan3 as $g ) {
           $tt_ttbs = $g->pf_tt_ttbs;
         }
@@ -61,7 +62,7 @@
       if(!isset(yii::app()->session['matk2'])){
       ?>  
       <div class="make-switch" data-on="success" data-off="default" style="float:right">
-      <input id="<?php echo (yii::app()->session['ma_tai_khoan'])?>"   class='gioihan3' type="checkbox" name="tt_ttbs"  value="<?php echo $tt_ttbs; ?>" <?php echo $tt_ttbs == 1 ? "checked": ""; ?> > 
+      <input id="<?php echo ($matk)?>"   class='gioihan3' type="checkbox" name="tt_ttbs"  value="<?php echo $tt_ttbs; ?>" <?php echo $tt_ttbs == 1 ? "checked": ""; ?> > 
       </div>  
       <?php
       }

@@ -25,20 +25,20 @@
                  
    //Loadmenu              
 $this->menu= array(
-     array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/view','id'=> $matk )),
-     array('label'=>'Thông Tin Bổ Sung', 'url'=>array('pf_ttbsnguoidung/create')),
-     array('label'=>'Tốt Nghiệp', 'url'=>array('pf_totnghiep/create')),
-     array('label'=>'Ngoại Ngữ', 'url'=>array('#')),
-     array('label'=>'Kỹ Năng', 'url'=>array('pf_kynang/create')),
-     array('label'=>'Hoạt Động Học Tập', 'url'=>array('#')),
-     array('label'=>'Hoạt Động Ngoại Khóa', 'url'=>array('#')),
-     array('label'=>'Kinh Nghiệm Làm Việc', 'url'=>array('#')),
-     array('label'=>'Mục Tiêu Nghề Nghiệp', 'url'=>array('#')),
+     array('label'=>'Thông tin người dùng', 'url'=>array('taikhoan/create')),
+     array('label'=>'Thông tin bổ sung', 'url'=>array('pf_ttbsnguoidung/create')),
+     array('label'=>'Tốt nghiệp', 'url'=>array('pf_totnghiep/create')),
+     array('label'=>'Ngoại ngữ', 'url'=>array('#')),
+     array('label'=>'Kỹ năng', 'url'=>array('pf_kynang/create')),
+     array('label'=>'Hoạt động học tập', 'url'=>array('#')),
+     array('label'=>'Hoạt động ngoại khóa', 'url'=>array('pf_hoatdongngoaikhoa/create')),
+    array('label'=>'Kinh nghiệm làm việc', 'url'=>array('#')),
+     array('label'=>'Mục tiêu nghề nghiệp', 'url'=>array('#')),
      );
     
 ?>
       <?php
-        $gioihan = PF_Gioihan::model()->findAllByAttributes(array('ma_tai_khoan'=>yii::app()->session['ma_tai_khoan']));
+        $gioihan = PF_Gioihan::model()->findAllByAttributes(array('ma_tai_khoan'=>$matk));
         foreach ($gioihan as $g ) {
           $tt_tn = $g->pf_tt_totnghiep;
         }
@@ -48,7 +48,7 @@ $this->menu= array(
         if(!isset(yii::app()->session['matk2'])){
       ?>  
         <div class="make-switch" data-on="success" data-off="default" style="float:right">
-          <input id="<?php echo (yii::app()->session['ma_tai_khoan'])?>"   class='gioihan' type="checkbox" name="tt_totnghiep"  value="<?php echo $tt_tn; ?>" <?php echo $tt_tn == 1 ? "checked": ""; ?> > 
+          <input id="<?php echo ($matk)?>"   class='gioihan' type="checkbox" name="tt_totnghiep"  value="<?php echo $tt_tn; ?>" <?php echo $tt_tn == 1 ? "checked": ""; ?> > 
           <!-- <input class='gioihan make-switch' data-on="success" data-off="default" style="float:right" type="checkbox" name="tt_totnghiep" id="<?php echo (yii::app()->session['ma_tai_khoan'])?>" value="<?php echo $tt_tn; ?>" > -->
         </div>  
       <?php
