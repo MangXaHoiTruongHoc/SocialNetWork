@@ -1,10 +1,8 @@
 <?php
-/* @var $this PF_HoatdongngoaikhoaController */
-/* @var $model PF_Hoatdongngoaikhoa */
+/* @var $this PF_HoatdonghoctapController */
+/* @var $model PF_Hoatdonghoctap */
 /* @var $form CActiveForm */
 ?>
-
-
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'pf--hoatdongngoaikhoa-form',
@@ -21,9 +19,9 @@
 	<div class="widget-head">
 		<?php
 		if($model->isNewRecord){
-			echo "<h3 class='heading'>Thêm Hoạt Động Ngoại Khóa</h3>";
+			echo "<h3 class='heading'>Thêm Hoạt Động Học Tập</h3>";
 		}else{
-			echo "<h3 class='heading'>Cập Nhật Hoạt Động Ngoại Khóa</h3>";
+			echo "<h3 class='heading'>Cập Nhật Hoạt Động Học Tập</h3>";
 		}
 		?>
     </div>	
@@ -101,4 +99,3 @@
 		</div>
 </div><!-- form -->
 <?php $this->endWidget(); ?>
-

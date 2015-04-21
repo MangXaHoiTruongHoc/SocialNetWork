@@ -1,11 +1,12 @@
 <?php
-/* @var $this PF_HoatdongngoaikhoaController */
-/* @var $model PF_Hoatdongngoaikhoa */
-   $matk = Yii::app()->session['ma_tai_khoan'];
-   // Kiểm tra matk người xem.
+/* @var $this PF_HoatdonghoctapController */
+/* @var $model PF_Hoatdonghoctap */
+     $matk = Yii::app()->session['ma_tai_khoan'];
+    // Kiểm tra matk người xem.
     if(isset(yii::app()->session['matk2'])){
             $matk = yii::app()->session['matk2'];
-    }    
+    } 
+
 $this->menu= array(
      array('label'=>'Thông tin người dùng', 'url'=>array('taikhoan/create')),
      array('label'=>'Thông tin bổ sung', 'url'=>array('pf_ttbsnguoidung/create')),
@@ -16,20 +17,23 @@ $this->menu= array(
      array('label'=>'Hoạt động ngoại khóa', 'url'=>array('pf_hoatdongngoaikhoa/create')),
      array('label'=>'Kinh nghiệm làm việc', 'url'=>array('#')),
      array('label'=>'Mục tiêu nghề nghiệp', 'url'=>array('#')),
-     );   
+     ); 
 ?>
-<h3 style="margin-left:10px">Hoạt động ngoại khóa
+
+<h3 style="margin-left:10px">Hoạt Động Học Tập
 <?php
       // lấy giới hạn kỹ năng
-        $gioihan4 = PF_Gioihan::model()->findAllByAttributes(array('ma_tai_khoan'=> $matk));
-        foreach ($gioihan4 as $g ) {
-          $tt_hdnk = $g->pf_tt_hdngoaikhoa;
+        $gioihan5 = PF_Gioihan::model()->findAllByAttributes(array('ma_tai_khoan'=> $matk));
+    
+        foreach ($gioihan5 as $g ) {
+          $tt_hdht = $g->pf_tt_hdhoctap;
         }
+
       // Kiểm tra session nguoi xem de ẩn checkbox
       if(!isset(yii::app()->session['matk2'])){
       ?>  
       <div class="make-switch" data-on="success" data-off="default" style="float:right">
-      <input id="<?php echo ($matk)?>"   class='gioihan4' type="checkbox" name="tt_hdht"  value="<?php echo $tt_hdnk; ?>" <?php echo $tt_hdnk == 1 ? "checked": ""; ?> > 
+      <input id="<?php echo ($matk)?>"   class='gioihan5' type="checkbox" name="tt_hdht"  value="<?php echo $tt_hdht; ?>" <?php echo $tt_hdht == 1 ? "checked": ""; ?> > 
       </div>  
       <?php
       }
@@ -37,13 +41,13 @@ $this->menu= array(
 </h3>
 <?php   
         
-        // Lấy thông tin hoạt động ngoại khóa
-        $tthdnk = PF_Hoatdongngoaikhoa::model()->findAllByAttributes(array('ma_tai_khoan'=>$matk)); 
-        if($tt_hdnk==0){// kiểm tra checkbox đc check chưa.
+        // Lấy thông tin hoạt động học tập
+        $tthdht = PF_Hoatdonghoctap::model()->findAllByAttributes(array('ma_tai_khoan'=>$matk)); 
+        if($tt_hdht==0){// kiểm tra checkbox đc check chưa.
     //kiểm tra giá trị hdnk để hiện thị view
-          if(isset($tthdnk)){
-             foreach($tthdnk as $k){
-                 $model->pf_ma_hdnk = $k->pf_ma_hdnk;
+          if(isset($tthdht)){
+             foreach($tthdht as $k){
+                 $model->pf_ma_hdht = $k->pf_ma_hdht;
                  $model->ma_tai_khoan = $k->ma_tai_khoan;
                  $model->pf_ten_hoat_dong = $k->pf_ten_hoat_dong;
                  $model->pf_ngay_bat_dau = $k->pf_ngay_bat_dau;
@@ -56,9 +60,9 @@ $this->menu= array(
              }
         }else{
           if(!isset(yii::app()->session['matk2'])){
-               if(isset($tthdnk)){
-                  foreach($tthdnk as $k){
-                      $model->pf_ma_hdnk = $k->pf_ma_hdnk;
+               if(isset($tthdht)){
+                  foreach($tthdht as $k){
+                      $model->pf_ma_hdht = $k->pf_ma_hdht;
                       $model->ma_tai_khoan = $k->ma_tai_khoan;
                       $model->pf_ten_hoat_dong = $k->pf_ten_hoat_dong;
                       $model->pf_ngay_bat_dau = $k->pf_ngay_bat_dau;
@@ -73,18 +77,16 @@ $this->menu= array(
                 echo "<h4 style='margin-left:10px'>Bạn phải liên hệ với chủ hồ sơ để được xem thông tin. Cảm ơn!!!</h4>";
           }
         }
-        
-        
 ?>
 <?php
-     $mahdnk = yii::app()->session['pf_ma_hdnk'];
+     $mahdht = yii::app()->session['pf_ma_hdht'];
      
      if(isset($temp)){
         $model->unsetAttributes();
         
-        $hdnk1 = PF_Hoatdongngoaikhoa::model()->findAllByAttributes(array('pf_ma_hdnk'=> $mahdnk));
-          foreach($hdnk1 as $k1){
-            $model->pf_ma_hdnk = $k1->pf_ma_hdnk;
+        $hdht1 = PF_Hoatdonghoctap::model()->findAllByAttributes(array('pf_ma_hdht'=> $mahdht));
+          foreach($hdht1 as $k1){
+            $model->pf_ma_hdht = $k1->pf_ma_hdht;
             $model->pf_ten_hoat_dong = $k1->pf_ten_hoat_dong;
             $model->pf_ngay_bat_dau = $k1->pf_ngay_bat_dau;
             $model->pf_ngay_ket_thuc = $k1->pf_ngay_ket_thuc;

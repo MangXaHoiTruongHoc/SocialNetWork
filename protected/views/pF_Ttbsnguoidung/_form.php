@@ -20,7 +20,13 @@
 <div class='widget'>
 	<!-- Widget heading -->
     <div class="widget-head">
-        <h4 class="heading">Cập Nhật</h4>
+           <?php
+		if($model->isNewRecord){
+			echo "<h3 class='heading'>Thêm thông tin bổ sung</h3>";
+		}else{
+			echo "<h3 class='heading'>Cập nhật thông tin bổ sung</h3>";
+		}
+		?>
     </div>
     <!-- // Widget heading END -->
       	<div class="widget-body innerAll inner-2x">

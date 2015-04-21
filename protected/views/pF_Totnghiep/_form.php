@@ -30,7 +30,13 @@
 
 	<?php echo $form->errorSummary($model); ?> -->
 	<div class="widget-head">
-        <h4 class="heading">Thêm trường tốt nghiệp</h4>
+        <?php
+		if($model->isNewRecord){
+			echo "<h3 class='heading'>Thêm Trường Tốt Nghiệp</h3>";
+		}else{
+			echo "<h3 class='heading'>Cập nhật Trường Tốt Nghiệp</h3>";
+		}
+		?>
     </div>
     	<!-- // Widget heading END -->
       	<div class="widget-body innerAll inner-2x">

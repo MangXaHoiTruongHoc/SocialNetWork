@@ -1,6 +1,6 @@
 <?php
 
-class PF_GioihanController extends Controller
+class PF_NgoainguController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,16 +62,17 @@ class PF_GioihanController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new PF_Gioihan;
+		$model=new PF_Ngoaingu;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['PF_Gioihan']))
+		if(isset($_POST['PF_Ngoaingu']))
 		{
-			$model->attributes=$_POST['PF_Gioihan'];
+			$model->attributes=$_POST['PF_Ngoaingu'];
+			$model->ma_tai_khoan = yii::app()->session['ma_tai_khoan'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->pf_ma_trangthai));
+				$this->redirect(array('create'));
 		}
 
 		$this->render('create',array(
@@ -91,33 +92,17 @@ class PF_GioihanController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		
-			//$model->attributes=$_POST['PF_Gioihan'];
-			if(isset($_POST['tt_totnghiep'])){
-			$model->pf_tt_totnghiep = $_POST['tt_totnghiep'];
-			}
-			if(isset($_POST['tt_kynang'])){
-			$model->pf_tt_kynang = $_POST['tt_kynang'];
-			}
-			if(isset($_POST['tt_ttbs'])){
-			$model->pf_tt_ttbs = $_POST['tt_ttbs'];
-			}
-			if(isset($_POST['tt_taikhoan'])){
-			$model->pf_tt_taikhoan = $_POST['tt_taikhoan'];
-			}
-			if(isset($_POST['tt_hdnk'])){
-				$model->pf_tt_hdngoaikhoa = $_POST['tt_hdnk'];
-			}
-			if(isset($_POST['tt_hdht'])){
-				$model->pf_tt_hdhoctap = $_POST['tt_hdht'];
-			}
-			if($model->save()){
-
-			}
-
-		
-
-	
+		if(isset($_POST['PF_Ngoaingu']))
+		{
+			$model->attributes=$_POST['PF_Ngoaingu'];
+			if($model->save())
+				$temp="";
+				$this->redirect(array('create','temp'=>$temp));
+		}
+		$temp="Update";
+		$this->render('update',array(
+			'model'=>$model,'temp'=>$temps
+		));
 	}
 
 	/**
@@ -139,7 +124,7 @@ class PF_GioihanController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PF_Gioihan');
+		$dataProvider=new CActiveDataProvider('PF_Ngoaingu');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -150,10 +135,10 @@ class PF_GioihanController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new PF_Gioihan('search');
+		$model=new PF_Ngoaingu('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['PF_Gioihan']))
-			$model->attributes=$_GET['PF_Gioihan'];
+		if(isset($_GET['PF_Ngoaingu']))
+			$model->attributes=$_GET['PF_Ngoaingu'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -164,12 +149,12 @@ class PF_GioihanController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return PF_Gioihan the loaded model
+	 * @return PF_Ngoaingu the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=PF_Gioihan::model()->findByAttributes(array('ma_tai_khoan'=>$id));
+		$model=PF_Ngoaingu::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -177,11 +162,11 @@ class PF_GioihanController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param PF_Gioihan $model the model to be validated
+	 * @param PF_Ngoaingu $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='pf--gioihan-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='pf--ngoaingu-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

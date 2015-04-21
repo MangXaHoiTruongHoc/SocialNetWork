@@ -3,17 +3,17 @@
 /* @var $model PF_Ttbsnguoidung */
 
     $matk = yii::app()->session['ma_tai_khoan'];
-   $this->menu= array(
-     array('label'=>'Thông tin người dùng', 'url'=>array('taikhoan/create')),
-     array('label'=>'Thông tin bổ sung', 'url'=>array('pf_ttbsnguoidung/create')),
-     array('label'=>'Tốt nghiệp', 'url'=>array('pf_totnghiep/create')),
-     array('label'=>'Ngoại ngữ', 'url'=>array('#')),
-     array('label'=>'Kỹ năng', 'url'=>array('pf_kynang/create')),
-     array('label'=>'Hoạt động học tập', 'url'=>array('#')),
-     array('label'=>'Hoạt động ngoại khóa', 'url'=>array('pf_hoatdongngoaikhoa/create')),
-    array('label'=>'Kinh nghiệm làm việc', 'url'=>array('#')),
-     array('label'=>'Mục tiêu nghề nghiệp', 'url'=>array('#')),
-     );
+       $this->menu= array(
+         array('label'=>'Thông tin người dùng', 'url'=>array('taikhoan/create')),
+         array('label'=>'Thông tin bổ sung', 'url'=>array('pf_ttbsnguoidung/create')),
+         array('label'=>'Tốt nghiệp', 'url'=>array('pf_totnghiep/create')),
+         array('label'=>'Ngoại ngữ', 'url'=>array('pf_ngoaingu/create')),
+         array('label'=>'Kỹ năng', 'url'=>array('pf_kynang/create')),
+        array('label'=>'Hoạt động học tập', 'url'=>array('pf_hoatdonghoctap/create')),
+         array('label'=>'Hoạt động ngoại khóa', 'url'=>array('pf_hoatdongngoaikhoa/create')),
+        array('label'=>'Kinh nghiệm làm việc', 'url'=>array('#')),
+         array('label'=>'Mục tiêu nghề nghiệp', 'url'=>array('#')),
+         );
 ?>
         <?php
         $chuyennganh = new PF_Chuyennganh;

@@ -67,7 +67,7 @@
                         </button>
                         <a class="navbar-brand" href="index.php">
                             <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css//images/logo/dhkt.jpg" alt="" style="width:40px">
-                            <b style="margin-left:7px">Mạng Xã Hội Trường Học</b>
+                            <b style="margin-left:7px;font-size:15px">MẠNG XÃ HỘI TRƯỜNG ĐẠI HỌC KINH TẾ</b>
                         </a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -216,10 +216,10 @@
                                         width="120" alt="" class="img-circle">
                                     </a>
                                     <h2 class="strong margin-none"><?php echo $pf->ho_ten ?></h2>
-                                    <div class="innerB">Working at MOSAICPRO</div>
-                                    <div class="btn-group-vertical btn-block">
+                                    <div class="innerB">Đang học tại đại học kinh tế đà nẵng</div>
+                                    <!-- <div class="btn-group-vertical btn-block">
                                         <a href="" class="btn btn-primary text-center "><i class="fa fa-cog pull-right"></i>Logout</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="widget">
@@ -343,7 +343,7 @@
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/library/bootstrap/js/bootstrap.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/nicescroll/jquery.nicescroll.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/breakpoints/breakpoints.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
-    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/preload/pace/pace.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+   <!-- <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/preload/pace/pace.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>-->
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/menus/sidr/jquery.sidr.js?v=v1.0.1-rc2"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/modules/admin/twitter/assets/js/twitter.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/holder/holder.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
