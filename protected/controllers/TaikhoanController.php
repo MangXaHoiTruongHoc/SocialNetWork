@@ -92,12 +92,37 @@ class TaikhoanController extends Controller
 		    // Thực hiện upload ảnh .
             $random = rand(0,9999); 
 			$model->attributes=$_POST['Taikhoan'];
+			$model->ngay_tao = new CDbExpression('NOW()');
             $uploadFile=CUploadedFile::getInstance($model,'hinh_dai_dien');
             $fileName = "{$random}-{$uploadFile}";
             $model->hinh_dai_dien = $fileName;
 			if($model->save()){
                 $uploadFile->saveAs(Yii::app()->basePath.'/../upload/'.$fileName);
+                $gioihan = new PF_gioihan;
+                $gioihan->ma_tai_khoan = $model->ma_tai_khoan;
+                $gioihan->pf_tt_totnghiep = 0;
+                $gioihan->pf_tt_taikhoan = 0;
+                $gioihan->pf_tt_ttbs = 0;
+                $gioihan->pf_tt_ngoaingu = 0;
+                $gioihan->pf_tt_kynang = 0;
+                $gioihan->pf_tt_hdhoctap = 0;
+                $gioihan->pf_tt_hdngoaikhoa = 0;
+                $gioihan->pf_tt_knlamviec = 0;
+                $gioihan->pf_tt_mtnghenghiep = 0;
+                $gioihan->save();
 				$this->redirect(array('//site/login'));
+			}
+		}
+	}
+	public function actionCheckemail(){
+		if(isset($_POST['email'])){
+			$email = Taikhoan::model()->findAllByAttributes(array('email'=>$_POST['email']));
+			$count = count($email);
+			
+			if($count > 0){
+				echo "NO";
+			}else{
+				echo "YES";
 			}
 		}
 	}

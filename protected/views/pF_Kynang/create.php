@@ -10,8 +10,8 @@ $this->menu= array(
      array('label'=>'Kỹ Năng', 'url'=>array('pf_kynang/create')),
      array('label'=>'Hoạt động học tập', 'url'=>array('pf_hoatdonghoctap/create')),
      array('label'=>'Hoạt Động Ngoại Khóa', 'url'=>array('pf_hoatdongngoaikhoa/create')),
-     array('label'=>'Kinh Nghiệm Làm Việc', 'url'=>array('#')),
-     array('label'=>'Mục Tiêu Nghề Nghiệp', 'url'=>array('#')),
+     array('label'=>'Kinh Nghiệm Làm Việc', 'url'=>array('pf_kinhnghiemlamviec/create')),
+     array('label'=>'Mục Tiêu Nghề Nghiệp', 'url'=>array('pf_muctieunghenghiep/create')),
      );
      
 ?>

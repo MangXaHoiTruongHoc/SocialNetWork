@@ -111,6 +111,15 @@ class PF_GioihanController extends Controller
 			if(isset($_POST['tt_hdht'])){
 				$model->pf_tt_hdhoctap = $_POST['tt_hdht'];
 			}
+			if(isset($_POST['tt_ngoaingu'])){
+				$model->pf_tt_ngoaingu = $_POST['tt_ngoaingu'];
+			}
+			if(isset($_POST['tt_knlamviec'])){
+				$model->pf_tt_knlamviec = $_POST['tt_knlamviec'];
+			}
+			if(isset($_POST['tt_mtnghenghiep'])){
+				$model->pf_tt_mtnghenghiep = $_POST['tt_mtnghenghiep'];
+			}
 			if($model->save()){
 
 			}

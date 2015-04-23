@@ -36,7 +36,7 @@
 
 				<?php echo $form->errorSummary($model); ?> -->
 
-				<div class="row">
+				<div class="form-group">
 					<?php echo $form->labelEx($model,'pf_dan_toc',array('class'=>'col-md-4 control-label')); ?>
 					<div class='col-md-6'>
 					<?php echo $form->textField($model,'pf_dan_toc',array('class'=>'form-control','size'=>10,'maxlength'=>10)); ?>
@@ -44,7 +44,7 @@
 					<?php echo $form->error($model,'pf_dan_toc'); ?>
 				</div>
 
-				<div class="row">
+				<div class="form-group">
 					<?php echo $form->labelEx($model,'pf_quoc_tich',array('class'=>'col-md-4 control-label')); ?>
 					<div class='col-md-6'>
 					<?php echo $form->textField($model,'pf_quoc_tich',array('class'=>'form-control','size'=>20,'maxlength'=>20)); ?>
@@ -52,7 +52,7 @@
 					<?php echo $form->error($model,'pf_quoc_tich'); ?>
 				</div>
 
-				<div class="row">
+				<div class="form-group">
 					<?php echo $form->labelEx($model,'pf_so_thich',array('class'=>'col-md-4 control-label')); ?>
 					<div class='col-md-6'>
 					<?php echo $form->textArea($model,'pf_so_thich',array('class'=>'form-control','rows'=>6, 'cols'=>50)); ?>
@@ -60,7 +60,7 @@
 					<?php echo $form->error($model,'pf_so_thich'); ?>
 				</div>
 
-				<div class="row">
+				<div class="form-group">
 					<?php echo $form->labelEx($model,'pf_ton_giao',array('class'=>'col-md-4 control-label')); ?>
 					<div class='col-md-6'>
 					<?php echo $form->textField($model,'pf_ton_giao',array('class'=>'form-control','size'=>20,'maxlength'=>20)); ?>
@@ -68,7 +68,7 @@
 					<?php echo $form->error($model,'pf_ton_giao'); ?>
 				</div>
 
-				<div class="row">
+				<div class="form-group">
 					<?php echo $form->labelEx($model,'pf_slogan',array('class'=>'col-md-4 control-label')); ?>
 					<div class='col-md-6'>
 					<?php echo $form->textArea($model,'pf_slogan',array('class'=>'form-control','rows'=>6, 'cols'=>50)); ?>
@@ -92,10 +92,10 @@
 			        }
 			        
 			    ?>
-			     <div class="row">
+			     <div class="form-group">
 			        <?php echo $form->labelEx($model,'pf_ma_chuyen_nganh',array('class'=>'col-md-4 control-label'))?>
 			        <div class='col-md-6'>
-			        <?php echo $form->dropDownList($model,'pf_ma_chuyen_nganh',$list,array('class'=>'form-control','empty'=>"Chọn Chuyên Ngành"))?>		        	
+			        <?php echo $form->dropDownList($model,'pf_ma_chuyen_nganh',$list,array('style'=>'width:293.438px;height:32px','class'=>'select2_6_2','empty'=>"Chọn Chuyên Ngành"))?>		        	
 			        </div>
 			        <?php echo $form->error($model,'pf_ma_chuyen_nganh')?>
 			     </div>

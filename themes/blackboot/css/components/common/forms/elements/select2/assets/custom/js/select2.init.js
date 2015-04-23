@@ -28,9 +28,9 @@ $(function()
 		
 		// enable/disable mode
 		$("#select2_6_1").select2();
-		$("#select2_6_2").select2();
-		$("#select2_6_enable").click(function() { $("#select2_6_1,#select2_6_2").select2("enable"); });
-		$("#select2_6_disable").click(function() { $("#select2_6_1,#select2_6_2").select2("disable"); });
+		$(".select2_6_2").select2();
+		$("#select2_6_enable").click(function() { $("#select2_6_1,.select2_6_2").select2("enable"); });
+		$("#select2_6_disable").click(function() { $("#select2_6_1,.select2_6_2").select2("disable"); });
 
 		// templating
 		function format(state) {

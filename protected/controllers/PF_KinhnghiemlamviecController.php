@@ -1,6 +1,6 @@
 <?php
 
-class PF_NgoainguController extends Controller
+class PF_KinhnghiemlamviecController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,16 +62,14 @@ class PF_NgoainguController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new PF_Ngoaingu;
+		$model=new PF_Kinhnghiemlamviec;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['PF_Ngoaingu']))
+		if(isset($_POST['PF_Kinhnghiemlamviec']))
 		{
-			$model->attributes=$_POST['PF_Ngoaingu'];
-			/*print_r($model);
-			die;*/
+			$model->attributes=$_POST['PF_Kinhnghiemlamviec'];
 			$model->ma_tai_khoan = yii::app()->session['ma_tai_khoan'];
 			if($model->save())
 				$this->redirect(array('create'));
@@ -90,18 +88,18 @@ class PF_NgoainguController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		 yii::app()->session['pf_ma_kinh_nghiem'] = $model->pf_ma_kinh_nghiem;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		yii::app()->session['pf_ma_ngoai_ngu'] = $model->pf_ma_ngoai_ngu;
-		if(isset($_POST['PF_Ngoaingu']))
+
+		if(isset($_POST['PF_Kinhnghiemlamviec']))
 		{
-			$model->attributes=$_POST['PF_Ngoaingu'];
+			$model->attributes=$_POST['PF_Kinhnghiemlamviec'];
 			if($model->save())
-				$temp="";
+				$temp = "";
 				$this->redirect(array('create','temp'=>$temp));
 		}
-		$temp="Update";
+		$temp = "Update";
 		$this->render('create',array(
 			'model'=>$model,'temp'=>$temp
 		));
@@ -126,7 +124,7 @@ class PF_NgoainguController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PF_Ngoaingu');
+		$dataProvider=new CActiveDataProvider('PF_Kinhnghiemlamviec');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -137,10 +135,10 @@ class PF_NgoainguController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new PF_Ngoaingu('search');
+		$model=new PF_Kinhnghiemlamviec('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['PF_Ngoaingu']))
-			$model->attributes=$_GET['PF_Ngoaingu'];
+		if(isset($_GET['PF_Kinhnghiemlamviec']))
+			$model->attributes=$_GET['PF_Kinhnghiemlamviec'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -151,12 +149,12 @@ class PF_NgoainguController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return PF_Ngoaingu the loaded model
+	 * @return PF_Kinhnghiemlamviec the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=PF_Ngoaingu::model()->findByPk($id);
+		$model=PF_Kinhnghiemlamviec::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -164,11 +162,11 @@ class PF_NgoainguController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param PF_Ngoaingu $model the model to be validated
+	 * @param PF_Kinhnghiemlamviec $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='pf--ngoaingu-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='pf--kinhnghiemlamviec-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

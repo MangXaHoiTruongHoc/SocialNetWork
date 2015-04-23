@@ -145,7 +145,7 @@
                             <div class="timeline-cover">
                                 <div class="cover">
                                     <div class="top">
-                                        <img style="width:851px;height:250px"src="<?php echo Yii::app()->theme->baseUrl; ?>/css//images/photodune-5765965-idea-concept-xs.jpg" class="img-responsive"
+                                        <img style="width:851px;height:250px"src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/dhkt/cover.jpg" class="img-responsive"
                                         />
                                     </div>
                                     <!-- <ul class="list-unstyled">
@@ -363,5 +363,7 @@
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/uniform/assets/custom/js/uniform.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/gallery/blueimp-gallery/assets/lib/js/blueimp-gallery.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/gallery/blueimp-gallery/assets/lib/js/jquery.blueimp-gallery.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/select2/assets/lib/js/select2.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/select2/assets/custom/js/select2.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
 </body>
 </html>

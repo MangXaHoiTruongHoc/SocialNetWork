@@ -36,7 +36,7 @@
 					array('Tiếng anh'=>'Tiếng anh','Tiếng nhật'=>'Tiếng nhật','Tiếng pháp'=>'Tiếng pháp',
 						  'Tiếng trung'=>'Tiếng trung','Tiếng nga'=>'Tiếng nga','Tiếng tây ban nha'=>'Tiếng tây ban nha',
 						  'Tiếng thái'=>'Tiếng thái','Tiếng lào'=>'Tiếng lào','Khác'=>'Khác'),
-					array('class'=>'form-control','empty'=>'Chọn Ngoại Ngữ')); ?>
+					array('style'=>'width:293.438px;height:32px','class'=>'select2_6_2','empty'=>'Chọn Ngoại Ngữ')); ?>
 					</div>
 					<?php echo $form->error($model,'pf_ten_ngoai_ngu'); ?>
 				</div>
@@ -50,7 +50,7 @@
 				<div class="form-group">
 					<?php echo $form->labelEx($model,'pf_ma_muc_do_nn',array('class'=>'col-md-4 control-label')); ?>
 					<div class='col-md-6'>
-					<?php echo $form->dropDownList($model,'pf_ma_muc_do_nn',$list,array('class'=>'form-control','empty'=>'Chọn mức độ')); ?>
+					<?php echo $form->dropDownList($model,'pf_ma_muc_do_nn',$list,array('style'=>'width:293.438px;height:32px','class'=>'select2_6_2','empty'=>'Chọn mức độ')); ?>
 					</div>
 					<?php echo $form->error($model,'pf_ma_muc_do_nn'); ?>
 				</div>

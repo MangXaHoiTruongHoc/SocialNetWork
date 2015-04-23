@@ -4,6 +4,7 @@
 
 	$mucdo = PF_Mucdongoaingu::model()->findAll();
 	$list = array();
+	// vòng lặp lấy ra mức độ theo id 
 	foreach ($mucdo as $key ) {
 		$list[$key->pf_ma_muc_do_nn] = $key->pf_muc_do;
 	}
@@ -16,11 +17,12 @@ $this->menu= array(
      array('label'=>'Kỹ năng', 'url'=>array('pf_kynang/create')),
      array('label'=>'Hoạt động học tập', 'url'=>array('pf_hoatdonghoctap/create')),
      array('label'=>'Hoạt động ngoại khóa', 'url'=>array('pf_hoatdongngoaikhoa/create')),
-     array('label'=>'Kinh nghiệm làm việc', 'url'=>array('#')),
-     array('label'=>'Mục tiêu nghề nghiệp', 'url'=>array('#')),
+     array('label'=>'Kinh nghiệm làm việc', 'url'=>array('pf_kinhnghiemlamviec/create')),
+     array('label'=>'Mục tiêu nghề nghiệp', 'url'=>array('pf_muctieunghenghiep/create')),
      );
 ?>
-	<div clas="widget ngoaingu<?php echo $model->pf_ma_ngoai_ngu?> ">
+  <p></p>
+	<div clas="widget" id="ngoaingu<?php echo $model->pf_ma_ngoai_ngu?>">
 		<table class="table">
 			<tbody>
 				<tr>
@@ -40,8 +42,8 @@ $this->menu= array(
 		                                'data' => null,
 		                                'success' => 'function(){
 		                                    alert("Xóa thành công");
-		                                    $(".ngoaingu'.$model->pf_ma_ngoai_ngu.'").
-		                                    slideUp("slow",function(){$(".ngoaingu'.$model->pf_ma_ngoai_ngu.'").remove();});
+		                                    $("#ngoaingu'.$model->pf_ma_ngoai_ngu.'").
+		                                    slideUp("slow",function(){$("#ngoaingu'.$model->pf_ma_ngoai_ngu.'").remove();});
 		                                }'
 		                ),
 		                array( 'confirm'=>'Ban muon xoa chu',));
@@ -57,3 +59,4 @@ $this->menu= array(
 			</tbody>
 		</table>
 </div>
+

@@ -10440,3 +10440,681 @@ Stack trace:
 REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_ngoaingu/create
 HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_ngoaingu/create
 ---
+2015/04/21 04:21:43 [error] [php] Undefined variable: temps (D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_NgoainguController.php:105)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_NgoainguController->runAction()
+#3 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PF_NgoainguController->filterAccessControl()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_NgoainguController->runActionWithFilters()
+#9 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_NgoainguController->run()
+#10 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_ngoaingu/update&id=3
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_NgoainguController.php (105)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/21 04:22:07 [error] [php] Undefined variable: temps (D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_NgoainguController.php:105)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_NgoainguController->runAction()
+#3 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PF_NgoainguController->filterAccessControl()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_NgoainguController->runActionWithFilters()
+#9 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_NgoainguController->run()
+#10 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_ngoaingu/update&id=3
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_NgoainguController.php (105)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/21 04:22:30 [error] [php] Undefined variable: temps (D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_NgoainguController.php:105)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_NgoainguController->runAction()
+#3 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PF_NgoainguController->filterAccessControl()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_NgoainguController->runActionWithFilters()
+#9 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_NgoainguController->run()
+#10 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_ngoaingu/update&id=3
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_NgoainguController.php (105)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/21 04:27:24 [error] [php] Undefined variable: gioihan6 (D:\xampp\htdocs\yii\SocialNetWork\protected\views\pF_Ngoaingu\create.php:28)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CController.php(869): PF_NgoainguController->renderFile()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(782): PF_NgoainguController->renderPartial()
+#2 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_NgoainguController.php(80): PF_NgoainguController->render()
+#3 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PF_NgoainguController->actionCreate()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_NgoainguController->runAction()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PF_NgoainguController->filterAccessControl()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_NgoainguController->runActionWithFilters()
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_NgoainguController->run()
+#13 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_ngoaingu/create
+in D:\xampp\htdocs\yii\SocialNetWork\protected\views\pF_Ngoaingu\create.php (28)
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_NgoainguController.php (80)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/21 04:47:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_ngoaingu/del...')
+#9 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_ngoaingu/delete&id=4
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_ngoaingu/update&id=3
+---
+2015/04/21 04:48:38 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_ngoaingu/del...')
+#9 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_ngoaingu/delete&id=4
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_ngoaingu/update&id=3
+---
+2015/04/21 05:04:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_NgoainguController.php:159
+Stack trace:
+#0 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_NgoainguController.php(90): PF_NgoainguController->loadModel('3')
+#1 [internal function]: PF_NgoainguController->actionUpdate('3')
+#2 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(PF_NgoainguController), Array)
+#3 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PF_NgoainguController), Object(ReflectionMethod), Array)
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_ngoaingu/upd...')
+#10 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_ngoaingu/update&id=3
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_ngoaingu/update&id=4
+---
+2015/04/21 06:47:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pf_taikhoan/check_email".' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_taikhoan/che...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_taikhoan/check_email
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=site/login
+---
+2015/04/21 06:47:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pf_taikhoan/check_email".' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_taikhoan/che...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_taikhoan/check_email
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=site/login
+---
+2015/04/21 06:48:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pf_taikhoan/check_email".' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_taikhoan/che...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_taikhoan/check_email
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=site/login
+---
+2015/04/21 06:52:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pf_taikhoan/check_email".' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_taikhoan/che...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_taikhoan/check_email&email=anyone2080@gmail.com
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=site/login
+---
+2015/04/21 06:57:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pf_taikhoan/check_email".' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_taikhoan/che...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_taikhoan/check_email&email=%C4%91%C3%A2sdasdasd
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=site/login
+---
+2015/04/21 06:58:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pf_taikhoan/check_email".' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_taikhoan/che...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_taikhoan/check_email&email=abc@gmail.com
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=site/login
+---
+2015/04/21 06:59:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "check_email".' in D:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('check_email')
+#1 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('check_email')
+#2 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('taikhoan/check_...')
+#3 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=taikhoan/check_email&email=abc@gmail.com
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=site/login
+---
+2015/04/21 07:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "check_email".' in D:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('check_email')
+#1 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('check_email')
+#2 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('taikhoan/check_...')
+#3 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=taikhoan/check_email
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=site/login
+---
+2015/04/21 17:50:32 [error] [exception.CException] exception 'CException' with message 'Property "PF_Kinhnghiemlamviec.pf_ma_tn" is not defined.' in D:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pf_ma_tn')
+#1 D:\xampp\htdocs\yii\SocialNetWork\protected\views\pF_Kinhnghiemlamviec\view.php(49): CActiveRecord->__get('pf_ma_tn')
+#2 D:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\yii\SocialNetWork\protected\views\pF_Kinhnghiemlamviec\create.php(56): CController->renderPartial('view', Array)
+#6 D:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#8 D:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php(79): CController->render('create', Array)
+#11 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PF_KinhnghiemlamviecController->actionCreate()
+#12 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#21 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_kinhnghiemla...')
+#22 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#23 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/create
+---
+2015/04/21 17:50:52 [error] [exception.CException] exception 'CException' with message 'The attribute must be specified in the format of "Name:Type:Label", where "Type" and "Label" are optional.' in D:\xampp\htdocs\yii\framework\zii\widgets\CDetailView.php:185
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CBaseController.php(181): CDetailView->run()
+#1 D:\xampp\htdocs\yii\SocialNetWork\protected\views\pF_Kinhnghiemlamviec\view.php(57): CBaseController->widget('zii.widgets.CDe...', Array)
+#2 D:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\yii\SocialNetWork\protected\views\pF_Kinhnghiemlamviec\create.php(56): CController->renderPartial('view', Array)
+#6 D:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#8 D:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php(79): CController->render('create', Array)
+#11 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PF_KinhnghiemlamviecController->actionCreate()
+#12 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#21 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_kinhnghiemla...')
+#22 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#23 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/create
+---
+2015/04/21 17:52:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_kinhnghiemla...')
+#9 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/delete&id=2
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/create
+---
+2015/04/21 17:53:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_kinhnghiemla...')
+#9 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/delete&id=2
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/create
+---
+2015/04/21 18:10:01 [error] [php] Undefined variable: temp (D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php:100)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_KinhnghiemlamviecController->runAction()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_KinhnghiemlamviecController->runActionWithFilters()
+#5 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_KinhnghiemlamviecController->run()
+#6 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=1
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php (100)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/21 18:11:50 [error] [exception.CException] exception 'CException' with message 'Property "PF_Kinhnghiemlamviec. pf_ten_cong_viec" is not defined.' in D:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get(' pf_ten_cong_vi...')
+#1 D:\xampp\htdocs\yii\framework\validators\CRequiredValidator.php(58): CActiveRecord->__get(' pf_ten_cong_vi...')
+#2 D:\xampp\htdocs\yii\framework\validators\CValidator.php(201): CRequiredValidator->validateAttribute(Object(PF_Kinhnghiemlamviec), ' pf_ten_cong_vi...')
+#3 D:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(PF_Kinhnghiemlamviec), NULL)
+#4 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(808): CModel->validate(NULL)
+#5 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php(98): CActiveRecord->save()
+#6 [internal function]: PF_KinhnghiemlamviecController->actionUpdate('1')
+#7 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(PF_KinhnghiemlamviecController), Array)
+#8 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PF_KinhnghiemlamviecController), Object(ReflectionMethod), Array)
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#14 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_kinhnghiemla...')
+#15 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=1
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=1
+---
+2015/04/21 18:12:44 [error] [php] Undefined variable: temp (D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php:100)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_KinhnghiemlamviecController->runAction()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_KinhnghiemlamviecController->runActionWithFilters()
+#5 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_KinhnghiemlamviecController->run()
+#6 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=1
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php (100)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/21 18:13:48 [error] [exception.CException] exception 'CException' with message 'Property "PF_Kinhnghiemlamviec. pf_ten_cong_viec" is not defined.' in D:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get(' pf_ten_cong_vi...')
+#1 D:\xampp\htdocs\yii\framework\validators\CRequiredValidator.php(58): CActiveRecord->__get(' pf_ten_cong_vi...')
+#2 D:\xampp\htdocs\yii\framework\validators\CValidator.php(201): CRequiredValidator->validateAttribute(Object(PF_Kinhnghiemlamviec), ' pf_ten_cong_vi...')
+#3 D:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(PF_Kinhnghiemlamviec), NULL)
+#4 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(808): CModel->validate(NULL)
+#5 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php(98): CActiveRecord->save()
+#6 [internal function]: PF_KinhnghiemlamviecController->actionUpdate('1')
+#7 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(PF_KinhnghiemlamviecController), Array)
+#8 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PF_KinhnghiemlamviecController), Object(ReflectionMethod), Array)
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#14 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_kinhnghiemla...')
+#15 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=1
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=1
+---
+2015/04/21 18:14:35 [error] [exception.CException] exception 'CException' with message 'Property "PF_Kinhnghiemlamviec. pf_ten_cong_viec" is not defined.' in D:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get(' pf_ten_cong_vi...')
+#1 D:\xampp\htdocs\yii\framework\validators\CRequiredValidator.php(58): CActiveRecord->__get(' pf_ten_cong_vi...')
+#2 D:\xampp\htdocs\yii\framework\validators\CValidator.php(201): CRequiredValidator->validateAttribute(Object(PF_Kinhnghiemlamviec), ' pf_ten_cong_vi...')
+#3 D:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(PF_Kinhnghiemlamviec), NULL)
+#4 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(808): CModel->validate(NULL)
+#5 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php(98): CActiveRecord->save()
+#6 [internal function]: PF_KinhnghiemlamviecController->actionUpdate('1')
+#7 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(PF_KinhnghiemlamviecController), Array)
+#8 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PF_KinhnghiemlamviecController), Object(ReflectionMethod), Array)
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#14 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_kinhnghiemla...')
+#15 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=1
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=1
+---
+2015/04/21 18:14:46 [error] [exception.CException] exception 'CException' with message 'Property "PF_Kinhnghiemlamviec. pf_ten_cong_viec" is not defined.' in D:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get(' pf_ten_cong_vi...')
+#1 D:\xampp\htdocs\yii\framework\validators\CRequiredValidator.php(58): CActiveRecord->__get(' pf_ten_cong_vi...')
+#2 D:\xampp\htdocs\yii\framework\validators\CValidator.php(201): CRequiredValidator->validateAttribute(Object(PF_Kinhnghiemlamviec), ' pf_ten_cong_vi...')
+#3 D:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(PF_Kinhnghiemlamviec), NULL)
+#4 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(808): CModel->validate(NULL)
+#5 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php(98): CActiveRecord->save()
+#6 [internal function]: PF_KinhnghiemlamviecController->actionUpdate('1')
+#7 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(PF_KinhnghiemlamviecController), Array)
+#8 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PF_KinhnghiemlamviecController), Object(ReflectionMethod), Array)
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#14 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_kinhnghiemla...')
+#15 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=1
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=1
+---
+2015/04/21 18:22:31 [error] [php] Undefined variable: temp (D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php:100)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_KinhnghiemlamviecController->runAction()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_KinhnghiemlamviecController->runActionWithFilters()
+#5 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_KinhnghiemlamviecController->run()
+#6 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=5
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php (100)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/21 18:22:43 [error] [exception.CException] exception 'CException' with message 'Property "PF_Kinhnghiemlamviec. pf_chuc_vu" is not defined.' in D:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get(' pf_chuc_vu')
+#1 D:\xampp\htdocs\yii\framework\validators\CRequiredValidator.php(58): CActiveRecord->__get(' pf_chuc_vu')
+#2 D:\xampp\htdocs\yii\framework\validators\CValidator.php(201): CRequiredValidator->validateAttribute(Object(PF_Kinhnghiemlamviec), ' pf_chuc_vu')
+#3 D:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(PF_Kinhnghiemlamviec), NULL)
+#4 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(808): CModel->validate(NULL)
+#5 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php(98): CActiveRecord->save()
+#6 [internal function]: PF_KinhnghiemlamviecController->actionUpdate('5')
+#7 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(PF_KinhnghiemlamviecController), Array)
+#8 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PF_KinhnghiemlamviecController), Object(ReflectionMethod), Array)
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#14 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_kinhnghiemla...')
+#15 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=5
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=5
+---
+2015/04/21 18:22:57 [error] [php] Undefined variable: temp (D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php:100)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_KinhnghiemlamviecController->runAction()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_KinhnghiemlamviecController->runActionWithFilters()
+#5 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_KinhnghiemlamviecController->run()
+#6 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=5
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php (100)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/21 18:25:03 [error] [php] Undefined variable: temp (D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php:100)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_KinhnghiemlamviecController->runAction()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_KinhnghiemlamviecController->runActionWithFilters()
+#5 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_KinhnghiemlamviecController->run()
+#6 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=5
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php (100)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/21 18:38:22 [error] [php] Undefined variable: temp (D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php:100)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_KinhnghiemlamviecController->runAction()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_KinhnghiemlamviecController->runActionWithFilters()
+#5 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_KinhnghiemlamviecController->run()
+#6 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=5
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php (100)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/21 18:39:39 [error] [php] Undefined variable: temp (D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php:100)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_KinhnghiemlamviecController->runAction()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_KinhnghiemlamviecController->runActionWithFilters()
+#5 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_KinhnghiemlamviecController->run()
+#6 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_kinhnghiemlamviec/update&id=5
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_KinhnghiemlamviecController.php (100)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/22 04:06:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request " pf_muctieunghenghiep/create".' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController(' pf_muctieunghe...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=%20pf_muctieunghenghiep/create
+---
+2015/04/22 05:58:34 [error] [php] Undefined variable: l (D:\xampp\htdocs\yii\SocialNetWork\protected\views\pF_Muctieunghenghiep\create.php:49)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CController.php(869): PF_MuctieunghenghiepController->renderFile()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(782): PF_MuctieunghenghiepController->renderPartial()
+#2 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_MuctieunghenghiepController.php(80): PF_MuctieunghenghiepController->render()
+#3 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PF_MuctieunghenghiepController->actionCreate()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_MuctieunghenghiepController->runAction()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PF_MuctieunghenghiepController->filterAccessControl()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_MuctieunghenghiepController->runActionWithFilters()
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_MuctieunghenghiepController->run()
+#13 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_muctieunghenghiep/create
+in D:\xampp\htdocs\yii\SocialNetWork\protected\views\pF_Muctieunghenghiep\create.php (49)
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_MuctieunghenghiepController.php (80)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/22 06:05:20 [error] [exception.CDbException] exception 'CDbException' with message 'Table "pf_kinhnghiemlamviec" does not have a column named "pf_ma_muc_tieu".' in D:\xampp\htdocs\yii\framework\db\schema\CDbCommandBuilder.php:697
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1540): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 D:\xampp\htdocs\yii\SocialNetWork\protected\views\pF_Muctieunghenghiep\create.php(77): CActiveRecord->findAllByAttributes(Array)
+#2 D:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#6 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_MuctieunghenghiepController.php(80): CController->render('create', Array)
+#7 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PF_MuctieunghenghiepController->actionCreate()
+#8 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#17 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_muctieunghen...')
+#18 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_muctieunghenghiep/create
+---
+2015/04/22 06:13:04 [error] [exception.CException] exception 'CException' with message 'Property "PF_Muctieunghenghiep.pf_ma_kinh_nghiem" is not defined.' in D:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pf_ma_kinh_nghi...')
+#1 D:\xampp\htdocs\yii\SocialNetWork\protected\views\pF_Muctieunghenghiep\view.php(51): CActiveRecord->__get('pf_ma_kinh_nghi...')
+#2 D:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\yii\SocialNetWork\protected\views\pF_Muctieunghenghiep\create.php(65): CController->renderPartial('view', Array)
+#6 D:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#8 D:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_MuctieunghenghiepController.php(80): CController->render('create', Array)
+#11 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PF_MuctieunghenghiepController->actionCreate()
+#12 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#21 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_muctieunghen...')
+#22 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#23 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_muctieunghenghiep/create
+---
+2015/04/22 06:14:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_muctieunghen...')
+#9 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_muctieunghenghiep/delete&id=3
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_muctieunghenghiep/create&temp=
+---
+2015/04/22 06:21:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_MuctieunghenghiepController.php:159
+Stack trace:
+#0 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_MuctieunghenghiepController.php(90): PF_MuctieunghenghiepController->loadModel('2')
+#1 [internal function]: PF_MuctieunghenghiepController->actionUpdate('2')
+#2 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(PF_MuctieunghenghiepController), Array)
+#3 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PF_MuctieunghenghiepController), Object(ReflectionMethod), Array)
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_muctieunghen...')
+#10 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_muctieunghenghiep/update&id=2
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_muctieunghenghiep/update&id=2
+---
+2015/04/22 06:21:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_MuctieunghenghiepController.php:159
+Stack trace:
+#0 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_MuctieunghenghiepController.php(90): PF_MuctieunghenghiepController->loadModel('2')
+#1 [internal function]: PF_MuctieunghenghiepController->actionUpdate('2')
+#2 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(PF_MuctieunghenghiepController), Array)
+#3 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PF_MuctieunghenghiepController), Object(ReflectionMethod), Array)
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pf_muctieunghen...')
+#10 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_muctieunghenghiep/update&id=2
+HTTP_REFERER=http://localhost:8080/yii/SocialNetWork/index.php?r=pf_muctieunghenghiep/create&temp=
+---
+2015/04/22 08:58:54 [error] [php] Array to string conversion (D:\xampp\htdocs\yii\framework\db\schema\CDbColumnSchema.php:146)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(809): PF_Muctieunghenghiep->insert()
+#1 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_MuctieunghenghiepController.php(74): PF_Muctieunghenghiep->save()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PF_MuctieunghenghiepController->actionCreate()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_MuctieunghenghiepController->runAction()
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_MuctieunghenghiepController->runActionWithFilters()
+#7 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_MuctieunghenghiepController->run()
+#8 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_muctieunghenghiep/create
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_MuctieunghenghiepController.php (74)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
+2015/04/22 08:59:09 [error] [php] Array to string conversion (D:\xampp\htdocs\yii\framework\db\schema\CDbColumnSchema.php:146)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(809): PF_Muctieunghenghiep->insert()
+#1 D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_MuctieunghenghiepController.php(74): PF_Muctieunghenghiep->save()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PF_MuctieunghenghiepController->actionCreate()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PF_MuctieunghenghiepController->runAction()
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(265): PF_MuctieunghenghiepController->runActionWithFilters()
+#7 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PF_MuctieunghenghiepController->run()
+#8 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\yii\SocialNetWork\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/SocialNetWork/index.php?r=pf_muctieunghenghiep/create
+in D:\xampp\htdocs\yii\SocialNetWork\protected\controllers\PF_MuctieunghenghiepController.php (74)
+in D:\xampp\htdocs\yii\SocialNetWork\index.php (13)
