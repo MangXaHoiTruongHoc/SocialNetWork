@@ -7,6 +7,7 @@ $this->menu= array(
      array('label'=>'Thông tin bổ sung', 'url'=>array('pf_ttbsnguoidung/create')),
      array('label'=>'Tốt nghiệp', 'url'=>array('pf_totnghiep/create')),
      array('label'=>'Ngoại ngữ', 'url'=>array('pf_ngoaingu/create')),
+     array('label'=>'Giải thưởng', 'url'=>array('pf_giaithuong/create')),
      array('label'=>'Kỹ năng', 'url'=>array('pf_kynang/create')),
       array('label'=>'Hoạt động học tập', 'url'=>array('pf_hoatdonghoctap/create')),
      array('label'=>'Hoạt động ngoại khóa', 'url'=>array('pf_hoatdongngoaikhoa/create')),

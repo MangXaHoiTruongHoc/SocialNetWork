@@ -70,6 +70,7 @@ class PF_MuctieunghenghiepController extends Controller
 		if(isset($_POST['PF_Muctieunghenghiep']))
 		{
 			$model->attributes=$_POST['PF_Muctieunghenghiep'];
+			// var_dump($model->pf_noi_lam_viec);die;
 			$model->ma_tai_khoan = yii::app()->session['ma_tai_khoan'];
 			if($model->save())
 				$this->redirect(array('create'));

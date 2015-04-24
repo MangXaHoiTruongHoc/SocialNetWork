@@ -176,8 +176,16 @@ class PF_HoatdongngoaikhoaController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
 
+		$this->loadModel($id)->delete();
+		$image = PF_Hinhanhhdnk::model()->findallByAttributes(array('pf_ma_hdnk'=>$id));
+		// var_dump($image);die;
+		foreach ($image as $key => $value) {
+			 // $deleteimg=PF_Hinhanhhdnk::model()->find($value->pf_ma_hinh_anh_hdnk); 
+    		$value->delete();
+			
+
+		}
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

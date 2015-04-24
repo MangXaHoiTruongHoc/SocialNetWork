@@ -120,6 +120,9 @@ class PF_GioihanController extends Controller
 			if(isset($_POST['tt_mtnghenghiep'])){
 				$model->pf_tt_mtnghenghiep = $_POST['tt_mtnghenghiep'];
 			}
+			if(isset($_POST['tt_giaithuong'])){
+				$model->pf_tt_giaithuong = $_POST['tt_giaithuong'];
+			}
 			if($model->save()){
 
 			}

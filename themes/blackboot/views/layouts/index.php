@@ -110,7 +110,7 @@
                                                 $key->hinh_dai_dien;
                                             }
                                         ?>
-                                        <img style="width:30px;heigth:30px;" src="<?php echo Yii::app()->baseUrl; ?>/upload/<?php echo $key->hinh_dai_dien?>"
+                                        <img style="width:30px;heigth:30px;" src="<?php echo Yii::app()->baseUrl; ?>/upload/avarta/<?php echo $key->hinh_dai_dien?>"
                                         alt="user" class="img-circle">
                                     </span>
                                     <?php echo($key->ho_ten) ?> <b class="caret"></b>
@@ -212,7 +212,7 @@
                                             }
                                     ?>
                                     <a href="index.php?r=taikhoan/about">
-                                        <img src="<?php echo Yii::app()->baseUrl; ?>/upload/<?php echo $pf->hinh_dai_dien?>"
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/upload/avarta/<?php echo $pf->hinh_dai_dien?>"
                                         width="120" alt="" class="img-circle">
                                     </a>
                                     <h2 class="strong margin-none"><?php echo $pf->ho_ten ?></h2>

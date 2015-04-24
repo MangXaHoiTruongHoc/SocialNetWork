@@ -109,6 +109,7 @@ class TaikhoanController extends Controller
                 $gioihan->pf_tt_hdngoaikhoa = 0;
                 $gioihan->pf_tt_knlamviec = 0;
                 $gioihan->pf_tt_mtnghenghiep = 0;
+                $gioihan->pf_tt_giaithuong=0;
                 $gioihan->save();
 				$this->redirect(array('//site/login'));
 			}
@@ -167,15 +168,25 @@ class TaikhoanController extends Controller
 
 		if(isset($_POST['Taikhoan']))
 		{
-		    $_POST['Taikhoan']['hinh_dai_dien'] = $model->hinh_dai_dien;
+		   // $_POST['Taikhoan']['hinh_dai_dien'] = $model->hinh_dai_dien;
            
+           	
 			$model->attributes=$_POST['Taikhoan'];
             $uploadFile = CUploadedFile::getInstance($model,'hinh_dai_dien');
             $model->hinh_dai_dien = $uploadFile;
+            // Thực hiện delete image đã có trong file upload
+            if(!empty($uploadFile)){
+            	 	$imagename = Taikhoan::model()->findAllByAttributes(array('ma_tai_khoan'=>yii::app()->session['ma_tai_khoan']));
+	           		foreach ($imagename as $key ) {
+	           			$key->hinh_dai_dien;
+	           		}
+				    unlink(getcwd()."/upload/avarta/".$key->hinh_dai_dien);	
+            }
 			if($model->save()){
 			  
 			     if(!empty($uploadFile)){
-			         $uploadFile->saveAs(Yii::app()->basePath.'/../upload/'.$model->hinh_dai_dien);
+			    
+			        $uploadFile->saveAs(Yii::app()->basePath.'/../upload/avarta/'.$model->hinh_dai_dien);
 			     }
                  $temp="";                                  
 				 $this->redirect(array('create','temp'=>$temp));

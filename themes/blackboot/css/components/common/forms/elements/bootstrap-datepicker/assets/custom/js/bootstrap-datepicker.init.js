@@ -8,7 +8,7 @@ $(function()
 	// default
 	$(".datepicker1").bdatepicker({
 		format: 'yyyy-mm-dd',
-		startDate: "2013-02-14"
+		startDate: "1990-01-01"
 	});
 
 

@@ -117,7 +117,7 @@ $this->pageTitle=Yii::app()->name;
         ?>
         <div class="media border-bottom margin-none bg-gray">
             <a href="" class="pull-left innerAll half">
-                <img style="width:50px!important;height:50px!important"  src="<?php echo Yii::app()->baseUrl; ?>/upload/<?php echo $tk->hinh_dai_dien?>"
+                <img style="width:50px!important;height:50px!important"  src="<?php echo Yii::app()->baseUrl; ?>/upload/avarta/<?php echo $tk->hinh_dai_dien?>"
 
                 class="media-object">
             </a>

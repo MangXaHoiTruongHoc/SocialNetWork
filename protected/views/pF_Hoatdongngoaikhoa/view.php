@@ -12,29 +12,15 @@ $this->menu= array(
      array('label'=>'Thông tin bổ sung', 'url'=>array('pf_ttbsnguoidung/create')),
      array('label'=>'Tốt nghiệp', 'url'=>array('pf_totnghiep/create')),
      array('label'=>'Ngoại ngữ', 'url'=>array('pf_ngoaingu/create')),
+     array('label'=>'Giải thưởng', 'url'=>array('pf_giaithuong/create')),
      array('label'=>'Kỹ năng', 'url'=>array('pf_kynang/create')),
      array('label'=>'Hoạt động học tập', 'url'=>array('pf_hoatdonghoctap/create')),
      array('label'=>'Hoạt động ngoại khóa', 'url'=>array('pf_hoatdongngoaikhoa/create')),
      array('label'=>'Kinh nghiệm làm việc', 'url'=>array('pf_kinhnghiemlamviec/create')),
      array('label'=>'Mục tiêu nghề nghiệp', 'url'=>array('pf_muctieunghenghiep/create')),
-     );
+     ); 
      
 ?>
-
-
-
-	<?php /*$this->widget('zii.widgets.CDetailView', array(
-		'data'=>$model,
-		'attributes'=>array(
-			'pf_ma_hdnk',
-			'pf_ten_hoat_dong',
-			'pf_ngay_bat_dau',
-			'pf_ngay_ket_thuc',
-			'pf_vai_tro',
-			'pf_mo_ta',
-			'ma_tai_khoan',
-		),
-	));*/ ?>
 <div class="widget hdnk<?php echo $model->pf_ma_hdnk ?>">
 	<table class="table">
 		<tbody>
