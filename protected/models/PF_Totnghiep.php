@@ -34,6 +34,7 @@ class PF_Totnghiep extends CActiveRecord
 			array('pf_ma_ket_qua_tn, ma_tai_khoan, pf_ma_chuyen_nganh', 'numerical', 'integerOnly'=>true),
 			array('pf_ten_truong_tn', 'length', 'max'=>200),
 			array('pf_ngay_bat_dau, pf_ngay_ket_thuc', 'length', 'max'=>10),
+			array('pf_ngay_ket_thuc','compare','compareAttribute'=>'pf_ngay_bat_dau','operator'=>'>', 'allowEmpty'=>false , 'message'=>'{attribute} phải lớn hơn "{compareValue}".'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('pf_ma_tn, pf_ten_truong_tn, pf_ngay_bat_dau, pf_ngay_ket_thuc, pf_ma_ket_qua_tn, ma_tai_khoan, pf_ma_chuyen_nganh', 'safe', 'on'=>'search'),

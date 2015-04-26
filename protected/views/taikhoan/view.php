@@ -33,7 +33,7 @@ $this->menu= array(
 ?>
 
 
-
+<div id="taget">
 <?php 
 
 $this->widget('zii.widgets.CDetailView', array(
@@ -56,3 +56,4 @@ $this->widget('zii.widgets.CDetailView', array(
 	   	//'ngay_tao',
 	),
 )); ?>
+</div>

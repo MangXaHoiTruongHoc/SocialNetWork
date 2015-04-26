@@ -72,7 +72,9 @@ class PF_DanhgiahosoController extends Controller
 			$model->attributes=$_POST['PF_Danhgiahoso'];
 			$model->ma_tai_khoan = yii::app()->session['matk2'];
 			if($model->save())
-				$this->redirect(array('//pf_kynang/create'));
+				// Chuyen ve trang hien tai
+				$this->redirect(Yii::app()->request->urlReferrer);
+				
 		}
 
 		/*$this->render('create',array(

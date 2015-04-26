@@ -34,6 +34,7 @@ class PF_Hoatdongngoaikhoa extends CActiveRecord
 			array('ma_tai_khoan', 'numerical', 'integerOnly'=>true),
 			array('pf_ngay_bat_dau, pf_ngay_ket_thuc', 'length', 'max'=>10),
 			array('pf_vai_tro', 'length', 'max'=>50),
+			array('pf_ngay_ket_thuc','compare','compareAttribute'=>'pf_ngay_bat_dau','operator'=>'>', 'allowEmpty'=>false , 'message'=>'{attribute} phải lớn hơn "{compareValue}".'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('pf_ma_hdnk, pf_ten_hoat_dong, pf_ngay_bat_dau, pf_ngay_ket_thuc, pf_vai_tro, pf_mo_ta, ma_tai_khoan', 'safe', 'on'=>'search'),
