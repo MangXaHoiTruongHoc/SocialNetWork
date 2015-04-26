@@ -32,6 +32,7 @@
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/less-js/less.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/modules/admin/charts/flot/assets/lib/excanvas.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/browser/ie/ie.prototype.polyfill.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script type="text/javascript" src="/yii/SocialNetWork/assets/socialajax/check_email.js"></script>
     <script>
     if ( /*@cc_on!@*/ false && document.documentMode === 10)
     {
@@ -106,7 +107,8 @@
                                                                                      <div class="form-group">
                                                                                         <?php echo $form->labelEx($model,'email',array('class'=>'col-md-4 control-label')); ?>
                                                                                         <div class='col-md-6'>
-                                                                                        <?php echo $form->emailField($model,'email',array('class'=>'form-control','size'=>50,'maxlength'=>50)); ?>
+                                                                                        <?php echo $form->emailField($model,'email',array('class'=>'form-control','id'=>'email','size'=>50,'maxlength'=>50)); ?>
+                                                                                        <span id ="available"></span>
                                                                                         </div>
                                                                                         <?php echo $form->error($model,'email'); ?>
                                                                                     </div>
@@ -114,7 +116,7 @@
                                                                                     <div class="form-group">
                                                                                         <?php echo $form->labelEx($model,'ho_ten',array('class'=>'col-md-4 control-label')); ?>
                                                                                         <div class='col-md-6'>
-                                                                                        <?php echo $form->textField($model,'ho_ten',array('class'=>'form-control','size'=>50,'maxlength'=>50)); ?>
+                                                                                        <?php echo $form->textField($model,'ho_ten',array('class'=>'form-control','size'=>50,'maxlength'=>50,'required'=>'true')); ?>
                                                                                         </div>
                                                                                         <?php echo $form->error($model,'ho_ten'); ?>
                                                                                     </div>
@@ -122,7 +124,7 @@
                                                                                     <div class="form-group">
                                                                                         <?php echo $form->labelEx($model,'ngay_sinh',array('class'=>'col-md-4 control-label')); ?>
                                                                                         <div class='col-md-6'>
-                                                                                        <?php echo $form->textField($model,'ngay_sinh',array('class'=>'form-control datepicker1','size'=>10,'maxlength'=>10)); ?>
+                                                                                        <?php echo $form->textField($model,'ngay_sinh',array('class'=>'form-control datepicker1','size'=>10,'maxlength'=>10,'required'=>'true')); ?>
                                                                                         </div>
                                                                                         <?php echo $form->error($model,'ngay_sinh'); ?>
                                                                                     </div>
@@ -160,18 +162,11 @@
                                                                                     <div class="form-group ">
                                                                                         <?php echo $form->labelEx($model,'mat_khau',array('class'=>'col-md-4 control-label')); ?>
                                                                                         <div class='col-md-6 border-none'>
-                                                                                        <?php echo $form->passwordField($model,'mat_khau',array('class'=>'form-control','size'=>32,'maxlength'=>32)); ?>
+                                                                                        <?php echo $form->passwordField($model,'mat_khau',array('class'=>'form-control','size'=>32,'maxlength'=>32,'required'=>'true')); ?>
                                                                                         </div>
                                                                                         <?php echo $form->error($model,'mat_khau'); ?>
                                                                                     </div>
 
-                                                                                    <div class="form-group">
-                                                                                        <?php echo $form->labelEx($model,'ngay_tao',array('class'=>'col-md-4 control-label')); ?>
-                                                                                        <div class='col-md-6'>
-                                                                                        <?php echo $form->dateField($model,'ngay_tao',array('class'=>'form-control','size'=>10,'maxlength'=>10)); ?>
-                                                                                        </div>
-                                                                                        <?php echo $form->error($model,'ngay_tao'); ?>
-                                                                                    </div>
                                                                                     <div class="form-group">
                                                                                         <div class="col-sm-offset-4 col-sm-10">
                                                                                             <button type="submit" class="btn btn-primary">Đăng Kí</button>

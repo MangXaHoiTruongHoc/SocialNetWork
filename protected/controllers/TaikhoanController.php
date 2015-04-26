@@ -92,12 +92,38 @@ class TaikhoanController extends Controller
 		    // Thực hiện upload ảnh .
             $random = rand(0,9999); 
 			$model->attributes=$_POST['Taikhoan'];
+			$model->ngay_tao = new CDbExpression('NOW()');
             $uploadFile=CUploadedFile::getInstance($model,'hinh_dai_dien');
             $fileName = "{$random}-{$uploadFile}";
             $model->hinh_dai_dien = $fileName;
 			if($model->save()){
                 $uploadFile->saveAs(Yii::app()->basePath.'/../upload/'.$fileName);
+                $gioihan = new PF_gioihan;
+                $gioihan->ma_tai_khoan = $model->ma_tai_khoan;
+                $gioihan->pf_tt_totnghiep = 0;
+                $gioihan->pf_tt_taikhoan = 0;
+                $gioihan->pf_tt_ttbs = 0;
+                $gioihan->pf_tt_ngoaingu = 0;
+                $gioihan->pf_tt_kynang = 0;
+                $gioihan->pf_tt_hdhoctap = 0;
+                $gioihan->pf_tt_hdngoaikhoa = 0;
+                $gioihan->pf_tt_knlamviec = 0;
+                $gioihan->pf_tt_mtnghenghiep = 0;
+                $gioihan->pf_tt_giaithuong=0;
+                $gioihan->save();
 				$this->redirect(array('//site/login'));
+			}
+		}
+	}
+	public function actionCheckemail(){
+		if(isset($_POST['email'])){
+			$email = Taikhoan::model()->findAllByAttributes(array('email'=>$_POST['email']));
+			$count = count($email);
+			
+			if($count > 0){
+				echo "NO";
+			}else{
+				echo "YES";
 			}
 		}
 	}
@@ -107,14 +133,14 @@ class TaikhoanController extends Controller
             $email = Yii::app()->session['email'];
             if(isset($email)){
             // Thực hiện lấy mã tài khoản của người dùng khi đăng nhập vào
-            $taikhoan = Taikhoan::model()->findAllByAttributes(array('email'=>$email)); 
+            //$taikhoan = Taikhoan::model()->findAllByAttributes(array('email'=>$email)); 
             /*$taikhoan = Taikhoan::model()->findAll(array('condition'=>'email LIKE :email',
             'params'=>array(':email'=>"%$email%")));*/
-                foreach($taikhoan as $tk){
+               /* foreach($taikhoan as $tk){
                       $tk->ma_tai_khoan;
-                }
+                }*/
             // Lưu mã tài khoản vào session['ma_tai_khoan']
-            Yii::app()->session['ma_tai_khoan'] = $tk->ma_tai_khoan;
+           // Yii::app()->session['ma_tai_khoan'] = $tk->ma_tai_khoan;
             $model = new Taikhoan;
             $matk = Yii::app()->session['ma_tai_khoan'];
             if(isset(yii::app()->session['matk2'])){
@@ -142,15 +168,25 @@ class TaikhoanController extends Controller
 
 		if(isset($_POST['Taikhoan']))
 		{
-		    $_POST['Taikhoan']['hinh_dai_dien'] = $model->hinh_dai_dien;
+		   // $_POST['Taikhoan']['hinh_dai_dien'] = $model->hinh_dai_dien;
            
+           	
 			$model->attributes=$_POST['Taikhoan'];
             $uploadFile = CUploadedFile::getInstance($model,'hinh_dai_dien');
             $model->hinh_dai_dien = $uploadFile;
+            // Thực hiện delete image đã có trong file upload
+            if(!empty($uploadFile)){
+            	 	$imagename = Taikhoan::model()->findAllByAttributes(array('ma_tai_khoan'=>yii::app()->session['ma_tai_khoan']));
+	           		foreach ($imagename as $key ) {
+	           			$key->hinh_dai_dien;
+	           		}
+				    unlink(getcwd()."/upload/avarta/".$key->hinh_dai_dien);	
+            }
 			if($model->save()){
 			  
 			     if(!empty($uploadFile)){
-			         $uploadFile->saveAs(Yii::app()->basePath.'/../upload/'.$model->hinh_dai_dien);
+			    
+			        $uploadFile->saveAs(Yii::app()->basePath.'/../upload/avarta/'.$model->hinh_dai_dien);
 			     }
                  $temp="";                                  
 				 $this->redirect(array('create','temp'=>$temp));

@@ -34,10 +34,10 @@ class PF_Gioihan extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('pf_tt_totnghiep, pf_tt_taikhoan, pf_tt_ttbs, pf_tt_ngoaingu, pf_tt_kynang, pf_tt_hdhoctap, pf_tt_hdngoaikhoa, pf_tt_knlamviec, pf_tt_mtnghenghiep, ma_tai_khoan', 'numerical', 'integerOnly'=>true),
+			array('pf_tt_totnghiep, pf_tt_taikhoan, pf_tt_ttbs, pf_tt_ngoaingu, pf_tt_kynang, pf_tt_hdhoctap, pf_tt_hdngoaikhoa, pf_tt_knlamviec,pf_tt_giaithuong ,pf_tt_mtnghenghiep, ma_tai_khoan', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('pf_ma_trangthai, pf_tt_totnghiep, pf_tt_taikhoan, pf_tt_ttbs, pf_tt_ngoaingu, pf_tt_kynang, pf_tt_hdhoctap, pf_tt_hdngoaikhoa, pf_tt_knlamviec, pf_tt_mtnghenghiep, ma_tai_khoan', 'safe', 'on'=>'search'),
+			array('pf_ma_trangthai, pf_tt_totnghiep, pf_tt_taikhoan, pf_tt_ttbs, pf_tt_ngoaingu, pf_tt_kynang, pf_tt_hdhoctap, pf_tt_hdngoaikhoa, pf_tt_knlamviec,pf_tt_giaithuong, pf_tt_mtnghenghiep, ma_tai_khoan', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,6 +68,7 @@ class PF_Gioihan extends CActiveRecord
 			'pf_tt_hdngoaikhoa' => 'Pf Tt Hdngoaikhoa',
 			'pf_tt_knlamviec' => 'Pf Tt Knlamviec',
 			'pf_tt_mtnghenghiep' => 'Pf Tt Mtnghenghiep',
+			'pf_tt_giaithuong'=>'Giải thưởng',
 			'ma_tai_khoan' => 'Ma Tai Khoan',
 		);
 	}

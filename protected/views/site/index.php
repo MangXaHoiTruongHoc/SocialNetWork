@@ -13,7 +13,7 @@ $this->pageTitle=Yii::app()->name;
     ?>
 	 <!-- Widget -->
     <div class="widget gridalicious-item not-responsive">
-        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/photodune-2755655-party-time-s.jpg" alt="" class="img-responsive"
+        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/dhkt/status.jpg" alt="" class="img-responsive"
         />
         <div class="ribbon-wrapper">
             <div class="ribbon primary"><i class="fa fa-fw fa-star-o "></i>
@@ -69,17 +69,17 @@ $this->pageTitle=Yii::app()->name;
             <p class="lead ">Important text goes in this line!</p>
             <div class="innerB">
                 <a href="">
-                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/social/100/1.jpg"
+                    <img style="width:100px!important;height:100px!important" src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/dhkt/sinhvien1.jpg"
                     alt="" class="img-post display-block-inline"
                     />
                 </a>
                 <a href="">
-                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/social/100/2.jpg"
+                    <img  style="width:100px!important;height:100px!important"  src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/dhkt/sv2.jpg"
                     alt="" class="img-post display-block-inline"
                     />
                 </a>
                 <a href="">
-                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/social/100/3.jpg"
+                    <img  style="width:100px!important;height:100px!important"  src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/dhkt/sv3.jpg"
                     alt="" class="img-post display-block-inline"
                     />
                 </a>
@@ -111,13 +111,17 @@ $this->pageTitle=Yii::app()->name;
         </div>
         <!-- First Comment -->
         <?php
-        $nguoidung = Taikhoan::model()->findall();
+        // Lấy mã tài khoản để thực hiện truy vấn không hiển thị tên người đang sử dụng tài khoản.
+        $mtk = yii::app()->session['ma_tai_khoan'];
+        $nguoidung = Taikhoan::model()->findall(array('condition'=>'ma_tai_khoan NOT IN (:matk)','params'=>array(':matk'=>$mtk)));
+        // end truy vấn
         foreach ($nguoidung as $tk ) {
         	
         ?>
+
         <div class="media border-bottom margin-none bg-gray">
             <a href="" class="pull-left innerAll half">
-                <img style="width:50px!important;height:50px!important"  src="<?php echo Yii::app()->baseUrl; ?>/upload/<?php echo $tk->hinh_dai_dien?>"
+                <img style="width:50px!important;height:50px!important"  src="<?php echo Yii::app()->baseUrl; ?>/upload/avarta/<?php echo $tk->hinh_dai_dien?>"
 
                 class="media-object">
             </a>
@@ -697,17 +701,17 @@ $this->pageTitle=Yii::app()->name;
         <div class="innerAll">
             <p class="lead">Late Night Show Photos</p>
             <a href="">
-                <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/social/100/1.jpg"
+                <img style="width:100px!important;height:100px!important" src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/dhkt/sinhvien1.jpg"
                 alt="" class="img-post display-block-inline"
                 />
             </a>
             <a href="">
-                <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/social/100/2.jpg"
+                <img  style="width:100px!important;height:100px!important"  src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/dhkt/sv2.jpg"
                 alt="" class="img-post display-block-inline"
                 />
             </a>
             <a href="">
-                <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/social/100/3.jpg"
+                <img  style="width:100px!important;height:100px!important"  src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/dhkt/sv3.jpg"
                 alt="" class="img-post display-block-inline"
                 />
             </a>
@@ -827,7 +831,7 @@ $this->pageTitle=Yii::app()->name;
         </div>
         <!-- Content -->
         <a href="">
-            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/photodune-2755655-party-time-s.jpg"
+            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/dhkt/status.jpg"
             alt="" class="img-responsive">
         </a>
         <!-- Comment -->
@@ -861,7 +865,7 @@ $this->pageTitle=Yii::app()->name;
     <!-- Widget -->
     <div class="widget gridalicious-item not-responsive">
         <a href="">
-            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/photodune-6374531-at-celebration-xs.jpg"
+            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/dhkt/status.jpg"
             alt="" class="img-responsive">
         </a>
         <!-- Info -->
@@ -904,6 +908,7 @@ $this->pageTitle=Yii::app()->name;
         </div>
     </div>
 <!-- //End Widget -->
+
 <?php
 }
 ?>

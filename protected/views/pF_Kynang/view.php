@@ -10,16 +10,17 @@
 //  array('label'=>'Manage PF_Kynang', 'url'=>array('admin')),
 //);
 $this->menu= array(
-     array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/create')),
-     array('label'=>'Thông Tin Bổ Sung', 'url'=>array('pf_ttbsnguoidung/create')),
-     array('label'=>'Tốt Nghiệp', 'url'=>array('pf_totnghiep/create')),
-     array('label'=>'Ngoại Ngữ', 'url'=>array('#')),
-     array('label'=>'Kỹ Năng', 'url'=>array('pf_kynang/create')),
-     array('label'=>'Hoạt Động Học Tập', 'url'=>array('#')),
-     array('label'=>'Hoạt Động Ngoại Khóa', 'url'=>array('#')),
-     array('label'=>'Kinh Nghiệm Làm Việc', 'url'=>array('#')),
-     array('label'=>'Mục Tiêu Nghề Nghiệp', 'url'=>array('#')),
-     );
+     array('label'=>'Thông tin người dùng', 'url'=>array('taikhoan/create')),
+     array('label'=>'Thông tin bổ sung', 'url'=>array('pf_ttbsnguoidung/create')),
+     array('label'=>'Tốt nghiệp', 'url'=>array('pf_totnghiep/create')),
+     array('label'=>'Ngoại ngữ', 'url'=>array('pf_ngoaingu/create')),
+     array('label'=>'Giải thưởng', 'url'=>array('pf_giaithuong/create')),
+     array('label'=>'Kỹ năng', 'url'=>array('pf_kynang/create')),
+      array('label'=>'Hoạt động học tập', 'url'=>array('pf_hoatdonghoctap/create')),
+     array('label'=>'Hoạt động ngoại khóa', 'url'=>array('pf_hoatdongngoaikhoa/create')),
+     array('label'=>'Kinh nghiệm làm việc', 'url'=>array('pf_kinhnghiemlamviec/create')),
+     array('label'=>'Mục tiêu nghề nghiệp', 'url'=>array('pf_muctieunghenghiep/create')),
+     ); 
 ?>
 
 

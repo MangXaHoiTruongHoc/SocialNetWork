@@ -40,6 +40,7 @@
         document.documentElement.className += ' ie ie10';
     }
     </script>
+    <script type="text/javascript" src="/yii/SocialNetWork/assets/socialajax/jquery.multifile.js"></script>
     <script type="text/javascript" src="/yii/SocialNetWork/assets/socialajax/socialajax.js"></script>
 </head>
 <body class=" menu-right-hidden">
@@ -66,7 +67,7 @@
                         </button>
                         <a class="navbar-brand" href="index.php">
                             <img src="<?php echo Yii::app()->theme->baseUrl; ?>/css//images/logo/dhkt.jpg" alt="" style="width:40px">
-                            <b style="margin-left:7px">Mạng Xã Hội Trường Học</b>
+                            <b style="margin-left:7px;font-size:15px">MẠNG XÃ HỘI TRƯỜNG ĐẠI HỌC KINH TẾ</b>
                         </a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -109,7 +110,7 @@
                                                 $key->hinh_dai_dien;
                                             }
                                         ?>
-                                        <img style="width:30px;heigth:30px;" src="<?php echo Yii::app()->baseUrl; ?>/upload/<?php echo $key->hinh_dai_dien?>"
+                                        <img style="width:30px;heigth:30px;" src="<?php echo Yii::app()->baseUrl; ?>/upload/avarta/<?php echo $key->hinh_dai_dien?>"
                                         alt="user" class="img-circle">
                                     </span>
                                     <?php echo($key->ho_ten) ?> <b class="caret"></b>
@@ -144,7 +145,7 @@
                             <div class="timeline-cover">
                                 <div class="cover">
                                     <div class="top">
-                                        <img style="width:851px;height:250px"src="<?php echo Yii::app()->theme->baseUrl; ?>/css//images/photodune-5765965-idea-concept-xs.jpg" class="img-responsive"
+                                        <img style="width:851px;height:250px"src="<?php echo Yii::app()->theme->baseUrl; ?>/css/images/dhkt/cover.jpg" class="img-responsive"
                                         />
                                     </div>
                                     <!-- <ul class="list-unstyled">
@@ -211,14 +212,14 @@
                                             }
                                     ?>
                                     <a href="index.php?r=taikhoan/about">
-                                        <img src="<?php echo Yii::app()->baseUrl; ?>/upload/<?php echo $pf->hinh_dai_dien?>"
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/upload/avarta/<?php echo $pf->hinh_dai_dien?>"
                                         width="120" alt="" class="img-circle">
                                     </a>
                                     <h2 class="strong margin-none"><?php echo $pf->ho_ten ?></h2>
-                                    <div class="innerB">Working at MOSAICPRO</div>
-                                    <div class="btn-group-vertical btn-block">
+                                    <div class="innerB">Đang học tại đại học kinh tế đà nẵng</div>
+                                    <!-- <div class="btn-group-vertical btn-block">
                                         <a href="" class="btn btn-primary text-center "><i class="fa fa-cog pull-right"></i>Logout</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="widget">
@@ -342,7 +343,7 @@
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/library/bootstrap/js/bootstrap.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/nicescroll/jquery.nicescroll.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/breakpoints/breakpoints.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
-    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/preload/pace/pace.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+   <!-- <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/preload/pace/pace.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>-->
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/menus/sidr/jquery.sidr.js?v=v1.0.1-rc2"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/modules/admin/twitter/assets/js/twitter.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/holder/holder.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
@@ -359,5 +360,17 @@
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/bootstrap-switch/assets/lib/js/bootstrap-switch.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/bootstrap-switch/assets/custom/js/bootstrap-switch.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/fuelux-checkbox/fuelux-checkbox.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/uniform/assets/custom/js/uniform.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/gallery/blueimp-gallery/assets/lib/js/blueimp-gallery.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/gallery/blueimp-gallery/assets/lib/js/jquery.blueimp-gallery.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/select2/assets/lib/js/select2.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/select2/assets/custom/js/select2.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/tables/datatables/assets/lib/js/jquery.dataTables.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/tables/datatables/assets/lib/extras/TableTools/media/js/TableTools.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/tables/datatables/assets/lib/extras/ColVis/media/js/ColVis.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/tables/datatables/assets/custom/js/DT_bootstrap.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/tables/datatables/assets/custom/js/datatables.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/bootstrap-select/assets/lib/js/bootstrap-select.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+
 </body>
 </html>

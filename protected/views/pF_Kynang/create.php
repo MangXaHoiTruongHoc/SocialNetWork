@@ -3,43 +3,47 @@
 /* @var $model PF_Kynang */
 
 $this->menu= array(
-     array('label'=>'Thông Tin Người Dùng', 'url'=>array('taikhoan/create')),
-     array('label'=>'Thông Tin Bổ Sung', 'url'=>array('pf_ttbsnguoidung/create')),
-     array('label'=>'Tốt Nghiệp', 'url'=>array('pf_totnghiep/create')),
-     array('label'=>'Ngoại Ngữ', 'url'=>array('#')),
-     array('label'=>'Kỹ Năng', 'url'=>array('pf_kynang/create')),
-     array('label'=>'Hoạt Động Học Tập', 'url'=>array('#')),
-     array('label'=>'Hoạt Động Ngoại Khóa', 'url'=>array('#')),
-     array('label'=>'Kinh Nghiệm Làm Việc', 'url'=>array('#')),
-     array('label'=>'Mục Tiêu Nghề Nghiệp', 'url'=>array('#')),
-     );
-     $matk = yii::app()->session['ma_tai_khoan'];
+     array('label'=>'Thông tin người dùng', 'url'=>array('taikhoan/create')),
+     array('label'=>'Thông tin bổ sung', 'url'=>array('pf_ttbsnguoidung/create')),
+     array('label'=>'Tốt nghiệp', 'url'=>array('pf_totnghiep/create')),
+     array('label'=>'Ngoại ngữ', 'url'=>array('pf_ngoaingu/create')),
+     array('label'=>'Giải thưởng', 'url'=>array('pf_giaithuong/create')),
+     array('label'=>'Kỹ năng', 'url'=>array('pf_kynang/create')),
+      array('label'=>'Hoạt động học tập', 'url'=>array('pf_hoatdonghoctap/create')),
+     array('label'=>'Hoạt động ngoại khóa', 'url'=>array('pf_hoatdongngoaikhoa/create')),
+     array('label'=>'Kinh nghiệm làm việc', 'url'=>array('pf_kinhnghiemlamviec/create')),
+     array('label'=>'Mục tiêu nghề nghiệp', 'url'=>array('pf_muctieunghenghiep/create')),
+     ); 
+     
 ?>
         <?php
-        // lấy giới hạn kỹ năng
-        $gioihan1 = PF_Gioihan::model()->findAllByAttributes(array('ma_tai_khoan'=>yii::app()->session['ma_tai_khoan']));
-        foreach ($gioihan1 as $g ) {
-          $tt_kn = $g->pf_tt_kynang;
+        // Khởi tại biến matk người dùng
+        $matk = yii::app()->session['ma_tai_khoan'];
+         // Kiểm tra matk người xem.
+        if(isset(yii::app()->session['matk2'])){
+                    $matk = yii::app()->session['matk2'];
         }
         ?>
 
 <h3 style="margin-left:10px"> Kỹ Năng
     <?php
-         // Kiểm tra session nguoi xem de ẩn checkbox
-        if(!isset(yii::app()->session['matk2'])){
+      // lấy giới hạn kỹ năng
+        $gioihan1 = PF_Gioihan::model()->findAllByAttributes(array('ma_tai_khoan'=> $matk));
+        foreach ($gioihan1 as $g ) {
+          $tt_kn = $g->pf_tt_kynang;
+        }
+      // Kiểm tra session nguoi xem de ẩn checkbox
+      if(!isset(yii::app()->session['matk2'])){
       ?>  
       <div class="make-switch" data-on="success" data-off="default" style="float:right">
-      <input id="<?php echo (yii::app()->session['ma_tai_khoan'])?>"   class='gioihan1' type="checkbox" name="tt_kynang"  value="<?php echo $tt_kn; ?>" <?php echo $tt_kn == 1 ? "checked": ""; ?> > 
+      <input id="<?php echo ($matk)?>"   class='gioihan1' type="checkbox" name="tt_kynang"  value="<?php echo $tt_kn; ?>" <?php echo $tt_kn == 1 ? "checked": ""; ?> > 
       </div>  
       <?php
       }
       ?>   
 </h3>
 <?php
-    // Kiểm tra matk người xem.
-    if(isset(yii::app()->session['matk2'])){
-                $matk = yii::app()->session['matk2'];
-    }
+   
     $kynang = PF_Kynang::model()->findAll(array('condition'=>'ma_tai_khoan = :matk','params'=>array(':matk'=>$matk)));
 
     if($tt_kn==0){// kiểm tra checkbox đc check chưa.
@@ -53,7 +57,7 @@ $this->menu= array(
         $this->renderPartial('view',array('model'=>$model));
         }
     }
-  }else{
+  }else{// Trường hợp $tt_kn = 1 và matk là người xem thì không hiển thị view.
     if(!isset(yii::app()->session['matk2'])){
        if(isset($kynang)){
         foreach($kynang as $k){
@@ -71,7 +75,6 @@ $this->menu= array(
   }
 
 ?>   
-<!-- <h1>Thêm Kỹ Năng</h1> -->
 <?php 
     // Kiểm tra khi click vào sửa
     $makn = yii::app()->session['pf_ma_ky_nang'];
@@ -82,8 +85,7 @@ $this->menu= array(
             $model->pf_ma_ky_nang = $k1->pf_ma_ky_nang;
             $model->pf_ky_nang = $k1->pf_ky_nang;
             $model->pf_so_nam_kinh_nghiem = $k1->pf_so_nam_kinh_nghiem;
-            $model->pf_mo_ta = $k1->pf_mo_ta;
-            
+            $model->pf_mo_ta = $k1->pf_mo_ta;            
         }
     }
     if(empty($temp)){

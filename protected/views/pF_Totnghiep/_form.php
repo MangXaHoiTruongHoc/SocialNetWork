@@ -30,7 +30,13 @@
 
 	<?php echo $form->errorSummary($model); ?> -->
 	<div class="widget-head">
-        <h4 class="heading">Thêm trường tốt nghiệp</h4>
+        <?php
+		if($model->isNewRecord){
+			echo "<h3 class='heading'>Thêm Trường Tốt Nghiệp</h3>";
+		}else{
+			echo "<h3 class='heading'>Cập nhật Trường Tốt Nghiệp</h3>";
+		}
+		?>
     </div>
     	<!-- // Widget heading END -->
       	<div class="widget-body innerAll inner-2x">
@@ -70,7 +76,7 @@
 					<div class="form-group">
 						<?php echo $form->labelEx($model,'pf_ma_ket_qua_tn',array('class'=>'col-md-4 control-label')); ?>
 						<div class='col-md-6'>
-						<?php echo $form->dropDownList($model,'pf_ma_ket_qua_tn',$list,array('empty'=>"Chọn kết quả",'class'=>'form-control')); ?>
+						<?php echo $form->dropDownList($model,'pf_ma_ket_qua_tn',$list,array('empty'=>"Chọn kết quả",'style'=>'width:293.438px;height:32px','class'=>'select2_6_2')); ?>
 						</div>
 						<?php echo $form->error($model,'pf_ma_ket_qua_tn'); ?>
 					</div>
@@ -93,7 +99,7 @@
 					<div class="form-group">
 						<?php echo $form->labelEx($model,'pf_ma_chuyen_nganh',array('class'=>'col-md-4 control-label')); ?>
 						<div class='col-md-6'>
-						<?php echo $form->dropDownList($model,'pf_ma_chuyen_nganh',$listcn,array('empty'=>"Chọn Chuyên Ngành",'class'=>'form-control')); ?>
+						<?php echo $form->dropDownList($model,'pf_ma_chuyen_nganh',$listcn,array('empty'=>"Chọn Chuyên Ngành",'style'=>'width:293.438px;height:32px','class'=>'select2_6_2')); ?>
 						</div>
 						<?php echo $form->error($model,'pf_ma_chuyen_nganh'); ?>
 					</div>

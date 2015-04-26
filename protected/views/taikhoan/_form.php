@@ -104,13 +104,6 @@
 					<?php echo $form->error($model,'mat_khau'); ?>
 				</div>
 
-				<div class="form-group">
-					<?php echo $form->labelEx($model,'ngay_tao',array('class'=>'col-md-4 control-label')); ?>
-					<div class='col-md-6'>
-					<?php echo $form->dateField($model,'ngay_tao',array('class'=>'form-control','size'=>10,'maxlength'=>10)); ?>
-					</div>
-					<?php echo $form->error($model,'ngay_tao'); ?>
-				</div>
 
 				<div class="form-actions col-md-7">
 					<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'btn btn-primary','style'=>'float:right')); ?>
