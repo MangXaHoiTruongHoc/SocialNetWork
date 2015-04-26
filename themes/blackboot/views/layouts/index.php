@@ -365,5 +365,12 @@
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/gallery/blueimp-gallery/assets/lib/js/jquery.blueimp-gallery.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/select2/assets/lib/js/select2.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/select2/assets/custom/js/select2.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/tables/datatables/assets/lib/js/jquery.dataTables.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/tables/datatables/assets/lib/extras/TableTools/media/js/TableTools.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/tables/datatables/assets/lib/extras/ColVis/media/js/ColVis.min.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/tables/datatables/assets/custom/js/DT_bootstrap.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/tables/datatables/assets/custom/js/datatables.init.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/common/forms/elements/bootstrap-select/assets/lib/js/bootstrap-select.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
+
 </body>
 </html>

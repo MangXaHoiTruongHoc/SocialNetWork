@@ -111,10 +111,14 @@ $this->pageTitle=Yii::app()->name;
         </div>
         <!-- First Comment -->
         <?php
-        $nguoidung = Taikhoan::model()->findall();
+        // Lấy mã tài khoản để thực hiện truy vấn không hiển thị tên người đang sử dụng tài khoản.
+        $mtk = yii::app()->session['ma_tai_khoan'];
+        $nguoidung = Taikhoan::model()->findall(array('condition'=>'ma_tai_khoan NOT IN (:matk)','params'=>array(':matk'=>$mtk)));
+        // end truy vấn
         foreach ($nguoidung as $tk ) {
         	
         ?>
+
         <div class="media border-bottom margin-none bg-gray">
             <a href="" class="pull-left innerAll half">
                 <img style="width:50px!important;height:50px!important"  src="<?php echo Yii::app()->baseUrl; ?>/upload/avarta/<?php echo $tk->hinh_dai_dien?>"

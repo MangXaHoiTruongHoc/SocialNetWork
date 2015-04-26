@@ -70,10 +70,23 @@ class PF_MuctieunghenghiepController extends Controller
 		if(isset($_POST['PF_Muctieunghenghiep']))
 		{
 			$model->attributes=$_POST['PF_Muctieunghenghiep'];
-			// var_dump($model->pf_noi_lam_viec);die;
+			
 			$model->ma_tai_khoan = yii::app()->session['ma_tai_khoan'];
-			if($model->save())
+			/*print_r($model->pf_noi_lam_viec);die;*/
+
+		
+			if($model->save()){
+
+				foreach ($model->pf_noi_lam_viec as $key) {
+				$noilamviec = new PF_Noilamviec();
+				$noilamviec->pf_ma_muc_tieu = $model->pf_ma_muc_tieu;
+				$noilamviec->ma_tinh_thanh = $key->pf_noi_lam_viec;
+			
+				$noilamviec->save();
+				}
 				$this->redirect(array('create'));
+			}
+			
 		}
 
 		$this->render('create',array(

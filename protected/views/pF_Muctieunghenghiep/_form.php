@@ -64,15 +64,21 @@
 						</div>
 						<?php echo $form->error($model,'pf_ma_loai_cv'); ?>
 					</div>
-
+					<?php
+					$tinhthanh = DC_Tinhthanh::model()->findAll();
+					$list1= array();
+					foreach ($tinhthanh as $l ) {
+						$list1[$l->ma_tinh_thanh] = $l->ten_tinh_thanh;
+					}
+					?>
 					<div class="form-group">
 						<?php echo $form->labelEx($model,'pf_noi_lam_viec',array('class'=>'col-md-4 control-label')); ?>
 						<div class="col-md-6">
-						<?php echo $form->dropDownList($model,'pf_noi_lam_viec',$list,array('style'=>'width:293.438px;height:32px','class'=>'select2_6_2','empty'=>'chọn','multiple'=>'multiple')); ?>
+						<?php echo $form->dropDownList($model,'pf_noi_lam_viec',$list1,array('style'=>'width:293.438px;height:32px','class'=>'select2_6_2','multiple'=>'multiple')); ?>
 						</div>
 						<?php echo $form->error($model,'pf_noi_lam_viec'); ?>
 					</div>
-
+					
 					<div class="form-actions col-md-8">
 						<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'btn btn-primary','style'=>'float:right')); ?>
 					</div>

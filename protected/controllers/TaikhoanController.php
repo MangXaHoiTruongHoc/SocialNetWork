@@ -133,14 +133,14 @@ class TaikhoanController extends Controller
             $email = Yii::app()->session['email'];
             if(isset($email)){
             // Thực hiện lấy mã tài khoản của người dùng khi đăng nhập vào
-            $taikhoan = Taikhoan::model()->findAllByAttributes(array('email'=>$email)); 
+            //$taikhoan = Taikhoan::model()->findAllByAttributes(array('email'=>$email)); 
             /*$taikhoan = Taikhoan::model()->findAll(array('condition'=>'email LIKE :email',
             'params'=>array(':email'=>"%$email%")));*/
-                foreach($taikhoan as $tk){
+               /* foreach($taikhoan as $tk){
                       $tk->ma_tai_khoan;
-                }
+                }*/
             // Lưu mã tài khoản vào session['ma_tai_khoan']
-            Yii::app()->session['ma_tai_khoan'] = $tk->ma_tai_khoan;
+           // Yii::app()->session['ma_tai_khoan'] = $tk->ma_tai_khoan;
             $model = new Taikhoan;
             $matk = Yii::app()->session['ma_tai_khoan'];
             if(isset(yii::app()->session['matk2'])){

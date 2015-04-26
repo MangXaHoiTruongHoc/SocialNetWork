@@ -171,7 +171,13 @@ class PF_HoatdonghoctapController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
+		$image = PF_Hinhanhhdht::model()->findallByAttributes(array('pf_ma_hdht'=>$id));
+		foreach ($image as $key => $value) {
+			 // $deleteimg=PF_Hinhanhhdnk::model()->find($value->pf_ma_hinh_anh_hdnk); 
+			unlink(getcwd()."/upload/hdht/".$value->pf_hinh_anh_hdht);	
+    		$value->delete();
 
+		}
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

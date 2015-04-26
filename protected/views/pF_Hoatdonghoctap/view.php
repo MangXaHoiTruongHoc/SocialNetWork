@@ -28,13 +28,19 @@ $this->menu= array(
 	            <th class="center col-md-3" style="text-align:right!important"><?php echo $model->getAttributeLabel('pf_ten_hoat_dong')?></th>
 	            <td><?php echo $model->pf_ten_hoat_dong?>
 	            <?php
+	            	//Đếm số lượt đánh giá theo mã hoạt dộng học tập
+	            	$danhgia  = PF_Danhgiahoso::model()->findAllByAttributes(array('pf_ma_hdht'=>$model->pf_ma_hdht),array('order'=>'pf_ma_danh_gia_ho_so DESC'));
+                    $count  = count($danhgia);
 	            	if(isset(yii::app()->session['matk2'])){
-                      echo  "<a style='float: right' href='#modal-danhgia{$model->pf_ma_hdht}'  data-toggle='modal'>Đánh giá</a>";
+                      echo  "
+                      <span style='float: right;margin-left:7px' class='badge badge-primary badge-stroke'>
+                      <a href='#modal-showdanhgia{$model->pf_ma_hdht}'  data-toggle='modal'>{$count}</a></span>
+                      <a style='float: right' href='#modal-danhgia{$model->pf_ma_hdht}'  data-toggle='modal'>Đánh giá</a>";
 		            }else{
 		                //Delete hoạt động học tập      
 		                $deleteajax= CHtml::ajaxLink('Xóa',
 		                "index.php?r=pf_hoatdonghoctap/delete&id=$model->pf_ma_hdht",
-		                array(
+		                array( 
 		                                'type'=>'post',
 		                                'data' => null,
 		                                'success' => 'function(){
@@ -46,7 +52,8 @@ $this->menu= array(
 		                array( 'confirm'=>'Ban muon xoa chu',));
 		                //Kiem tra nguoi dùng để ẩn hiện action
 		                echo "<div class='re_up' style='float: right; display:display'>
-		                            
+		                            <span style='float: right;margin-left:7px' class='badge badge-primary badge-stroke'>
+		                            <a href='#modal-showdanhgia{$model->pf_ma_hdht}'  data-toggle='modal'>{$count}</a></span>
 		                            <a href='index.php?r=pf_hoatdonghoctap/update&id={$model->pf_ma_hdht}'>Sửa</a> 
 		                            {$deleteajax} </div>";
 		            }
@@ -182,6 +189,7 @@ $this->menu= array(
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <button type="submit" class="btn btn-primary">Gửi</button>
+                                    <a href="#" class="btn btn-primary huy">Hủy</a>
                                 </div>
                             </div>
                             <?php
@@ -194,4 +202,63 @@ $this->menu= array(
             <!-- // Modal body END -->
         </div>
     </div>
-</div>     
+</div> 
+<!-- Show tabel đánh giá -->  
+<div class="modal fade" id="modal-showdanhgia<?php echo $model->pf_ma_hdht?>">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal heading -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Danh sách người đánh giá</h3>
+            </div>
+            <!-- // Modal heading END -->
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="innerAll">
+                    <div class="innerLR">
+                    	    <table class="dynamicTable scrollVertical table table-primary">
+                                <!-- Table heading -->
+                                <thead>
+                                    <tr>
+                                        <th>Khách xem</th>
+                                    </tr>
+                                </thead>
+                                <!-- // Table heading END -->
+                                <!-- Table body -->
+                                <tbody>
+                                    <!-- Table row -->
+                                    <?php
+                                    foreach ($danhgia as $key) {
+                                        $imagekhach = Taikhoan::model()->findAllByAttributes(array('email'=>$key->email));
+                                        foreach ($imagekhach as $img ) {
+                                    ?>
+                                    <tr class="gradeX">
+                                        <td>
+                                        <div class="media  innerAll margin-none">
+	                                        <img style="width:35px;height:35px" src="/yii/SocialNetWork/upload/avarta/<?php echo $img->hinh_dai_dien?>" class="pull-left media-object">
+	                                        <div class="media-body">
+	                                            <h5 class="margin-none"><a href="" class="text-inverse"><?php echo $img->ho_ten; ?></a>
+	                                            </h5>
+	                                            <small><?php echo $key->pf_noi_dung?></small>
+	                                    	</div>
+                                    	</div>
+                                        </td>
+                                    </tr>
+                                    <?php
+
+                                     }
+
+                                	}
+                                    ?>
+                                    <!-- // Table row END -->
+                                </tbody>
+                                <!-- // Table body END -->
+                            </table>
+                    </div>
+                </div>
+            </div>
+            <!-- // Modal body END -->
+        </div>
+    </div>
+</div>   

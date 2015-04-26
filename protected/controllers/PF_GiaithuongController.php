@@ -166,7 +166,16 @@ class PF_GiaithuongController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
-
+		// delete mutilfile
+		$image = PF_Hinhanhgiaithuong::model()->findallByAttributes(array('pf_ma_giai_thuong'=>$id));
+		// var_dump($image);die;
+		foreach ($image as $key => $value) {
+			 // $deleteimg=PF_Hinhanhhdnk::model()->find($value->pf_ma_hinh_anh_hdnk); 
+			// delete hình trong thư mục
+			unlink(getcwd()."/upload/giaithuong/".$value->pf_hinh_anh_gt);	
+			// delete hình trong csdl
+    		$value->delete();
+		}
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

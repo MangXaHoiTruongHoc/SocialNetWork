@@ -101,6 +101,12 @@ class SiteController extends Controller
 	                Yii::app()->session['email'] = $model->email;
 	                $email = Yii::app()->session['email'];
 	                if(isset($email)){
+	                // Thực hiện lấy mã tài khoản;
+	                $taikhoan = Taikhoan::model()->findAllByAttributes(array('email'=>$email));
+	                foreach ($taikhoan as $key ) {
+	                		yii::app()->session['ma_tai_khoan']= $key->ma_tai_khoan;
+	                	}
+	               	// Kêt thúc lấy mã tk	
 					$this->redirect(Yii::app()->user->returnUrl);// nếu tồn tài thì đưa về trang index.
 	                }
 			}

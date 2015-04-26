@@ -28,8 +28,14 @@ $this->menu= array(
 	            <th class="center col-md-3" style="text-align:right!important"><?php echo $model->getAttributeLabel('pf_ten_hoat_dong')?></th>
 	            <td><?php echo $model->pf_ten_hoat_dong?>
 	            <?php
+	            	//Đếm số lượt đánh giá theo mã hoạt động ngoại khóa
+	            	$danhgia  = PF_Danhgiahoso::model()->findAllByAttributes(array('pf_ma_hdnk'=>$model->pf_ma_hdnk),array('order'=>'pf_ma_danh_gia_ho_so DESC'));
+                    $count  = count($danhgia);
 	            	if(isset(yii::app()->session['matk2'])){
-                      echo  "<a style='float: right' href='#modal-danhgia{$model->pf_ma_hdnk}'  data-toggle='modal'>Đánh giá</a>";
+                      echo  "
+                      <span style='float: right;margin-left:7px' class='badge badge-primary badge-stroke'>
+                      <a href='#modal-showdanhgia{$model->pf_ma_hdnk}'  data-toggle='modal'>{$count}</a></span>
+                      <a style='float: right' href='#modal-danhgia{$model->pf_ma_hdnk}'  data-toggle='modal'>Đánh giá</a>";
 		            }else{
 		                //Delete hoạt động ngoại khóa      
 		                $deleteajax= CHtml::ajaxLink('Xóa',
@@ -46,7 +52,8 @@ $this->menu= array(
 		                array( 'confirm'=>'Ban muon xoa chu',));
 		                //Kiem tra nguoi dùng để ẩn hiện action
 		                echo "<div class='re_up' style='float: right; display:display'>
-		                            
+		                            <span style='float: right;margin-left:7px' class='badge badge-primary badge-stroke'>
+		                            <a href='#modal-showdanhgia{$model->pf_ma_hdnk}'  data-toggle='modal'>{$count}</a></span>
 		                            <a href='index.php?r=pf_hoatdongngoaikhoa/update&id={$model->pf_ma_hdnk}'>Sửa</a> 
 		                            {$deleteajax} </div>";
 		            }
@@ -195,3 +202,62 @@ $this->menu= array(
         </div>
     </div>
 </div>     
+<!-- Show tabel đánh giá -->  
+<div class="modal fade" id="modal-showdanhgia<?php echo $model->pf_ma_hdnk?>">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal heading -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Danh sách người đánh giá</h3>
+            </div>
+            <!-- // Modal heading END -->
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="innerAll">
+                    <div class="innerLR">
+                    	    <table class="dynamicTable scrollVertical table table-primary">
+                                <!-- Table heading -->
+                                <thead>
+                                    <tr>
+                                        <th>Khách xem</th>
+                                    </tr>
+                                </thead>
+                                <!-- // Table heading END -->
+                                <!-- Table body -->
+                                <tbody>
+                                    <!-- Table row -->
+                                    <?php
+                                    foreach ($danhgia as $key) {
+                                        $imagekhach = Taikhoan::model()->findAllByAttributes(array('email'=>$key->email));
+                                        foreach ($imagekhach as $img ) {
+                                    ?>
+                                    <tr class="gradeX">
+                                        <td>
+                                        <div class="media  innerAll margin-none">
+	                                        <img style="width:35px;height:35px" src="/yii/SocialNetWork/upload/avarta/<?php echo $img->hinh_dai_dien?>" class="pull-left media-object">
+	                                        <div class="media-body">
+	                                            <h5 class="margin-none"><a href="" class="text-inverse"><?php echo $img->ho_ten; ?></a>
+	                                            </h5>
+	                                            <small><?php echo $key->pf_noi_dung?></small>
+	                                    	</div>
+                                    	</div>
+                                        </td>
+                                    </tr>
+                                    <?php
+
+                                     }
+
+                                	}
+                                    ?>
+                                    <!-- // Table row END -->
+                                </tbody>
+                                <!-- // Table body END -->
+                            </table>
+                    </div>
+                </div>
+            </div>
+            <!-- // Modal body END -->
+        </div>
+    </div>
+</div> 
