@@ -27,7 +27,7 @@ $this->menu= array(
      ); 
         
 ?>
-
+<div id='print'> hahaha</div>
 <h3 style="margin-left:10px">Thông Tin Người Dùng </h3>
 <?php
    
@@ -377,3 +377,22 @@ else{
     $this->redirect(array('login'));
 }
 ?>
+
+<script type="text/javascript" src="/yii/SocialNetWork/assets/socialajax/html2canvas.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#print').click(function(event) {
+    /* Act on the event */
+     html2canvas($('#taget'), {
+    onrendered: function(canvas) {
+        document.body.appendChild(canvas);
+    }
+  });
+    
+});
+
+  });
+
+ 
+  
+</script>

@@ -323,6 +323,16 @@
      ?>
      
      <?php }?>
+     <!-- Dung hieu ung gallery -->
+      <!-- Blueimp Gallery -->
+            <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+                <div class="slides"></div>
+                <h3 class="title"></h3>
+                <a class="prev no-ajaxify">‹</a>
+                <a class="next no-ajaxify">›</a>
+                <a class="close no-ajaxify">×</a>
+            </div>
+            <!-- // Blueimp Gallery END -->
     <!-- // Main Container Fluid END -->
     <!-- Global -->
     <script data-id="App.Config">

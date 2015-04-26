@@ -86,9 +86,9 @@ $this->menu= array(
 	            <div class="widget-body">
 	               
 	                <!-- Gallery Layout -->
-	                <div class="gallery gallery-2">
+	                <div class="gallery gallery-<?php echo $model->pf_ma_hdnk ?>">
 	                    <ul class="row" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-4"
-	                    data-delegate="#gallery-4">
+	                    data-delegate="#gallery<?php echo $model->pf_ma_hdnk ?>">
 	                    	<?php
 	                    	// Thực hiện vòng lặp lấy tất cả hình của theo mã hdnk
 	                    	foreach ($images as $image) {
@@ -97,7 +97,7 @@ $this->menu= array(
 	                    	?>
 	                        <li class="col-md-3 hidden-phone">
 	                            <a class="thumb" href="<?php echo Yii::app()->baseUrl; ?>/upload/hdnk/<?php echo $image->pf_hinh_anh_hdnk;?>"
-	                            data-gallery="gallery">
+	                            data-gallery="gallery-<?php echo $model->pf_ma_hdnk ?>">
 	                                <img style="height:135px!important"src="<?php echo Yii::app()->baseUrl;?>/upload/hdnk/<?php echo $image->pf_hinh_anh_hdnk;?>"
 	                                alt="photo"
 	                                class="img-responsive"
@@ -111,15 +111,7 @@ $this->menu= array(
 	                </div>
 	            </div>
 	        </div>
-	        <!-- Blueimp Gallery -->
-	        <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-	            <div class="slides"></div>
-	            <h3 class="title"></h3>
-	            <a class="prev no-ajaxify">‹</a>
-	            <a class="next no-ajaxify">›</a>
-	            <a class="close no-ajaxify">×</a>
-	        </div>
-	        <!-- // Blueimp Gallery END -->
+	    
 	       </td>
 	       </tr>
 	       <?php

@@ -35,6 +35,7 @@ class PF_Kinhnghiemlamviec extends CActiveRecord
 			array('ma_tai_khoan', 'numerical', 'integerOnly'=>true),
 			array('pf_ten_cong_ty, pf_ten_cong_viec, pf_chuc_vu', 'length', 'max'=>50),
 			array('pf_ngay_bat_dau, pf_ngay_ket_thuc', 'length', 'max'=>10),
+			array('pf_ngay_ket_thuc','compare','compareAttribute'=>'pf_ngay_bat_dau','operator'=>'>', 'allowEmpty'=>false , 'message'=>'{attribute} phải lớn hơn "{compareValue}".'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('pf_ma_kinh_nghiem, pf_ten_cong_ty, pf_ten_cong_viec, pf_ngay_bat_dau, pf_ngay_ket_thuc, pf_chuc_vu, pf_mo_ta, ma_tai_khoan', 'safe', 'on'=>'search'),

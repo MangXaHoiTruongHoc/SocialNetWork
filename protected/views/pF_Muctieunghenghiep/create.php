@@ -1,7 +1,8 @@
 <?php
 /* @var $this PF_MuctieunghenghiepController */
 /* @var $model PF_Muctieunghenghiep */
-
+   
+    // if(count($model->pf_noi_lam_viec)!=0)
         $matk = yii::app()->session['ma_tai_khoan'];
          // Kiểm tra matk người xem.
         if(isset(yii::app()->session['matk2'])){

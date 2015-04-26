@@ -30,13 +30,13 @@ class PF_Muctieunghenghiep extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('pf_ten_cong_ty, ma_vi_tri, pf_muc_tieu, ma_tai_khoan, pf_ma_loai_cv, pf_noi_lam_viec', 'required'),
+			array('pf_ten_cong_ty, ma_vi_tri, pf_muc_tieu, ma_tai_khoan, pf_ma_loai_cv', 'required'),
 			array('ma_vi_tri, ma_tai_khoan, pf_ma_loai_cv', 'numerical', 'integerOnly'=>true),
 			array('pf_ten_cong_ty', 'length', 'max'=>50),
-			array('pf_noi_lam_viec', 'length', 'max'=>100),
+			
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('pf_ma_muc_tieu, pf_ten_cong_ty, ma_vi_tri, pf_muc_tieu, ma_tai_khoan, pf_ma_loai_cv, pf_noi_lam_viec', 'safe', 'on'=>'search'),
+			array('pf_ma_muc_tieu, pf_ten_cong_ty, ma_vi_tri, pf_muc_tieu, ma_tai_khoan, pf_ma_loai_cv', 'safe', 'on'=>'search'),
 		);
 	}
 
