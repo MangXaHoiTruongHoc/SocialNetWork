@@ -22,8 +22,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'ma_vi_tri'); ?>
-		<?php echo $form->textField($model,'ma_vi_tri'); ?>
+		<?php echo $form->label($model,'ma_nganh_nghe'); ?>
+		<?php echo $form->textField($model,'ma_nganh_nghe'); ?>
 	</div>
 
 	<div class="row">

@@ -13,8 +13,8 @@
 	<?php echo CHtml::encode($data->pf_ten_cong_ty); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('ma_vi_tri')); ?>:</b>
-	<?php echo CHtml::encode($data->ma_vi_tri); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('ma_nganh_nghe')); ?>:</b>
+	<?php echo CHtml::encode($data->ma_nganh_nghe); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('pf_muc_tieu')); ?>:</b>

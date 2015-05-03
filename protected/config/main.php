@@ -18,7 +18,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'ext.select2.Select2',
+		'ext.select2.ESelect2',
 	),
 
 	'modules'=>array(

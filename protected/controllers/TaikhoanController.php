@@ -211,7 +211,9 @@ class TaikhoanController extends Controller
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
-
+	public function actionPrint(){
+		$this->render('print');
+	}
 	/**
 	 * Lists all models.
 	 */

@@ -74,23 +74,26 @@ class PF_HoatdongngoaikhoaController extends Controller
 	            $model->ma_tai_khoan = yii::app()->session['ma_tai_khoan'];
 	            
 	            $images = CUploadedFile::getInstancesByName('images');
-	         
 	            if (isset($images) && count($images) > 0) 
 	            {
 	          
-		            // go through each uploaded image
+		            // Lấy tất cả các image
 		            foreach ($images as $image => $pic) 
 		            {
-		            
-		            if ($pic->saveAs(Yii::getPathOfAlias('webroot').'/upload/hdnk/'.$pic->name)) 
+		              // đổi tên image
+		              $random = rand(0,9999); 	
+		              $ext = end(explode('.', $pic->name));// lấy phần mở rộng jpg,png...
+		              $rename = $random.".".$ext;
+		              //	
+		            if ($pic->saveAs(Yii::getPathOfAlias('webroot').'/upload/hdnk/'.$rename)) 
 		            {
-		            // add it to the main model now
-		            $model->save();//save your gallery first
+		            
+		            $model->save();//Luu gia tri dau tien de lay ma_hdnk
 		            $img_add = new PF_Hinhanhhdnk();
-		            $img_add->pf_hinh_anh_hdnk = $pic->name; //it might be $img_add->name for you, filename is just what I chose to call it in my model
-		            $img_add->pf_ma_hdnk = $model->pf_ma_hdnk; // this links your picture model to the main model (like your user, or profile model)
-		            //echo $model->id .' # '.$pic->name.'<br />';
-		            $img_add->save(); // save your imagesDONE
+		            $img_add->pf_hinh_anh_hdnk = $rename; 
+		            $img_add->pf_ma_hdnk = $model->pf_ma_hdnk; 
+		            // Thuc hien luu ten image
+		            $img_add->save(); 
 		            }
 		            else
 		            {
@@ -137,19 +140,23 @@ class PF_HoatdongngoaikhoaController extends Controller
 	            if (isset($images) && count($images) > 0) 
 	            {
 	          
-		            // go through each uploaded image
+		            // Thực hiện vòng lặp
 		            foreach ($images as $image => $pic) 
 		            {
-		            
-		            if ($pic->saveAs(Yii::getPathOfAlias('webroot').'/upload/hdnk/'.$pic->name)) 
+		            // đổi tên image
+		              $random = rand(0,9999); 	
+		              $ext = end(explode('.', $pic->name));// lấy phần mở rộng jpg,png...
+		              $rename = $random.".".$ext;
+		              //	
+		            if ($pic->saveAs(Yii::getPathOfAlias('webroot').'/upload/hdnk/'.$rename)) 
 		            {
-		            // add it to the main model now
-		            $model->save();//save your gallery first
+		          
+		            $model->save();
 		            $img_add = new PF_Hinhanhhdnk();
-		            $img_add->pf_hinh_anh_hdnk = $pic->name; //it might be $img_add->name for you, filename is just what I chose to call it in my model
-		            $img_add->pf_ma_hdnk = $model->pf_ma_hdnk; // this links your picture model to the main model (like your user, or profile model)
-		            //echo $model->id .' # '.$pic->name.'<br />';
-		            $img_add->save(); // save your imagesDONE
+		            $img_add->pf_hinh_anh_hdnk = $rename; 
+		            $img_add->pf_ma_hdnk = $model->pf_ma_hdnk; 
+		            
+		            $img_add->save(); 
 		            }
 		            else
 		            {
@@ -176,7 +183,7 @@ class PF_HoatdongngoaikhoaController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-
+		$mtk = yii::app()->session['ma_tai_khoan'];
 		$this->loadModel($id)->delete();
 		$image = PF_Hinhanhhdnk::model()->findallByAttributes(array('pf_ma_hdnk'=>$id));
 		// var_dump($image);die;
@@ -185,6 +192,11 @@ class PF_HoatdongngoaikhoaController extends Controller
 			 // $deleteimg=PF_Hinhanhhdnk::model()->find($value->pf_ma_hinh_anh_hdnk); 
 			unlink(getcwd()."/upload/hdnk/".$value->pf_hinh_anh_hdnk);	
     		$value->delete();
+		}
+		//Thuc hien xoa danh gia hoat dong ngoai khoa
+		$danhgiahdnk = PF_Danhgiahoso::model()->findAllByAttributes(array('ma_tai_khoan'=>$mtk,'pf_ma_hdnk'=>$id));
+		foreach ($danhgiahdnk as $key1 => $value1) {
+			$value1->delete();
 		}
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

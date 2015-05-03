@@ -62,19 +62,64 @@ class PF_DanhgiahosoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new PF_Danhgiahoso;
+		
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['PF_Danhgiahoso']))
-		{
+		{	// Thực hiện kiểm tra giá trị post của 3 trường đc đánh giá
+			if(isset($_POST['PF_Danhgiahoso']['pf_ma_ky_nang'])){
+			$updatekn = PF_Danhgiahoso::model()->findallbyAttributes(array('email'=>$_POST['PF_Danhgiahoso']['email'],
+			'pf_ma_ky_nang'=>$_POST['PF_Danhgiahoso']['pf_ma_ky_nang']));
+			}
+			if(isset($_POST['PF_Danhgiahoso']['pf_ma_hdnk'])){
+			$updatenk = PF_Danhgiahoso::model()->findallbyAttributes(array('email'=>$_POST['PF_Danhgiahoso']['email'],
+			'pf_ma_hdnk'=>$_POST['PF_Danhgiahoso']['pf_ma_hdnk']));
+			}
+			if(isset($_POST['PF_Danhgiahoso']['pf_ma_hdht'])){
+			$updateht = PF_Danhgiahoso::model()->findallbyAttributes(array('email'=>$_POST['PF_Danhgiahoso']['email'],
+			'pf_ma_hdht'=>$_POST['PF_Danhgiahoso']['pf_ma_hdht']));
+			}
+			// Thực hiện kiểm tra để thực hiện đánh giá khi đã có giá trị trong csdl
+			if(!empty($updatekn)||!empty($updatenk)||!empty($updateht)){
+				if(!empty($updatekn)){
+					foreach ($updatekn as $key) {
+				    }
+					$model=$this->loadModel($key->pf_ma_danh_gia_ho_so);
+					$model->attributes=$_POST['PF_Danhgiahoso'];
+					$model->ma_tai_khoan = yii::app()->session['matk2'];
+					$model->update();
+					$this->redirect(Yii::app()->request->urlReferrer);
+				}
+				if(!empty($updatenk)){
+					foreach ($updatenk as $key2) {
+				    }
+					$model=$this->loadModel($key2->pf_ma_danh_gia_ho_so);
+					$model->attributes=$_POST['PF_Danhgiahoso'];
+					$model->ma_tai_khoan = yii::app()->session['matk2'];
+					$model->update();
+					$this->redirect(Yii::app()->request->urlReferrer);
+				}
+				if(!empty($updateht)){
+					foreach ($updateht as $key3) {
+				    }
+					$model=$this->loadModel($key3->pf_ma_danh_gia_ho_so);
+					$model->attributes=$_POST['PF_Danhgiahoso'];
+					$model->ma_tai_khoan = yii::app()->session['matk2'];
+					$model->update();
+					$this->redirect(Yii::app()->request->urlReferrer);
+				}			
+			}else{ // Nếu chưa có thì tiến hành thêm mới vào csdl
+
+			$model=new PF_Danhgiahoso;	
 			$model->attributes=$_POST['PF_Danhgiahoso'];
 			$model->ma_tai_khoan = yii::app()->session['matk2'];
-			if($model->save())
-				// Chuyen ve trang hien tai
-				$this->redirect(Yii::app()->request->urlReferrer);
-				
+				if($model->save()){
+					// Chuyen ve trang hien tai
+					$this->redirect(Yii::app()->request->urlReferrer);
+				}
+			}	
 		}
 
 		/*$this->render('create',array(
@@ -113,8 +158,9 @@ class PF_DanhgiahosoController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
 
+
+		$this->loadModel($id)->delete();
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

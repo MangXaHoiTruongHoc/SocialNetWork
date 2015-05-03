@@ -66,24 +66,24 @@ class PF_MuctieunghenghiepController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		$noilamviec = array();
 		if(isset($_POST['PF_Muctieunghenghiep']))
 		{
 			$model->attributes=$_POST['PF_Muctieunghenghiep'];
 			
 			$model->ma_tai_khoan = yii::app()->session['ma_tai_khoan'];
-			/*print_r($model->pf_noi_lam_viec);die;*/
-
-		
-			if($model->save()){
-
-				foreach ($model->pf_noi_lam_viec as $key) {
-				$noilamviec = new PF_Noilamviec();
-				$noilamviec->pf_ma_muc_tieu = $model->pf_ma_muc_tieu;
-				$noilamviec->ma_tinh_thanh = $key->pf_noi_lam_viec;
+			//Lấy nơi làm việc
+			$noilamviec = $_POST['noilamviec'];
 			
-				$noilamviec->save();
+			if($model->save()){
+				//Thực hiên lưu model xong và lưu giá trị vào table nơi làm việc
+				foreach ($noilamviec as $key =>$value) {
+				$noilamviec1 = new PF_Noilamviec();
+				$noilamviec1->pf_ma_muc_tieu = $model->pf_ma_muc_tieu;
+				$noilamviec1->ma_tinh_thanh = $value;
+				$noilamviec1->save();
 				}
+				// kết thúc lưu noi làm việc
 				$this->redirect(array('create'));
 			}
 			
@@ -127,7 +127,10 @@ class PF_MuctieunghenghiepController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
-
+		$tinhthanh = PF_Noilamviec::model()->findAllByAttributes(array('pf_ma_muc_tieu'=>$id));
+		foreach ($tinhthanh as $key => $value) {
+			$value->delete();
+		}
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

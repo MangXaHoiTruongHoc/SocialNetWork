@@ -43,6 +43,7 @@ class PF_Noilamviec extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'tinhthanh'=>array(self::MANY_MANY,'DC_Tinhthanh','ma_tinh_thanh')
 		);
 	}
 

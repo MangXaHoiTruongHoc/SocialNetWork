@@ -46,7 +46,7 @@ $this->menu= array(
                foreach ($mamtnn as $l) {
                      $model->pf_ma_muc_tieu =  $l->pf_ma_muc_tieu;
                      $model->pf_ten_cong_ty = $l->pf_ten_cong_ty;
-                     $model->ma_vi_tri = $l->ma_vi_tri;
+                     $model->ma_nganh_nghe = $l->ma_nganh_nghe;
                      $model->pf_muc_tieu = $l->pf_muc_tieu;
                      $model->pf_ma_loai_cv = $l->pf_ma_loai_cv;
                      $model->pf_noi_lam_viec= $l->pf_noi_lam_viec;
@@ -60,7 +60,7 @@ $this->menu= array(
                     foreach ($mamtnn as $l) {
                      $model->pf_ma_muc_tieu =  $l->pf_ma_muc_tieu;
                      $model->pf_ten_cong_ty = $l->pf_ten_cong_ty;
-                     $model->ma_vi_tri = $l->ma_vi_tri;
+                     $model->ma_nganh_nghe = $l->ma_nganh_nghe;
                      $model->pf_muc_tieu = $l->pf_muc_tieu;
                      $model->pf_ma_loai_cv = $l->pf_ma_loai_cv;
                      $model->pf_noi_lam_viec= $l->pf_noi_lam_viec;
@@ -80,7 +80,7 @@ $this->menu= array(
     foreach($muctieu as $l){
                      $model->pf_ma_muc_tieu =  $l->pf_ma_muc_tieu;
                      $model->pf_ten_cong_ty = $l->pf_ten_cong_ty;
-                     $model->ma_vi_tri = $l->ma_vi_tri;
+                     $model->ma_nganh_nghe = $l->ma_nganh_nghe;
                      $model->pf_muc_tieu = $l->pf_muc_tieu;
                      $model->pf_ma_loai_cv = $l->pf_ma_loai_cv;
                      $model->pf_noi_lam_viec= $l->pf_noi_lam_viec;

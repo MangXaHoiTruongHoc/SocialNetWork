@@ -7,7 +7,7 @@
 <html class="footer-sticky">
 <!-- <![endif]-->
 <head>
-    <title>Social Admin Template (v1.0.1-rc2)</title>
+    <title>Mạng xã hội trường kinh tế</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -283,18 +283,18 @@
                                 </div>
                             </div>
                             <!-- Widget -->
-                            <div class="widget widget-heading-simple widget-body-white">
-                                <!-- Widget Heading -->
+                            <!-- <div class="widget widget-heading-simple widget-body-white">
+                                
                                 <div class="widget-head">
                                     <h4 class="heading glyphicons glyphicons-social twitter"><i></i>Twitter feed</h4>
                                 </div>
-                                <!-- // Widget Heading END -->
+                                
                                 <div class="widget-body" data-builder-exclude="element children">
                                     <div class="jstwitter" data-gridalicious="false" data-type="slide" data-images="false">
                                         <span class="label label-default">Loading ..</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- // Widget END -->
                         </div>
                     </div>

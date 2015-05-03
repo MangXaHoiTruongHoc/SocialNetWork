@@ -112,8 +112,13 @@ class PF_KynangController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$mtk = yii::app()->session['ma_tai_khoan'];
 		$this->loadModel($id)->delete();
-
+		//Thuc hien xoa danh gia ky nang
+		$danhgiakynang = PF_Danhgiahoso::model()->findAllByAttributes(array('ma_tai_khoan'=>$mtk,'pf_ma_ky_nang'=>$id));
+		foreach ($danhgiakynang as $key => $value) {
+			$value->delete();
+		}
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

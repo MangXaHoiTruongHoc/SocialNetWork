@@ -21,7 +21,7 @@ $this->menu= array(
      ); 
      
 ?>
-<div class="widget hdnk<?php echo $model->pf_ma_hdnk ?>">
+<div class="widget hdnk<?php echo $model->pf_ma_hdnk ?> ">
 	<table class="table">
 		<tbody>
 	        <tr >
@@ -175,7 +175,7 @@ $this->menu= array(
                             <div class="form-group">
                                 <label for="NoiDung" class="col-sm-2 control-label">Nội Dung</label>
                                 <div class="col-sm-10">
-                                    <textarea name="PF_Danhgiahoso[pf_noi_dung]" rows="6" cols="50" class="form-control"></textarea>
+                                    <textarea name="PF_Danhgiahoso[pf_noi_dung]" rows="6" cols="50" class="form-control" required="true"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -195,7 +195,7 @@ $this->menu= array(
     </div>
 </div>     
 <!-- Show tabel đánh giá -->  
-<div class="modal fade" id="modal-showdanhgia<?php echo $model->pf_ma_hdnk?>">
+<div class="modal fade scroll1" id="modal-showdanhgia<?php echo $model->pf_ma_hdnk?>">
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal heading -->

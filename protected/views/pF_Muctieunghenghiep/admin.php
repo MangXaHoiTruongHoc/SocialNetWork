@@ -47,7 +47,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'pf_ma_muc_tieu',
 		'pf_ten_cong_ty',
-		'ma_vi_tri',
+		'ma_nganh_nghe',
 		'pf_muc_tieu',
 		'ma_tai_khoan',
 		'pf_ma_loai_cv',

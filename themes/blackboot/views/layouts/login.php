@@ -7,7 +7,7 @@
 <html class="">
 <!-- <![endif]-->
 <head>
-    <title>Social Admin Template (v1.0.1-rc2)</title>
+    <title>Mạng xã hội trường kinh tế</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +33,7 @@
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/modules/admin/charts/flot/assets/lib/excanvas.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script src="<?php echo Yii::app()->theme->baseUrl; ?>/css/components/plugins/browser/ie/ie.prototype.polyfill.js?v=v1.0.1-rc2&sv=v0.0.1.1"></script>
     <script type="text/javascript" src="/yii/SocialNetWork/assets/socialajax/check_email.js"></script>
+    <!--<script type="text/javascript" src="/yii/SocialNetWork/assets/socialajax/socialajax.js"></script>-->
     <script>
     if ( /*@cc_on!@*/ false && document.documentMode === 10)
     {
@@ -169,7 +170,7 @@
 
                                                                                     <div class="form-group">
                                                                                         <div class="col-sm-offset-4 col-sm-10">
-                                                                                            <button type="submit" class="btn btn-primary">Đăng Kí</button>
+                                                                                            <button type="submit" class="btn btn-primary" id="dangki">Đăng Kí</button>
                                                                                         </div>
                                                                                     </div>
                                                                                 <?php $this->endWidget(); ?>

@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'pf_muctieunghenghiep':
  * @property integer $pf_ma_muc_tieu
  * @property string $pf_ten_cong_ty
- * @property integer $ma_vi_tri
+ * @property integer $ma_nganh_nghe
  * @property string $pf_muc_tieu
  * @property integer $ma_tai_khoan
  * @property integer $pf_ma_loai_cv
@@ -30,13 +30,13 @@ class PF_Muctieunghenghiep extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('pf_ten_cong_ty, ma_vi_tri, pf_muc_tieu, ma_tai_khoan, pf_ma_loai_cv', 'required'),
-			array('ma_vi_tri, ma_tai_khoan, pf_ma_loai_cv', 'numerical', 'integerOnly'=>true),
+			array('pf_ten_cong_ty, ma_nganh_nghe, pf_muc_tieu, ma_tai_khoan, pf_ma_loai_cv', 'required'),
+			array('ma_nganh_nghe, ma_tai_khoan, pf_ma_loai_cv', 'numerical', 'integerOnly'=>true),
 			array('pf_ten_cong_ty', 'length', 'max'=>50),
-			
+			array('pf_noi_lam_viec', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('pf_ma_muc_tieu, pf_ten_cong_ty, ma_vi_tri, pf_muc_tieu, ma_tai_khoan, pf_ma_loai_cv', 'safe', 'on'=>'search'),
+			array('pf_ma_muc_tieu, pf_ten_cong_ty, ma_nganh_nghe, pf_muc_tieu, ma_tai_khoan, pf_ma_loai_cv', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,7 +48,8 @@ class PF_Muctieunghenghiep extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'loaicv'=>array(self::HAS_ONE,'PF_Loaicongviec','pf_ma_loai_cv')
+			'loaicv'=>array(self::HAS_ONE,'PF_Loaicongviec','pf_ma_loai_cv'),
+			'nganhnghe'=>array(self::HAS_ONE,'DC_Nganhnghe','ma_nganh_nghe')
 		);
 	}
 
@@ -60,7 +61,7 @@ class PF_Muctieunghenghiep extends CActiveRecord
 		return array(
 			
 			'pf_ten_cong_ty' => 'Tên công ty',
-			'ma_vi_tri' => 'Vị trí',
+			'ma_nganh_nghe' => 'Ngành nghề',
 			'pf_muc_tieu' => 'Mục tiêu',
 			
 			'pf_ma_loai_cv' => 'Loại công việc',
@@ -88,7 +89,7 @@ class PF_Muctieunghenghiep extends CActiveRecord
 
 		$criteria->compare('pf_ma_muc_tieu',$this->pf_ma_muc_tieu);
 		$criteria->compare('pf_ten_cong_ty',$this->pf_ten_cong_ty,true);
-		$criteria->compare('ma_vi_tri',$this->ma_vi_tri);
+		$criteria->compare('ma_nganh_nghe',$this->ma_nganh_nghe);
 		$criteria->compare('pf_muc_tieu',$this->pf_muc_tieu,true);
 		$criteria->compare('ma_tai_khoan',$this->ma_tai_khoan);
 		$criteria->compare('pf_ma_loai_cv',$this->pf_ma_loai_cv);

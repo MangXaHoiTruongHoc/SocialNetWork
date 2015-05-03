@@ -79,19 +79,23 @@ class PF_HoatdonghoctapController extends Controller
 	            if (isset($images) && count($images) > 0) 
 	            {
 	          
-		            // go through each uploaded image
+		            // Thực hiện vòng lặp
 		            foreach ($images as $image => $pic) 
 		            {
-		            
-		            if ($pic->saveAs(Yii::getPathOfAlias('webroot').'/upload/hdht/'.$pic->name)) 
+		            // đổi tên image
+		              $random = rand(0,9999); 	
+		              $ext = end(explode('.', $pic->name));// lấy phần mở rộng jpg,png...
+		              $rename = $random.".".$ext;
+		              //
+		            if ($pic->saveAs(Yii::getPathOfAlias('webroot').'/upload/hdht/'.$rename)) 
 		            {
-		            // add it to the main model now
-		            $model->save();//save your gallery first
+		            
+		            $model->save();
 		            $img_add = new PF_Hinhanhhdht();
-		            $img_add->pf_hinh_anh_hdht = $pic->name; //it might be $img_add->name for you, filename is just what I chose to call it in my model
-		            $img_add->pf_ma_hdht = $model->pf_ma_hdht; // this links your picture model to the main model (like your user, or profile model)
-		            //echo $model->id .' # '.$pic->name.'<br />';
-		            $img_add->save(); // save your imagesDONE
+		            $img_add->pf_hinh_anh_hdht = $rename; 
+		            $img_add->pf_ma_hdht = $model->pf_ma_hdht; 
+		            
+		            $img_add->save(); 
 		            }
 		            else
 		            {
@@ -131,19 +135,23 @@ class PF_HoatdonghoctapController extends Controller
 	            if (isset($images) && count($images) > 0) 
 	            {
 	          
-		            // go through each uploaded image
+		            // Thực hiện vòng lặp
 		            foreach ($images as $image => $pic) 
 		            {
-		            
-		            if ($pic->saveAs(Yii::getPathOfAlias('webroot').'/upload/hdht/'.$pic->name)) 
+		             // đổi tên image
+		              $random = rand(0,9999); 	
+		              $ext = end(explode('.', $pic->name));// lấy phần mở rộng jpg,png...
+		              $rename = $random.".".$ext;
+		              //	
+		            if ($pic->saveAs(Yii::getPathOfAlias('webroot').'/upload/hdht/'.$rename)) 
 		            {
-		            // add it to the main model now
-		            $model->save();//save your gallery first
+		            
+		            $model->save();
 		            $img_add = new PF_Hinhanhhdht();
-		            $img_add->pf_hinh_anh_hdht = $pic->name; //it might be $img_add->name for you, filename is just what I chose to call it in my model
-		            $img_add->pf_ma_hdht = $model->pf_ma_hdht; // this links your picture model to the main model (like your user, or profile model)
-		            //echo $model->id .' # '.$pic->name.'<br />';
-		            $img_add->save(); // save your imagesDONE
+		            $img_add->pf_hinh_anh_hdht = $rename; 
+		            $img_add->pf_ma_hdht = $model->pf_ma_hdht; 
+		           
+		            $img_add->save(); 
 		            }
 		            else
 		            {
@@ -170,6 +178,7 @@ class PF_HoatdonghoctapController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$mtk = yii::app()->session['ma_tai_khoan'];
 		$this->loadModel($id)->delete();
 		$image = PF_Hinhanhhdht::model()->findallByAttributes(array('pf_ma_hdht'=>$id));
 		foreach ($image as $key => $value) {
@@ -177,6 +186,11 @@ class PF_HoatdonghoctapController extends Controller
 			unlink(getcwd()."/upload/hdht/".$value->pf_hinh_anh_hdht);	
     		$value->delete();
 
+		}
+		//Thuc hien xoa danh gia hdht
+		$danhgiahdht = PF_Danhgiahoso::model()->findAllByAttributes(array('ma_tai_khoan'=>$mtk,'pf_ma_hdht'=>$id));
+		foreach ($danhgiahdht as $key1 => $value1) {
+			$value1->delete();
 		}
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

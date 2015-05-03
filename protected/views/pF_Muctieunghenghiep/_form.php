@@ -34,13 +34,19 @@
 						</div>
 						<?php echo $form->error($model,'pf_ten_cong_ty'); ?>
 					</div>
-
+					<?php
+					$nganhnghe = DC_Nganhnghe::model()->findAll();
+					$listnn= array();
+					foreach ($nganhnghe as $lnn ) {
+						$listnn[$lnn->ma_nganh_nghe] = $lnn->ten_nganh_nghe;
+					}
+					?>
 					<div class="form-group">
-						<?php echo $form->labelEx($model,'ma_vi_tri',array('class'=>'col-md-4 control-label')); ?>
+						<?php echo $form->labelEx($model,'ma_nganh_nghe',array('class'=>'col-md-4 control-label')); ?>
 						<div class="col-md-6">
-						<?php echo $form->textField($model,'ma_vi_tri',array('class'=>'form-control',)); ?>
+						<?php echo $form->dropDownList($model,'ma_nganh_nghe',$listnn,array('style'=>'width:293.438px;height:32px','class'=>'select2_6_2','empty'=>'Chọn ngành nghề')); ?>
 						</div>
-						<?php echo $form->error($model,'ma_vi_tri'); ?>
+						<?php echo $form->error($model,'ma_nganh_nghe'); ?>
 					</div>
 
 					<div class="form-group">
@@ -74,7 +80,18 @@
 					<div class="form-group">
 						<?php echo $form->labelEx($model,'pf_noi_lam_viec',array('class'=>'col-md-4 control-label')); ?>
 						<div class="col-md-6">
-						<?php echo $form->dropDownList($model,'pf_noi_lam_viec',$list1,array('style'=>'width:293.438px;height:32px','class'=>'select2_6_2','multiple'=>'multiple')); ?>
+						<?php
+							$this->widget('ext.select2.ESelect2',array(
+							  'name'=>'noilamviec',
+							  'data'=>$list1,
+							//  'atribute'=>'ten_tinh_thanh',
+							  'htmlOptions'=>array(
+							  'multiple'=>'multiple',
+							  'class'=>'select2_6_2',
+							  'style'=>'width:293.438px;height:32px',
+							  ),
+							));
+						?>	
 						</div>
 						<?php echo $form->error($model,'pf_noi_lam_viec'); ?>
 					</div>

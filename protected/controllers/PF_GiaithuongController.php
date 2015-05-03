@@ -79,19 +79,23 @@ class PF_GiaithuongController extends Controller
 	            if (isset($images) && count($images) > 0) 
 	            {
 	          
-		            // go through each uploaded image
+		            
 		            foreach ($images as $image => $pic) 
 		            {
-		            
-		            if ($pic->saveAs(Yii::getPathOfAlias('webroot').'/upload/giaithuong/'.$pic->name)) 
+		            // đổi tên image
+		              $random = rand(0,9999); 	
+		              $ext = end(explode('.', $pic->name));// lấy phần mở rộng jpg,png...
+		              $rename = $random.".".$ext;
+		              //
+		            if ($pic->saveAs(Yii::getPathOfAlias('webroot').'/upload/giaithuong/'.$rename)) 
 		            {
-		            // add it to the main model now
-		            $model->save();//save your gallery first
+		            
+		            $model->save();
 		            $img_add = new PF_Hinhanhgiaithuong();
-		            $img_add->pf_hinh_anh_gt = $pic->name; //it might be $img_add->name for you, filename is just what I chose to call it in my model
-		            $img_add->pf_ma_giai_thuong = $model->pf_ma_giai_thuong; // this links your picture model to the main model (like your user, or profile model)
-		            //echo $model->id .' # '.$pic->name.'<br />';
-		            $img_add->save(); // save your imagesDONE
+		            $img_add->pf_hinh_anh_gt = $rename; 
+		            $img_add->pf_ma_giai_thuong = $model->pf_ma_giai_thuong; 
+
+		            $img_add->save(); 
 		            }
 		            else
 		            {
@@ -127,18 +131,22 @@ class PF_GiaithuongController extends Controller
 	            if (isset($images) && count($images) > 0) 
 	            {
 	          
-		            // go through each uploaded image
+		            
 		            foreach ($images as $image => $pic) 
 		            {
-		            
-		            if ($pic->saveAs(Yii::getPathOfAlias('webroot').'/upload/giaithuong/'.$pic->name)) 
+		            // đổi tên image
+		              $random = rand(0,9999); 	
+		              $ext = end(explode('.', $pic->name));// lấy phần mở rộng jpg,png...
+		              $rename = $random.".".$ext;
+		              //
+		            if ($pic->saveAs(Yii::getPathOfAlias('webroot').'/upload/giaithuong/'.$rename)) 
 		            {
-		            // add it to the main model now
+		          
 		            $img_add = new PF_Hinhanhgiaithuong();
-		            $img_add->pf_hinh_anh_gt = $pic->name; //it might be $img_add->name for you, filename is just what I chose to call it in my model
-		            $img_add->pf_ma_giai_thuong = $model->pf_ma_giai_thuong; // this links your picture model to the main model (like your user, or profile model)
-		            //echo $model->id .' # '.$pic->name.'<br />';
-		            $img_add->save(); // save your imagesDONE
+		            $img_add->pf_hinh_anh_gt = $rename; 
+		            $img_add->pf_ma_giai_thuong = $model->pf_ma_giai_thuong; 
+
+		            $img_add->save(); 
 		            }
 		            else
 		            {

@@ -27,8 +27,14 @@ $this->menu= array(
      ); 
         
 ?>
-<div id='print'> hahaha</div>
-<h3 style="margin-left:10px">Thông Tin Người Dùng </h3>
+
+<h3 style="margin-left:10px">Thông Tin Người Dùng
+<?php
+if(!isset(yii::app()->session['matk2'])){
+  echo"<a href='index.php?r=taikhoan/print' class='btn btn-default print hidden-print'><i class='fa fa-fw fa-print'></i> Print</a>";
+}
+?> 
+</h3>
 <?php
    
    $this->renderPartial('view',array('id'=>$matk,'model'=>$model));
@@ -378,6 +384,7 @@ else{
 }
 ?>
 
+<!--<div id='print'> hahaha</div>
 <script type="text/javascript" src="/yii/SocialNetWork/assets/socialajax/html2canvas.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -392,7 +399,4 @@ $(document).ready(function(){
 });
 
   });
-
- 
-  
-</script>
+</script>-->
